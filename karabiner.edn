@@ -1,18 +1,29 @@
  {:profiles
   {:Default {:default true
-            :sim     150
+            :sim     50
             :delay   500
             :alone   500
-            :held    500}}
+            :held    500
+}}
+
+:templates {
+    :open "open \"%s\""
+    :open-app "open -a \"%s\""
+} 
  
  :simlayers   {
+        :caps-mod {:key :caps_lock}
         :c-cmd {:key :c}
         :m-cmd {:key :m}
         :comma-ctrl {:key :comma}
         :x-ctrl {:key :x}
+        :launcher {:key :semicolon}
+        :backspace-mod {:key :delete_or_backspace}
  }
 
- :main [{:des "left shift + space = command + space"
+ :main [
+        ;; misc modifications 
+        {:des "left shift + space = command + space"
                 :rules [[:!Sspacebar :!Cspacebar]]}
         { :des "rshift + backsp = opt + backsp" 
                 :rules [[:!Rdelete_or_backspace :!Odelete_or_backspace]]}
@@ -22,13 +33,16 @@
                 :rules [[:##slash :right_shift nil {:alone :slash}]]}
         {:des "shift + slash = qmark more reliably (simultaneous)" 
                 :rules [[[:left_shift :slash] :!Rslash] [[:right_shift :slash] :!Rslash]]}
-        {:des "rshift + caps = caps lock"
-                :rules [[:!Rcaps_lock :caps_lock]] }
-        {:des "lshift = espace if alone" 
-                :rules [[:##left_shift :left_shift nil {:alone :escape}]]}
-        {:des "rshift = home layer if alone" 
-                :rules [[:##right_shift :right_shift nil {:alone ["caps-layer" 0 ]}]]}
+        {:des "switch colon and semicolon"
+                :rules [[:semicolon :!Ssemicolon] [:!Ssemicolon :semicolon]]}
+
         
+        {:des "rshift + caps = home layer"
+                :rules [[:!Rcaps_lock [["tap-layer" 0 ]]]] }
+        {:des "caps lock = escape if tapped alone, acts as modifier when held"
+                :rules [[:caps_lock ["caps-mod" 1] nil {:alone [:escape ["tap-layer" 0] ["numpad" 0]] :afterup ["caps-mod" 0]}]]}
+        {:des "rshift = home layer if alone" 
+                :rules [[:##right_shift :right_shift nil {:alone ["tap-layer" 0 ]}]]}
        
 
         {:des "m-cmd mapping"
@@ -38,8 +52,8 @@
 
         {:des "c-cmd mapping"
                 :rules [:c-cmd
-                        [:k :!Cdown_arrow caps-layer]
-                        [:k :!Ck !caps-layer]
+                        [:k :!Cdown_arrow tap-layer]
+                        [:k :!Ck !tap-layer]
                         [:l :!Cl] [:n :!Cn] [:p :!Cp]
                         [:comma :!Ccomma] [:period :!Cperiod] [:slash :!Cslash]]}
         {:des "x-ctrl mapping"
@@ -53,18 +67,43 @@
                         [:m :!Wm] [:spacebar [:comma :spacebar]] [:s :!Cs]]}
 
         {:des "caps-layer mapping"
-                :rules [:caps-layer
-                 [:u [:!S9 ]] [:o [:!S0 ]] [:y [:!Sopen_bracket ]] [:p [:!Sclose_bracket ]]
-                 [:##i [{:key :up_arrow :repeat true}]] [:##l [{:key :right_arrow :repeat true}]]
-                 [:##k [{:key :down_arrow :repeat true}]] [:##j [{:key :left_arrow :repeat true}]]
+                :rules [:caps-mod
+                 [:k [{:key :up_arrow :repeat true}]] [:l [{:key :right_arrow :repeat true}]]
+                 [:j [{:key :down_arrow :repeat true}]] [:h [{:key :left_arrow :repeat true}]]
+                 ]}
+
+        {:des "tap-layer mapping"
+                :rules [:tap-layer
+                 [:##k [{:key :up_arrow :repeat true}]] [:##l [{:key :right_arrow :repeat true}]]
+                 [:##j [{:key :down_arrow :repeat true}]] [:##h [{:key :left_arrow :repeat true}]]
                 [:##s :left_shift]
                 [:##a :left_option]
                  ]}
 
-        
-        {:des "caps lock if alone sets caps-layer to true"
-                :rules [[:caps_lock ["caps-layer" 0] ["caps-layer" 1]]
-                        [:caps_lock ["caps-layer" 1] ["caps-layer" 0]]
-                ]}
+        {:des "backspace layer mapping"
+                :rules [:backspace-mod
+                 [:u :!S9] [:i :!S0] [:j :open_bracket ] [:k :close_bracket][:m :!Sopen_bracket] [:comma :!Sclose_bracket]
+                 [:o :!Shyphen] [:p [:spacebar :equal_sign :spacebar]] [:l :hyphen] [:semicolon :!Sequal_sign] [:slash :backslash]
+                 [:n ["numpad" 1]]
+                 ]}
 
-]}
+        {:des "numpad"
+                :rules [:numpad
+                 [:j :1] [:k :2] [:l :3]]}
+
+        {:des "launcher mode"
+                :rules [:launcher
+                [:t [:open-app "iterm"]]
+                [:c [:open-app "google chrome"]]
+                [:s [:open "users/dannylittle/Library/Mobile Documents/Bowdoin Classes"]]
+                 ]
+                 :simlayer-threshold 500}
+                 
+        {:des "left shift sets tap layer to 1 when alone"
+        :rules [[:##left_shift :left_shift nil {:alone [["tap-layer" 1]]}]]}    
+   ]} 
+
+;; todo:
+;; numpad
+;; media keys
+;;better get out of tap-layer
