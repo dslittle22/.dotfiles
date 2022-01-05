@@ -13,12 +13,12 @@
  
  :simlayers   {
         :caps-mod {:key :caps_lock}
+        :launcher {:key :semicolon}
+        :backspace-mod {:key :delete_or_backspace}
         :c-cmd {:key :c}
         :m-cmd {:key :m}
         :comma-ctrl {:key :comma}
         :x-ctrl {:key :x}
-        :launcher {:key :semicolon}
-        :backspace-mod {:key :delete_or_backspace}
  }
 
  :main [
@@ -29,14 +29,17 @@
                 :rules [[:!Rdelete_or_backspace :!Odelete_or_backspace]]}
         {:des "insert -> copy screenshot"
                 :rules [[:insert :!STC4]]}
+
+
+        ;; slash acts as shift when held with another key
         {:des "slash = shift if held with another key"
                 :rules [[:##slash :right_shift nil {:alone :slash}]]}
         {:des "shift + slash = qmark more reliably (simultaneous)" 
                 :rules [[[:left_shift :slash] :!Rslash] [[:right_shift :slash] :!Rslash]]}
-        {:des "switch colon and semicolon"
-                :rules [[:semicolon :!Ssemicolon] [:!Ssemicolon :semicolon]]}
-
+        {:des "slash + space only equals slash + space" :rules [[:!Rspacebar [:slash :spacebar]]]}
         
+        ;; when caps is held, it sets caps-mod to 1. this means that unlike the other
+        ;; simlayers, i can hold it for a second and then still be in caps-mod. 
         {:des "rshift + caps = home layer"
                 :rules [[:!Rcaps_lock [["tap-layer" 0 ]]]] }
         {:des "caps lock = escape if tapped alone, acts as modifier when held"
@@ -44,52 +47,80 @@
         {:des "rshift = home layer if alone" 
                 :rules [[:##right_shift :right_shift nil {:alone ["tap-layer" 0 ]}]]}
        
+       {:des "q = q if tapped alone, acts as modifier when held"
+                :rules [[:q ["q-mod" 1] nil {:alone [:q] :afterup ["q-mod" 0]}]]}
 
+        ;; command keys on left side
         {:des "m-cmd mapping"
                 :rules [:m-cmd
                         [:f :!Cf] [:w :!Cw] [:r :!Cr] [:s :!Cs] [:t :!Ct] [:tab :!Ctab]
                         [:grave_accent_and_tilde :!Cgrave_accent_and_tilde] [:d :!Cd] [:a :!Ca] [:z :!Cz] [:x :!Cx] [:c :!Cc] [:v :!Cv]]}
 
+        ;; command keys on right side
         {:des "c-cmd mapping"
                 :rules [:c-cmd
                         [:k :!Cdown_arrow tap-layer]
                         [:k :!Ck !tap-layer]
                         [:l :!Cl] [:n :!Cn] [:p :!Cp]
-                        [:comma :!Ccomma] [:period :!Cperiod] [:slash :!Cslash]]}
+                        [:comma :!Ccomma] [:period :!Cperiod] [:slash :!Cslash]
+                        [:semicolon :quote]
+                        ]}
         {:des "x-ctrl mapping"
                 :rules [:x-ctrl
                         [:u :!Wu] [:o :!Wo] [:p :!Wp] [:h :!Wh] [:j :!Wj] [:k :!Wk]
                         [:l :!Wl] [:n :!Wn] [:m :!Wm]
+                        [:semicolon :!Squote]
                         [:slash :!Cslash]]}
         {:des "comma-ctrl mapping"
                 :rules [:comma-ctrl
                         [:a :!Wa] [:e :!We] [:r :!Wr] [:n :!Wn]
                         [:m :!Wm] [:spacebar [:comma :spacebar]] [:s :!Cs]]}
 
-        {:des "caps-layer mapping"
+        ;; when holding down caps
+        {:des "caps-mod mapping"
                 :rules [:caps-mod
-                 [:k [{:key :up_arrow :repeat true}]] [:l [{:key :right_arrow :repeat true}]]
-                 [:j [{:key :down_arrow :repeat true}]] [:h [{:key :left_arrow :repeat true}]]
+                ;; hjkl arrows
+                [:##k [{:key :up_arrow :repeat true}]] [:##l [{:key :right_arrow :repeat true}]]
+                [:##j [{:key :down_arrow :repeat true}]] [:##h [{:key :left_arrow :repeat true}]]
+                [:##s :left_shift]
+                [:##a :left_option]
+                ;; switch tabs in most apps
+                [:comma :!COleft_arrow]
+                [:period :!COright_arrow]
                  ]}
 
+        ;; after tapping shift once, these will be set (until hit escape).
         {:des "tap-layer mapping"
                 :rules [:tap-layer
                  [:##k [{:key :up_arrow :repeat true}]] [:##l [{:key :right_arrow :repeat true}]]
                  [:##j [{:key :down_arrow :repeat true}]] [:##h [{:key :left_arrow :repeat true}]]
                 [:##s :left_shift]
                 [:##a :left_option]
+                ;; switch tabs in most apps
+                [:comma :!COleft_arrow]
+                [:period :!COright_arrow]
                  ]}
 
-        {:des "backspace layer mapping"
-                :rules [:backspace-mod
-                 [:u :!S9] [:i :!S0] [:j :open_bracket ] [:k :close_bracket][:m :!Sopen_bracket] [:comma :!Sclose_bracket]
-                 [:o :!Shyphen] [:p [:spacebar :equal_sign :spacebar]] [:l :hyphen] [:semicolon :!Sequal_sign] [:slash :backslash]
+        {:des "q-mod mapping"
+                :rules [:q-mod
+                 [:y :!S9] [:i :!S0] [:j :open_bracket ] [:k :close_bracket][:m :!Sopen_bracket] [:comma :!Sclose_bracket]
+                 [:o :!Shyphen] [:p [:spacebar :equal_sign :spacebar]] [:l :hyphen] [:semicolon :!Sequal_sign] [:period :backslash]
+                 [:e :play_or_pause]
+                 [:r :rewind]
+                 [:t :fastforward]
                  [:n ["numpad" 1]]
                  ]}
 
         {:des "numpad"
                 :rules [:numpad
-                 [:j :1] [:k :2] [:l :3]]}
+                 [:u :4] [:i :5] [:o :6] 
+                 [:j :1] [:k :2] [:l :3] 
+                 [:m :0]]}
+
+        ;; backspace mod should be things you only want with a split keyboard. 
+        ;; e.g. media / funciton keys        
+        {:des "backspace mod"
+                :rules []}       
 
         {:des "launcher mode"
                 :rules [:launcher
@@ -101,6 +132,10 @@
                  
         {:des "left shift sets tap layer to 1 when alone"
         :rules [[:##left_shift :left_shift nil {:alone [["tap-layer" 1]]}]]}    
+        
+        ;; this messes stuff up unless i put it at the bottom
+        {:des "switch colon and semicolon"
+                :rules [[:semicolon :!Ssemicolon] [:!Ssemicolon :semicolon]]}
    ]} 
 
 ;; todo:
