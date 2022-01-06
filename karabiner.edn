@@ -117,8 +117,10 @@
 
         {:des "q-mod mapping"
                 :rules [:q-mod
-                 [:j :!S9] [:k :!S0] [:m :open_bracket ] [:comma :close_bracket][:i :!Sopen_bracket] [:o :!Sclose_bracket]
-                 [:semicolon :!Squote]
+                [:j :!Shyphen] [:##k :hyphen] [:##m :!Sequal_sign] [:##comma :equal_sign]
+                [:semicolon :quote]
+                [:##period :backslash] 
+                                 
                  [:e :play_or_pause]
                  [:r :rewind]
                  [:t :fastforward]
@@ -128,9 +130,8 @@
 
         {:des "z-mod mapping"
         :rules [:z-mod 
-                [:j :!Shyphen] [:##k :hyphen] [:##m :!Sequal_sign] [:##comma :equal_sign]
-                [:semicolon :quote]
-                [:##period :backslash] ]}
+                [:j :!S9] [:k :!S0] [:m :open_bracket ] [:comma :close_bracket][:u :!Sopen_bracket] [:i :!Sclose_bracket] [:semicolon :!Squote]
+                ]}
 
         {:des "numpad"
                 :rules [:numpad
