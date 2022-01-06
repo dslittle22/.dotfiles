@@ -26,7 +26,7 @@
  :layers {
         :z-mod {:key :z }
         :q-mod {:key :q}
-        :launcher {:key :quote}
+        :launcher {:key :open_bracket}
  }
 
  :devices {
