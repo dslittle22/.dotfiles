@@ -26,6 +26,7 @@
  :layers {
         :z-mod {:key :z }
         :q-mod {:key :q}
+        :launcher {:key :quote}
  }
 
  :main [
