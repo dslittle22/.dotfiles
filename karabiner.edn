@@ -172,12 +172,12 @@
         {:des "comma is ! if held"
                 :rules [[:comma :comma nil {
                                 :held [:delete_or_backspace :!S1]
-                                :params {:held 250}}]]}
+                                :params {:held 200}}]]}
        
         {:des "period is @ if held"
                 :rules [[:period :period nil {
                                 :held [:delete_or_backspace :!S2]
-                                :params {:held 250}}]]}
+                                :params {:held 200}}]]}
 
 
         ;; {:des "test for double-tap mode"
