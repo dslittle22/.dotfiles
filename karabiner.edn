@@ -121,16 +121,24 @@
                 [:semicolon :quote]
                 [:##period :backslash] 
                                  
-                 [:e :play_or_pause]
-                 [:r :rewind]
-                 [:t :fastforward]
+                 [:w :play_or_pause]
+                 [:e :display_brightness_decrement]
+                 [:r :display_brightness_increment]
+                 [:d :rewind]
+                 [:f :fastforward]
                  [:n ["numpad" 1]]
                  [:u [:q :u]]
                  ]}
 
         {:des "z-mod mapping"
         :rules [:z-mod 
-                [:j :!S9] [:k :!S0] [:m :open_bracket ] [:comma :close_bracket][:u :!Sopen_bracket] [:i :!Sclose_bracket] [:semicolon :!Squote]
+                [:j :!S9] [:k :!S0] [:m :open_bracket ] [:comma :close_bracket][:u :!Sopen_bracket] [:i :!Sclose_bracket] 
+                [:semicolon :!Squote]
+                [:s :!S3]
+                [:d :!S4]
+                [:f :!S5]
+                [:x :!S6]
+                [:c :!S7]
                 ]}
 
         {:des "numpad"
