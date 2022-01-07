@@ -15,7 +15,6 @@
  ;; for other keys, e.g. espace, you can probably just use a normal layer. 
  :simlayers   {
         :caps-mod {:key :caps_lock}
-
         :backspace-mod {:key :delete_or_backspace}
         :c-cmd {:key :c}
         :m-cmd {:key :m}
@@ -39,8 +38,6 @@
  }
 
  :main [
- 
-
         ;; misc modifications 
         {:des "left shift + space = command + space"
                 :rules [[:!Sspacebar :!Cspacebar]]}
@@ -50,8 +47,8 @@
                 :rules [[:insert :!STC4]]}
 
 
-        {:des "left control alone sets tap layer to 1" :rules [[:left_control :left_control ["tap-layer" 0] {:alone [["tap-layer" 1]]}]]}    
-        {:des "left control alone sets tap layer to 1" :rules [[:left_control :left_control ["tap-layer" 1] {:alone [["tap-layer" 0]]}]]}    
+        {:des "left control alone sets tap layer to 1" :rules [[:left_control :left_control :!tap-layer {:alone [["tap-layer" 1]]}]]}    
+        {:des "left control alone sets tap layer to 1" :rules [[:left_control :left_control :tap-layer {:alone [["tap-layer" 0]]}]]}    
     
         ;; {:des "tab alone sets tap layer to 1" :rules [[:##tab :tab nil {:alone [["tap-layer" 1]]}]]}    
        
@@ -104,16 +101,17 @@
         {:des "comma-ctrl mapping"
                 :rules [:comma-ctrl
                         [:a :!Wa] [:e :!We] [:r :!Wr] [:n :!Wn] [:d :!Wd] [:c :!Wc]
-                        [:m :!Wm] [:spacebar [:comma :spacebar]] [:s :!Cs]]}
+                        [:m :!Wm] [:spacebar [:comma :spacebar]] [:s :!Cs]
+                        [:grave_accent_and_tilde :!Wgrave_accent_and_tilde]]}
 
         ;; when holding down caps
         {:des "caps-mod mapping"
                 :rules [:caps-mod
-                ;; hjkl arrows
+                 ;; hjkl arrows
+                [:##s :left_shift]
+                [:##d :left_option]
                 [:##k [{:key :up_arrow :repeat true}]] [:##l [{:key :right_arrow :repeat true}]]
                 [:##j [{:key :down_arrow :repeat true}]] [:##h [{:key :left_arrow :repeat true}]]
-                [:##s :left_shift]
-                [:##a :left_option]
                 ;; switch tabs in most apps
                 [:comma :!COleft_arrow]
                 [:period :!COright_arrow]
@@ -125,10 +123,11 @@
         ;; after tapping shift once, these will be set (until hit escape).
         {:des "tap-layer mapping"
                 :rules [:tap-layer
+                ;; hjkl arrows
                  [:##k [{:key :up_arrow :repeat true}]] [:##l [{:key :right_arrow :repeat true}]]
                  [:##j [{:key :down_arrow :repeat true}]] [:##h [{:key :left_arrow :repeat true}]]
                 [:##s :left_shift]
-                [:##a :left_option]
+                [:##d :left_option]
                 ;; switch tabs in most apps
                 [:comma :!COleft_arrow]
                 [:period :!COright_arrow]
@@ -178,6 +177,7 @@
                 [:b [:open-app "google chrome"]]
                 [:c [:open-app "visual studio code"]]
                 [:s [:open "users/dannylittle/Library/Mobile Documents/Bowdoin Classes"]]
+                [:close_bracket [:open_bracket :close_bracket]]
                  ]
                  :simlayer-threshold 500}
                  
@@ -211,16 +211,17 @@
         ;; ;; set double esc mode if already pressed once
         ;; [:comma ["double-comma-mode" 1] ["comma-pressed-once" 1]]
         ;; ;; if not already pressed once, set already pressed and unset doube comma mode
-        ;; [:comma [["comma-pressed-once" 1]] ["double-comma-mode" 0] 
-        ;;         ;; if we press comma and then nothing after
-        ;;         {:delayed {:invoked [:comma ["comma-pressed-once" 0]] 
+        ;; [:comma [["comma-pressed-once" 1]] ["double-comma-mode" 0] {
+        ;;         :delayed {
+        ;;                 ;; if we press comma and then nothing after
+        ;;                 :invoked [:comma ["comma-pressed-once" 0]] 
         ;;                 ;; if we press comma and then another key shortly after
         ;;                 :canceled [:comma ["comma-pressed-once" 0]]}
         ;;         :params {:delay 250}}]
         ;;                 ;; if we are in double comma mode, do these
-        ;;                 :double-comma-mode
-        ;;                 [:comma ["double-comma-mode" 0]]
-        ;;                 [:a [:delete_or_backspace :!S4 ["double-comma-mode" 0]]]]}
+        ;;         :double-comma-mode
+        ;;         [:comma ["double-comma-mode" 0]]
+        ;;         [:a [:delete_or_backspace :!S4 ["double-comma-mode" 0]]]]}
 
    ]
    :simlayer-threshold 250} 
@@ -240,4 +241,18 @@
     ;; !! | mandatory command + control + optional + shift (hyper)
     ;; ## | optional any
 
+
+;; anatomy of a rule:
+;; simple remapping: [:from_code :to_code]
+;; multiple to's: [:from_code [:to_code_1 :to_code_2 ["var" 1]]
+;; conditional remapping: [:from_code :to_code :condition]
+;; multiple conditions: [:from_code :to_code [:condition1 :condition2] (can use ! for negation)
+;; simultaneous: [[:period :comma] :!S1] ;;map simultaneous period and comma to !
+;; you can also define an "other options" section for stuff like if held, if alone:
+;; [[:comma :comma nil {
+;;                 ^condition is 'nil', so by default, it goes to comma.
+;;         :held [:delete_or_backspace :!S1]
+;;         :params {:held 200}}]]
+
+                       
 ;; todo:
