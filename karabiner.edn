@@ -118,6 +118,8 @@
                 [:comma :!COleft_arrow]
                 [:period :!COright_arrow]
                 [:spacebar :delete_or_backspace :macbook_internal]
+                [:spacebar :return_or_enter :mistel]
+                [:delete_or_backspace :!Wd :mistel]
                  ]}
 
         ;; after tapping shift once, these will be set (until hit escape).
