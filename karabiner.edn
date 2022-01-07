@@ -49,8 +49,6 @@
 
         {:des "left control alone sets tap layer to 1" :rules [[:left_control :left_control :!tap-layer {:alone [["tap-layer" 1]]}]]}    
         {:des "left control alone sets tap layer to 1" :rules [[:left_control :left_control :tap-layer {:alone [["tap-layer" 0]]}]]}    
-    
-        ;; {:des "tab alone sets tap layer to 1" :rules [[:##tab :tab nil {:alone [["tap-layer" 1]]}]]}    
        
         ;; when caps is held, it sets caps-mod to 1. this means that unlike the other
         ;; simlayers, i can hold it for a second and then still be in caps-mod. 
@@ -109,7 +107,7 @@
                 :rules [:caps-mod
                  ;; hjkl arrows
                 [:##s :left_shift]
-                [:##d :left_option]
+                [:##a :left_option]
                 [:##k [{:key :up_arrow :repeat true}]] [:##l [{:key :right_arrow :repeat true}]]
                 [:##j [{:key :down_arrow :repeat true}]] [:##h [{:key :left_arrow :repeat true}]]
                 ;; switch tabs in most apps
@@ -127,7 +125,7 @@
                  [:##k [{:key :up_arrow :repeat true}]] [:##l [{:key :right_arrow :repeat true}]]
                  [:##j [{:key :down_arrow :repeat true}]] [:##h [{:key :left_arrow :repeat true}]]
                 [:##s :left_shift]
-                [:##d :left_option]
+                [:##a :left_option]
                 ;; switch tabs in most apps
                 [:comma :!COleft_arrow]
                 [:period :!COright_arrow]
