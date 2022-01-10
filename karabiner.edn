@@ -199,12 +199,12 @@
 
         {:des "comma is ! if held"
                 :rules [[:comma :comma nil {
-                                :held [:delete_or_backspace :!S1]
+                                :held [ {:key :delete_or_backspace :repeat false}{:key :!S1 :repeat false} ]
                                 :params {:held 200}}]]}
        
         {:des "period is @ if held"
                 :rules [[:period :period nil {
-                                :held [:delete_or_backspace :!S2]
+                                :held [ {:key :delete_or_backspace :repeat false}{:key :!S2 :repeat false} ]
                                 :params {:held 200}}]]}
 
 
