@@ -56,8 +56,13 @@
                 :rules [[:!Rcaps_lock [["tap-layer" 0 ]]]] }
         {:des "caps lock = escape if tapped alone, acts as modifier when held"
                 :rules [[:caps_lock ["caps-mod" 1] nil {:alone [:escape ["tap-layer" 0] ["numpad" 0]] :afterup ["caps-mod" 0]}]]}
+        
+        {:des "shift + slash = qmark more reliably (simultaneous)" 
+        :rules [[[:left_shift :slash] :!Sslash]
+                [[:right_shift :slash] :!Rslash]]}
+
         {:des "rshift = home layer if alone" 
-                :rules [[:##right_shift :right_shift nil {:alone ["tap-layer" 0 ]}]]}
+                :rules [[:right_shift :right_shift nil {:alone [["tap-layer" 0 ] ["numpad" 0]]}]]}
 
         ;; command keys on left side
         {:des "m-cmd mapping"
@@ -185,9 +190,8 @@
         ;; slash acts as shift when held with another key
         {:des "slash = shift if held with another key"
                 :rules [[:##slash :right_shift nil {:alone :slash}]]}
-        {:des "shift + slash = qmark more reliably (simultaneous)" 
-                :rules [[[:left_shift :slash] :!Rslash] [[:right_shift :slash] :!Rslash]]}
         {:des "slash + space only equals slash + space" :rules [[:!Rspacebar [:slash :spacebar]]]}
+        
  
         {:des "switch colon and semicolon"
                 :rules [[:semicolon :!Ssemicolon] [:!Ssemicolon :semicolon]]}
