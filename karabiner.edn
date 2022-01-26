@@ -108,6 +108,7 @@
                         [:l :!Wl] [:n :!Wn] [:m :!Wm]
                         [:semicolon :!Squote]
                         [:slash :!Cslash]
+                        [:backslash :!Cbackslash]
                         [:period :!Cperiod]
                 ]}
         {:des "comma-ctrl mapping"
