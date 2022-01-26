@@ -107,9 +107,8 @@
                         [:u :!Wu] [:o :!Wo] [:p :!Wp] [:h :!Wh] [:j :!Wj] [:k :!Wk]
                         [:l :!Wl] [:n :!Wn] [:m :!Wm]
                         [:semicolon :!Squote]
-                        [:slash :!Cslash]
-                        [:backslash :!Cbackslash]
-                        [:period :!Cperiod]
+                        [:backslash :!Wbackslash]
+                        [:period :!Wperiod]
                 ]}
         {:des "comma-ctrl mapping"
                 :rules [:comma-ctrl
