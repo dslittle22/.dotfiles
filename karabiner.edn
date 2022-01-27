@@ -201,7 +201,7 @@
                 [:t [:open-app "iterm"]]
                 [:b [:open-app "google chrome"]]
                 [:c [:open-app "visual studio code"]]
-                [:s [:open "users/dannylittle/Library/Mobile Documents/Bowdoin Classes"]]
+                [:s [:open "/Users/dannylittle/Library/Mobile Documents/com~apple~CloudDocs/Bowdoin Classes"]]
                  ]
                  :simlayer-threshold 500}
                  
