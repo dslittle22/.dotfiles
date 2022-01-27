@@ -142,6 +142,10 @@
                 [:r :display_brightness_decrement]
                 [:t :display_brightness_increment]
 
+                ;; ctrl arrows = esc + u or i
+                [:u :!Tleft_arrow]
+                [:i :!Tright_arrow]
+
                  ]}
 
         ;; after tapping shift once, these will be set (until hit escape).
