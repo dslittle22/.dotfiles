@@ -52,7 +52,9 @@
         { :des "rshift + backsp = opt + backsp" 
                 :rules [[:!Rdelete_or_backspace :!Odelete_or_backspace]]}
         {:des "insert -> copy screenshot"
-                :rules [[:insert :!STC4]]}
+                :rules [[:print_screen :!STC4]]}
+        {:des "alt + tilde = command + alt + escape"
+                :rules [[:!Qgrave_accent_and_tilde :!COescape]]}
 
 
         {:des "left control alone sets tap layer to 1" :rules [[:left_control :left_control :!tap-layer {:alone [["tap-layer" 1]]}]]}    
@@ -132,6 +134,14 @@
                 [:spacebar :delete_or_backspace :macbook_internal]
                 [:spacebar :return_or_enter :mistel]
                 [:delete_or_backspace :!Wd :mistel]
+
+                ;;media keys
+                [:q :rewind]
+                [:w :play_or_pause]
+                [:e :fastforward]
+                [:r :display_brightness_decrement]
+                [:t :display_brightness_increment]
+
                  ]}
 
         ;; after tapping shift once, these will be set (until hit escape).
@@ -157,14 +167,8 @@
                 [:j :!Shyphen] [:##k :hyphen] [:##m :!Sequal_sign] [:##comma :equal_sign]
                 [:semicolon :quote]
                 [:##period :backslash] 
-                 [:n ["numpad" 1]]
-                                 
-                 [:e :display_brightness_decrement]
-                 [:r :display_brightness_increment]
-                 [:s :play_or_pause]
-                 [:d :rewind]
-                 [:f :fastforward]
-                 [:u [:q :u]]
+                [:n ["numpad" 1]]
+                [:u [:q :u]]
                  ]}
 
         {:des "z-mod mapping"
