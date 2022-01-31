@@ -203,6 +203,14 @@
                 [:##period :backslash]
                 [:n ["numpad" 1]]
                 [:u [:q :u]]
+                
+                [:w :play_or_pause]
+                [:e :fastforward]
+                [:r :display_brightness_decrement]
+                [:t :display_brightness_increment]
+                [:s :volume_decrement]
+                [:d :volume_increment]
+                [:f :mute]
                  ]}
 
         {:des "z-mod mapping"
