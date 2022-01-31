@@ -46,6 +46,8 @@
                         [:##left_option :##left_command]
                         [:##right_option :##right_command]
                         [:##right_command :##right_option]
+                        
+                        [:!OQspacebar :vk_none]
                 ]}
         {:des "left shift + space = command + space"
                 :rules [[:!Sspacebar :!Cspacebar]]}
