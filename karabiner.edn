@@ -122,6 +122,7 @@
                         [:f :!Cf] [:w :!Cw] [:r :!Cr] [:s :!Cs] [:t :!Ct] [:tab :!Ctab]
                         [:grave_accent_and_tilde :!Cgrave_accent_and_tilde] [:d :!Cd] [:a :!Ca]
                         [:z :!Cz] [:x :!Cx] [:c :!Cc] [:v :!Cv]
+                        [:1 :!Cq]
         ]}
 
         ;; command keys on right side
@@ -130,7 +131,6 @@
                         [:k [:c :k] !tap-layer]
                         [:l :!Cl] [:n :!Cn] [:p :!Cp]
                         [:comma :!Ccomma] [:period :!Cperiod] [:slash :!Cslash]
-                        [:semicolon :quote]
                         ]}
         {:des "x-ctrl mapping"
                 :rules [:x-ctrl
