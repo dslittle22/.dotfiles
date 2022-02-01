@@ -263,7 +263,7 @@
         {:des "comma is ! if held"
                 :rules [[:period :period nil {
                                 :held [:delete_or_backspace :!S1]
-                                :params {:held 100}}]]}
+                                :params {:held 150}}]]}
 
         {:des "period is @ if held"
                 :rules [[:comma :comma nil {
