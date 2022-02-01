@@ -14,7 +14,7 @@
  ;; you should probably only use them for letter keys that you type regularly.
  ;; for other keys, e.g. espace, you can probably just use a normal layer.
  :simlayers   {
-        :caps-mod {:key :caps_lock}
+        :nav-layer {:key :f}
         :backspace-mod {:key :delete_or_backspace}
         :c-cmd {:key :c}
         :m-cmd {:key :m}
@@ -36,6 +36,10 @@
             {:vendor_id 1241}
     ]
  }
+ 
+ :applications {
+        :vscode "com.microsoft.VSCode"
+ }
 
  :main [
         ;; misc modifications
@@ -55,10 +59,18 @@
                 :rules [[:!Rdelete_or_backspace :!Odelete_or_backspace]]}
         {:des "insert -> copy screenshot"
                 :rules [[:print_screen :!STC4]]}
-        {:des "command + caps = command + command + escape"
+        {:des "right command + caps = command + command + escape"
                 :rules [[:!Qcaps_lock :!COescape]]}
 
-        {:des ""
+        {:des "vscode shortcuts"
+                :rules [:vscode
+                        [:!SOi :!SOup_arrow]
+                        [:!SOk :!SOdown_arrow]
+                        [:!STi :!STup_arrow]
+                        [:!STk :!STdown_arrow]
+                ]}
+
+        {:des "right shift + fn + num = fn key"
                 :rules [
                         [:!Rf1 :f1]
                         [:!Rf2 :f2]
@@ -95,7 +107,7 @@
         {:des "rshift + caps = home layer"
                 :rules [[:!Rcaps_lock [["tap-layer" 0 ]]]] }
         {:des "caps lock = escape if tapped alone, acts as modifier when held"
-                :rules [[:caps_lock ["caps-mod" 1] nil {:alone [:escape ["tap-layer" 0] ["numpad" 0]] :afterup ["caps-mod" 0]}]]}
+                :rules [[:caps_lock ["nav-layer" 1] nil {:alone [:escape ["tap-layer" 0] ["numpad" 0]] :afterup ["nav-layer" 0]}]]}
 
         {:des "shift + slash = qmark more reliably (simultaneous)"
         :rules [[[:left_shift :slash] :!Sslash]
@@ -108,22 +120,8 @@
         {:des "m-cmd mapping"
                 :rules [:m-cmd
                         [:f :!Cf] [:w :!Cw] [:r :!Cr] [:s :!Cs] [:t :!Ct] [:tab :!Ctab]
-                        [:grave_accent_and_tilde :!Cgrave_accent_and_tilde] [:d :!Cd] [:a :!Ca ["cmdq" 0]] [:z :!Cz] [:x :!Cx] [:c :!Cc] [:v :!Cv]
-
-                        ;; if cmdq == 1, press a to quit and cleanup notification and variable
-                        [:a [:!Cq ["cmdq" 0] [:noti :cmdq]] ["cmdq" 1]]
-
-                        ;; on initially pressing mcmd-q, show notification and set variable
-                        [:q [[:noti :cmdq "Press \"a\" to quit."] ["cmdq" 1]]
-                            nil {
-                                :delayed {
-                                        ;; cleanup noti and variable if it :delay param passes
-                                        :invoked [["cmdq" 0][:noti :cmdq]]
-                                        ;; if another key hit before :delay, do the same cleanup
-                                        :cancelled [["cmdq" 0][:noti :cmdq]]
-                                }
-                                :params {:delay 1000}
-                        }]
+                        [:grave_accent_and_tilde :!Cgrave_accent_and_tilde] [:d :!Cd] [:a :!Ca]
+                        [:z :!Cz] [:x :!Cx] [:c :!Cc] [:v :!Cv]
         ]}
 
         ;; command keys on right side
@@ -150,14 +148,16 @@
                         [:grave_accent_and_tilde :!Wgrave_accent_and_tilde]]}
 
         ;; when holding down caps
-        {:des "caps-mod mapping"
-                :rules [:caps-mod
-                 ;; hjkl arrows
+        {:des "nav-layer mapping"
+                :rules [:nav-layer
+                 ;; ijkl arrows
                 [:##a :left_option]
                 [:##s :left_command]
                 [:##d :left_shift]
-                [:##k [{:key :up_arrow :repeat true}]] [:##l [{:key :right_arrow :repeat true}]]
-                [:##j [{:key :down_arrow :repeat true}]] [:##h [{:key :left_arrow :repeat true}]]
+                [:##i [{:key :up_arrow :repeat true}]]
+                [:##l [{:key :right_arrow :repeat true}]]
+                [:##k [{:key :down_arrow :repeat true}]]
+                [:##j [{:key :left_arrow :repeat true}]]
                 ;; switch tabs in most apps
                 [:comma :!COleft_arrow]
                 [:period :!COright_arrow]
@@ -169,21 +169,29 @@
                 [:q :rewind]
                 [:w :play_or_pause]
                 [:e :fastforward]
-                [:r :display_brightness_decrement]
-                [:t :display_brightness_increment]
 
-                ;; ctrl arrows = esc + u or i
+                [:x :display_brightness_decrement]
+                [:c :display_brightness_increment]
+
+                ;; ctrl arrows = esc + u or o
                 [:u :!Tleft_arrow]
-                [:i :!Tright_arrow]
+                [:o :!Tright_arrow]
 
+                ;; nav + quote = go inside two quotes
+                [:quote [:!Squote :!Squote :left_arrow]]
+
+                ;; semicolon to tab
+                [:semicolon :tab]
                  ]}
 
         ;; after tapping shift once, these will be set (until hit escape).
         {:des "tap-layer mapping"
                 :rules [:tap-layer
-                ;; hjkl arrows
-                [:##k [{:key :up_arrow :repeat true}]] [:##l [{:key :right_arrow :repeat true}]]
-                [:##j [{:key :down_arrow :repeat true}]] [:##h [{:key :left_arrow :repeat true}]]
+                ;; ijkl arrows
+                [:##i [{:key :up_arrow :repeat true}]]
+                [:##l [{:key :right_arrow :repeat true}]]
+                [:##k [{:key :down_arrow :repeat true}]]
+                [:##j [{:key :left_arrow :repeat true}]]
                 [:##a :left_option]
                 [:##s :left_command]
                 [:##d :left_shift]
@@ -289,7 +297,7 @@
         ;;         [:a [:delete_or_backspace :!S4 ["double-comma-mode" 0]]]]}
 
    ]
-   :simlayer-threshold 250}
+   :simlayer-threshold 160}
 
     ;; !  | means mandatory
     ;; #  | means optional
