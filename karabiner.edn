@@ -99,8 +99,9 @@
                         [:!Sf12 :f12]
                 ]}
 
-        {:des "left control alone sets tap layer to 1" :rules [[:left_control :left_control :!tap-layer {:alone [["tap-layer" 1]]}]]}
-        {:des "left control alone sets tap layer to 1" :rules [[:left_control :left_control :tap-layer {:alone [["tap-layer" 0]]}]]}
+        {:des "left alt + tilde sets tap layer to 1" :rules [[:!Ograve_accent_and_tilde nil :!tap-layer {:alone [["tap-layer" 1]]}]]}
+        {:des "left alt + tilde sets tap layer to 0" :rules [[:!Ograve_accent_and_tilde nil :tap-layer {:alone [["tap-layer" 0]]}]]}
+
 
         ;; when caps is held, it sets caps-mod to 1. this means that unlike the other
         ;; simlayers, i can hold it for a second and then still be in caps-mod.
@@ -186,7 +187,7 @@
                 [:semicolon :tab]
                  ]}
 
-        ;; after tapping shift once, these will be set (until hit escape).
+        ;; after tapping left alt + tilde, this is activated until hit again (or caps lock).
         {:des "tap-layer mapping"
                 :rules [:tap-layer
                 ;; ijkl arrows
