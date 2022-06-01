@@ -99,8 +99,8 @@
                         [:!Sf12 :f12]
                 ]}
 
-        {:des "left ctrl + tilde sets tap layer to 1" :rules [[:!Tgrave_accent_and_tilde nil :!tap-layer {:alone [["tap-layer" 1]]}]]}
-        {:des "left ctrl + tilde sets tap layer to 0" :rules [[:!Tgrave_accent_and_tilde nil :tap-layer {:alone [["tap-layer" 0]]}]]}
+        {:des "left ctrl + tilde sets tap layer to 1" :rules [[:!TOgrave_accent_and_tilde nil :!tap-layer {:alone [["tap-layer" 1]]}]]}
+        {:des "left ctrl + tilde sets tap layer to 0" :rules [[:!TOgrave_accent_and_tilde nil :tap-layer {:alone [["tap-layer" 0]]}]]}
 
 
         ;; when caps is held, it sets caps-mod to 1. this means that unlike the other
