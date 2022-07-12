@@ -54,6 +54,9 @@ alias ga="git add ."
 alias gd="git diff"
 alias gcm="git commit -m"
 alias gcam="git commit -am"
+alias glo="git log --oneline"
+alias gc="git checkout"
+
 # colorize output of ls, with some aliases
 alias ls="ls -G"
 alias ll="ls -lG"
