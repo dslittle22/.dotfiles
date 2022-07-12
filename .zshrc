@@ -15,15 +15,9 @@ zstyle ':vcs_info:*' unstagedstr '*'
 zstyle ':vcs_info:*' stagedstr '+'
 
 # display when no action (e.g. rebase)
-<<<<<<< HEAD
 zstyle ':vcs_info:git:*' formats 'on %F{40}%b %F{220}%u%c%m%f'
 # display on action
 zstyle ':vcs_info:git:*' actionformats 'on %F{40}%b|%F{220}%u%c%F{1}(%a)%f'
-=======
-zstyle ':vcs_info:git:*' formats 'on %F{6}%b %F{4}%u%c%m%f'
-# display on action
-zstyle ':vcs_info:git:*' actionformats 'on %F{6}%b|%F{4}%u%c%F{5}(%a)%f'
->>>>>>> 6e4b1bd (update prompt length)
 # run hook below to check for untracked files
 zstyle ':vcs_info:git*+set-message:*' hooks git-untracked
 
