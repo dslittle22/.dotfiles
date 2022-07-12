@@ -30,5 +30,6 @@ mas "Hidden Bar", id: 1452453066
 mas "iStat Menus", id: 1319778037
 mas "Logic Pro", id: 634148309
 mas "NordVPN", id: 905953485
+mas "Okta Verify", id: 490179405
 mas "OmniFocus", id: 1346203938
 mas "Slack", id: 803453959
