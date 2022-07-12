@@ -15,9 +15,9 @@ zstyle ':vcs_info:*' unstagedstr '*'
 zstyle ':vcs_info:*' stagedstr '+'
  
 # display when no action (e.g. rebase)
-zstyle ':vcs_info:git:*' formats 'on: %F{6}%b %F{4}%u%c%m%f' 
-# display on action 
-zstyle ':vcs_info:git:*' actionformats 'on: %F{6}%b|%F{4}%u%c%m%F{5}(%a)%f'
+zstyle ':vcs_info:git:*' formats 'on %F{6}%b %F{4}%u%c%m%f'
+# display on action
+zstyle ':vcs_info:git:*' actionformats 'on %F{6}%b|%F{4}%u%c%F{5}(%a)%f'
 # run hook below to check for untracked files
 zstyle ':vcs_info:git*+set-message:*' hooks git-untracked
 
@@ -44,7 +44,6 @@ suffix='%(!.#.→) '
 PROMPT='${err}${dir} ${suffix}'
 RPROMPT='%32>..>${vcs_info_msg_0_}'
 
-# check for venv running
 if [ -n "$VIRTUAL_ENV" ]; then
   RPROMPT="🐍:(`basename \"$VIRTUAL_ENV\"`)$RPROMPT "
 fi
