@@ -74,6 +74,7 @@ alias gsm="git stash --message"
 alias gsl="git stash --list"
 alias gsp="git stash pop"
 alias gsa="git stash apply"
+alias gp="git pull"
 
 # colorize output of ls, with some aliases
 alias ls="ls -G"
