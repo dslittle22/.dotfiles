@@ -71,6 +71,7 @@ echo "Remaining things to do:"
 echo "[ ] configure firefox userchrome (https://www.userchrome.org/how-create-userchrome-css.html) and symlink: ln -s ~/.dotfiles/userChrome.css ~/Library/Application Support/Firefox/Profiles/\`weird string\`.default-release/chrome/userChrome.css"
 echo "[ ] Import rectangle settings"
 echo "[ ] Install wavelink and import settings"
-echo "[ ] ITerm2: Preferences -> General -> Preferences -> Load preferences from a custom folder or URL: ~/.dotfiles"
+echo "[ ] ITerm2: Preferences -> General -> Preferences -> Load preferences from a custom folder or URL: ~/.dotfiles. \
+Then, import color scheme (~/.dotfiles/material-ui-colors)"
 echo "[ ] Get tinkertool (http://www.bresink.com/osx/TinkerToolOverview.html), import settings"
 echo "[ ] Set MacOS shortcuts (f4 to DND)"
