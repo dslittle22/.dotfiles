@@ -28,9 +28,21 @@ zstyle ':vcs_info:git*+set-message:*' hooks git-untracked
     hook_com[misc]='?'
   fi
 }
-# set left and right prompt
-PROMPT='%(?..%F{red}?%?)%f%B%F{4}%2~%f %(!.#.→) %f'
-RPROMPT='${vcs_info_msg_0_}'
+# set prompt
+
+# renders a question mark character for a certain error code
+err='%(?..%F{red}? %?)%f'
+
+# the part in parenths, %(...), says: if the cwd is >= 4
+# dirs, show dir1/.../last2/dirs.
+# the %32<..< says, if the whole string is longer than 32,
+# truncate it to ..rest-of-string.
+dir='%B%F{4}%32<..<%(4~|%-1~/…/%2~|%3~)%f'
+
+# shows arrow normally, pound sign if elevated privilages (sudo)
+suffix='%(!.#.→) '
+PROMPT='${err}${dir} ${suffix}'
+RPROMPT='%32>..>${vcs_info_msg_0_}'
 
 # check for venv running
 if [ -n "$VIRTUAL_ENV" ]; then
@@ -56,6 +68,11 @@ alias gcm="git commit -m"
 alias gcam="git commit -am"
 alias glo="git log --oneline"
 alias gc="git checkout"
+alias gs="git stash"
+alias gsm="git stash --message"
+alias gsl="git stash --list"
+alias gsp="git stash pop"
+alias gsa="git stash apply"
 
 # colorize output of ls, with some aliases
 alias ls="ls -G"
