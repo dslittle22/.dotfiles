@@ -9,7 +9,7 @@ while getopts 'm:' opt; do
   case $opt in
     m) machine=$OPTARG;;
     *) print_usage
-       exit 1 
+       exit 1
   esac
 done
 
@@ -24,6 +24,12 @@ echo "Installing homebrew..."
 
 echo "Installing 1Password..."
 brew install 1password
+
+# https://github.com/ryanoasis/nerd-fonts#option-4-homebrew-fonts
+echo "Installing fonts from homebrew..."
+brew tap homebrew/cask-fonts
+brew install font-meslo-lg-nerd-font
+brew install font-fira-code-nerd-font
 
 echo "Sign in to iCloud, Log in to 1Password, and do the new SSH key thing for github! Go here: "
 echo "https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent"

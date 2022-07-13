@@ -37,6 +37,8 @@ err="%(?..%F{red}? %?)%f"
 # this will reevaluate whenever the terminal is resized to
 # have the left and right prompts take up prompt_width_pct
 # percent of the total width.
+# https://unix.stackexchange.com/questions/369847/
+# how-to-configure-zsh-prompt-so-that-its-length-is-proportional-to-terminal-width
 export prompt_width_pct=30
 function prompt_width_func() {
   echo $(( ${COLUMNS:-80} * prompt_width_pct / 100 ))
