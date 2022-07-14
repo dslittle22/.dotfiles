@@ -68,6 +68,11 @@ mkcd () {
   cd "$1"
 }
 
+timezsh() {
+  shell=${1-$SHELL}
+  for i in $(seq 1 10); do /usr/bin/time $shell -i -c exit; done
+}
+
 # aliases
 alias python="/opt/homebrew/bin/python3"
 alias avenv="source venv/bin/activate"
