@@ -1,8 +1,6 @@
 #!/bin/zsh
 
-# get ${ZDOTDIR} from ./.zshrc
-# . ./.zshrc
-$ZDOTDIR=~/.zsh
+ZDOTDIR="${HOME}/.zsh"
 
 print_usage() {
   printf "Usage: -m should be either personal or work."
@@ -52,13 +50,13 @@ brew install font-fira-code-nerd-font
 echo "Checking for .zshrc.local..."
 if [ ! -f ${ZDOTDIR}/.zshrc.local ]; then
   echo "${ZDOTDIR}/.zshrc.local does not exist, creating file"
-  # touch "${ZDOTDIR}/.zshrc.local";
+  touch "${ZDOTDIR}/.zshrc.local";
 fi
 
 echo "Checking for ~/.zshenv..."
 if [ ! -f ~/.zshenv ]; then
   echo "~/.zshenv does not exist, creating file and setting ZDOTDIR"
-  echo 'ZDOTDIR=$HOME/.zsh' >> ~/.zshenv;
+  echo "ZDOTDIR=${ZDOTDIR}" >> ~/.zshenv;
 fi
 
 echo "Making symlinks..."
@@ -98,15 +96,14 @@ for ghlink in "${vimplugins[@]}"; do
   fi
 done
 
-
 cd ~/.dotfiles
 pause "Sign in to iCloud to get app store apps."
 pause "Installing ${machine} machine profile."
 
 if [ "$machine" = 'work' ]; then
     brew bundle --file=./Brewfile-work
-  else
-    brew bundle --file=./Brewfile-personal
+else
+  brew bundle --file=./Brewfile-personal
 fi
 
 pause "Go setup Karabiner permissions!"

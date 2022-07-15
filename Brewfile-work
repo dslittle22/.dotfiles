@@ -17,7 +17,6 @@ cask "alt-tab"
 cask "font-fira-code-nerd-font"
 cask "font-meslo-lg-nerd-font"
 cask "iina"
-cask "nordvpn"
 cask "superduper"
 mas "1Password for Safari", id: 1569813296
 mas "AdGuard for Safari", id: 1440147259
