@@ -13,21 +13,21 @@
  ;; simlayers are like layers, but only work in a certain 'time frame'.
  ;; you should probably only use them for letter keys that you type regularly.
  ;; for other keys, e.g. espace, you can probably just use a normal layer.
- :simlayers   {
-        :nav-layer {:key :f}
-        :backspace-mod {:key :delete_or_backspace}
-        :c-cmd {:key :c}
-        :m-cmd {:key :m}
-        :j-shift {:key :j}
-        :x-ctrl {:key :x}
-        :comma-ctrl {:key :comma}
- }
+;;  :simlayers   {
+;;         :nav-layer {:key :f}
+;;         :backspace-mod {:key :delete_or_backspace}
+;;         :c-cmd {:key :c}
+;;         :m-cmd {:key :m}
+;;         :j-shift {:key :j}
+;;         :x-ctrl {:key :x}
+;;         :comma-ctrl {:key :comma}
+;;  }
 
- :layers {
-        :z-mod {:key :z }
-        :q-mod {:key :q}
-        :launcher {:key :backslash}
- }
+;;  :layers {
+;;         :z-mod {:key :z }
+;;         :q-mod {:key :q}
+;;         :launcher {:key :backslash}
+;;  }
 
  :devices {
     :macbook_internal [
@@ -63,220 +63,220 @@
         {:des "right command + caps = command + command + escape"
                 :rules [[:!Qcaps_lock :!COescape]]}
 
-        {:des "vscode shortcuts"
-                :rules [:vscode
-                        [:!SOi :!SOup_arrow]
-                        [:!SOk :!SOdown_arrow]
-                        [:!STi :!STup_arrow]
-                        [:!STk :!STdown_arrow]
-                ]}
+        ;; {:des "vscode shortcuts"
+        ;;         :rules [:vscode
+        ;;                 [:!SOi :!SOup_arrow]
+        ;;                 [:!SOk :!SOdown_arrow]
+        ;;                 [:!STi :!STup_arrow]
+        ;;                 [:!STk :!STdown_arrow]
+        ;;         ]}
 
-        {:des "right shift + fn + num = fn key"
-                :rules [
-                        [:!Rf1 :f1]
-                        [:!Rf2 :f2]
-                        [:!Rf3 :f3]
-                        [:!Rf4 :f4]
-                        [:!Rf5 :f5]
-                        [:!Rf6 :f6]
-                        [:!Rf7 :f7]
-                        [:!Rf8 :f8]
-                        [:!Rf9 :f9]
-                        [:!Rf10 :f10]
-                        [:!Rf11 :f11]
-                        [:!Rf12 :f12]
+        ;; {:des "right shift + fn + num = fn key"
+        ;;         :rules [
+        ;;                 [:!Rf1 :f1]
+        ;;                 [:!Rf2 :f2]
+        ;;                 [:!Rf3 :f3]
+        ;;                 [:!Rf4 :f4]
+        ;;                 [:!Rf5 :f5]
+        ;;                 [:!Rf6 :f6]
+        ;;                 [:!Rf7 :f7]
+        ;;                 [:!Rf8 :f8]
+        ;;                 [:!Rf9 :f9]
+        ;;                 [:!Rf10 :f10]
+        ;;                 [:!Rf11 :f11]
+        ;;                 [:!Rf12 :f12]
 
-                        [:!Sf1 :f1]
-                        [:!Sf2 :f2]
-                        [:!Sf3 :f3]
-                        [:!Sf4 :f4]
-                        [:!Sf5 :f5]
-                        [:!Sf6 :f6]
-                        [:!Sf7 :f7]
-                        [:!Sf8 :f8]
-                        [:!Sf9 :f9]
-                        [:!Sf10 :f10]
-                        [:!Sf11 :f11]
-                        [:!Sf12 :f12]
-                ]}
+        ;;                 [:!Sf1 :f1]
+        ;;                 [:!Sf2 :f2]
+        ;;                 [:!Sf3 :f3]
+        ;;                 [:!Sf4 :f4]
+        ;;                 [:!Sf5 :f5]
+        ;;                 [:!Sf6 :f6]
+        ;;                 [:!Sf7 :f7]
+        ;;                 [:!Sf8 :f8]
+        ;;                 [:!Sf9 :f9]
+        ;;                 [:!Sf10 :f10]
+        ;;                 [:!Sf11 :f11]
+        ;;                 [:!Sf12 :f12]
+        ;;         ]}
 
-        {:des "left ctrl + tilde sets tap layer to 1" :rules [[:!TOgrave_accent_and_tilde nil :!tap-layer {:alone [["tap-layer" 1]]}]]}
-        {:des "left ctrl + tilde sets tap layer to 0" :rules [[:!TOgrave_accent_and_tilde nil :tap-layer {:alone [["tap-layer" 0]]}]]}
-
-
-        ;; when caps is held, it sets caps-mod to 1. this means that unlike the other
-        ;; simlayers, i can hold it for a second and then still be in caps-mod.
-        {:des "rshift + caps = home layer"
-                :rules [[:!Rcaps_lock [["tap-layer" 0 ]]]] }
-        {:des "caps lock = escape if tapped alone, acts as modifier when held"
-                :rules [[:caps_lock ["nav-layer" 1] nil {:alone [:escape ["tap-layer" 0] ["numpad" 0]] :afterup ["nav-layer" 0]}]]}
-
-        {:des "shift + slash = qmark more reliably (simultaneous)"
-        :rules [[[:left_shift :slash] :!Sslash]
-                [[:right_shift :slash] :!Rslash]]}
-
-        {:des "rshift = home layer if alone"
-                :rules [[:right_shift :right_shift nil {:alone [["tap-layer" 0 ] ["numpad" 0]]}]]}
-
-        ;; command keys on left side
-        {:des "m-cmd mapping"
-                :rules [:m-cmd
-                        [:f :!Cf] [:w :!Cw] [:r :!Cr] [:s :!Cs] [:t :!Ct] [:tab :!Ctab]
-                        [:grave_accent_and_tilde :!Cgrave_accent_and_tilde] [:d :!Cd] [:a :!Ca]
-                        [:z :!Cz] [:x :!Cx] [:c :!Cc] [:v :!Cv]
-                        [:1 :!Cq]
-        ]}
+        ;; {:des "left ctrl + tilde sets tap layer to 1" :rules [[:!TOgrave_accent_and_tilde nil :!tap-layer {:alone [["tap-layer" 1]]}]]}
+        ;; {:des "left ctrl + tilde sets tap layer to 0" :rules [[:!TOgrave_accent_and_tilde nil :tap-layer {:alone [["tap-layer" 0]]}]]}
 
 
-        ;; command keys on left side
-        {:des "j-shift mapping"
-                :rules [:j-shift
-                        [:q :!Rq]
-                        [:w :!Rw]
-                        [:e :!Re]
-                        [:r :!Rr]
-                        [:t :!Rt]
-                        [:y :!Ry]
-                        [:a :!Ra]
-                        [:s :!Rs]
-                        [:d :!Rd]
-                        [:f :!Rf]
-                        [:g :!Rg]
-                        [:z :!Rz]
-                        [:x :!Rx]
-                        [:c :!Rc]
-                        [:v :!Rv]
-                        [:b :!Rb]
-                        [:1 :!C1]
-                        [:2 :!C2]
-                        [:3 :!C3]
-                        [:4 :!C4]
-                        [:5 :!C5]
-        ]}
+        ;; ;; when caps is held, it sets caps-mod to 1. this means that unlike the other
+        ;; ;; simlayers, i can hold it for a second and then still be in caps-mod.
+        ;; {:des "rshift + caps = home layer"
+        ;;         :rules [[:!Rcaps_lock [["tap-layer" 0 ]]]] }
+        ;; {:des "caps lock = escape if tapped alone, acts as modifier when held"
+        ;;         :rules [[:caps_lock ["nav-layer" 1] nil {:alone [:escape ["tap-layer" 0] ["numpad" 0]] :afterup ["nav-layer" 0]}]]}
 
-        ;; command keys on right side
-        {:des "c-cmd mapping"
-                :rules [:c-cmd
-                        [:x :!Oleft_control]
-                        [:k [:c :k] !tap-layer]
-                        [:l :!Cl] [:n :!Cn] [:p :!Cp]
-                        [:comma :!Ccomma] [:period :!Cperiod] [:slash :!Cslash]
-                        ]}
-        {:des "x-ctrl mapping"
-                :rules [:x-ctrl
-                        [:c :!Tleft_option]
-                        [:u :!Wu] [:o :!Wo] [:p :!Wp] [:h :!Wh] [:j :!Wj] [:k :!Wk]
-                        [:l :!Wl] [:n :!Wn] [:m :!Wm]
-                        [:semicolon :!Squote]
-                        [:comma :!Wcomma]
-                        [:backslash :!Wbackslash]
-                        [:period :!Wperiod]
-                ]}
-        {:des "comma-ctrl mapping"
-                :rules [:comma-ctrl
-                        [:a :!Wa] [:e :!We] [:r :!Wr] [:n :!Wn] [:d :!Wd] [:c :!Wc]
-                        [:m :!Wm] [:spacebar [:comma :spacebar]] [:s :!Cs]
-                        [:grave_accent_and_tilde :!Wgrave_accent_and_tilde]]}
+        ;; {:des "shift + slash = qmark more reliably (simultaneous)"
+        ;; :rules [[[:left_shift :slash] :!Sslash]
+        ;;         [[:right_shift :slash] :!Rslash]]}
+
+        ;; {:des "rshift = home layer if alone"
+        ;;         :rules [[:right_shift :right_shift nil {:alone [["tap-layer" 0 ] ["numpad" 0]]}]]}
+
+        ;; ;; command keys on left side
+        ;; {:des "m-cmd mapping"
+        ;;         :rules [:m-cmd
+        ;;                 [:f :!Cf] [:w :!Cw] [:r :!Cr] [:s :!Cs] [:t :!Ct] [:tab :!Ctab]
+        ;;                 [:grave_accent_and_tilde :!Cgrave_accent_and_tilde] [:d :!Cd] [:a :!Ca]
+        ;;                 [:z :!Cz] [:x :!Cx] [:c :!Cc] [:v :!Cv]
+        ;;                 [:1 :!Cq]
+        ;; ]}
+
+
+        ;; ;; command keys on left side
+        ;; {:des "j-shift mapping"
+        ;;         :rules [:j-shift
+        ;;                 [:q :!Rq]
+        ;;                 [:w :!Rw]
+        ;;                 [:e :!Re]
+        ;;                 [:r :!Rr]
+        ;;                 [:t :!Rt]
+        ;;                 [:y :!Ry]
+        ;;                 [:a :!Ra]
+        ;;                 [:s :!Rs]
+        ;;                 [:d :!Rd]
+        ;;                 [:f :!Rf]
+        ;;                 [:g :!Rg]
+        ;;                 [:z :!Rz]
+        ;;                 [:x :!Rx]
+        ;;                 [:c :!Rc]
+        ;;                 [:v :!Rv]
+        ;;                 [:b :!Rb]
+        ;;                 [:1 :!C1]
+        ;;                 [:2 :!C2]
+        ;;                 [:3 :!C3]
+        ;;                 [:4 :!C4]
+        ;;                 [:5 :!C5]
+        ;; ]}
+
+        ;; ;; command keys on right side
+        ;; {:des "c-cmd mapping"
+        ;;         :rules [:c-cmd
+        ;;                 [:x :!Oleft_control]
+        ;;                 [:k [:c :k] !tap-layer]
+        ;;                 [:l :!Cl] [:n :!Cn] [:p :!Cp]
+        ;;                 [:comma :!Ccomma] [:period :!Cperiod] [:slash :!Cslash]
+        ;;                 ]}
+        ;; {:des "x-ctrl mapping"
+        ;;         :rules [:x-ctrl
+        ;;                 [:c :!Tleft_option]
+        ;;                 [:u :!Wu] [:o :!Wo] [:p :!Wp] [:h :!Wh] [:j :!Wj] [:k :!Wk]
+        ;;                 [:l :!Wl] [:n :!Wn] [:m :!Wm]
+        ;;                 [:semicolon :!Squote]
+        ;;                 [:comma :!Wcomma]
+        ;;                 [:backslash :!Wbackslash]
+        ;;                 [:period :!Wperiod]
+        ;;         ]}
+        ;; {:des "comma-ctrl mapping"
+        ;;         :rules [:comma-ctrl
+        ;;                 [:a :!Wa] [:e :!We] [:r :!Wr] [:n :!Wn] [:d :!Wd] [:c :!Wc]
+        ;;                 [:m :!Wm] [:spacebar [:comma :spacebar]] [:s :!Cs]
+        ;;                 [:grave_accent_and_tilde :!Wgrave_accent_and_tilde]]}
 
         ;; when holding down caps
-        {:des "nav-layer mapping"
-                :rules [:nav-layer
-                 ;; ijkl arrows
-                [:##a :left_option]
-                [:##s :left_command]
-                [:##d :left_shift]
-                [:##i [{:key :up_arrow :repeat true}]]
-                [:##l [{:key :right_arrow :repeat true}]]
-                [:##k [{:key :down_arrow :repeat true}]]
-                [:##j [{:key :left_arrow :repeat true}]]
-                ;; switch tabs in most apps
-                [:comma :!COleft_arrow]
-                [:period :!COright_arrow]
-                [:spacebar :delete_or_backspace :macbook_internal]
-                [:spacebar :return_or_enter :mistel]
-                [:delete_or_backspace :!Wd :mistel]
+        ;; {:des "nav-layer mapping"
+        ;;         :rules [:nav-layer
+        ;;          ;; ijkl arrows
+        ;;         [:##a :left_option]
+        ;;         [:##s :left_command]
+        ;;         [:##d :left_shift]
+        ;;         [:##i [{:key :up_arrow :repeat true}]]
+        ;;         [:##l [{:key :right_arrow :repeat true}]]
+        ;;         [:##k [{:key :down_arrow :repeat true}]]
+        ;;         [:##j [{:key :left_arrow :repeat true}]]
+        ;;         ;; switch tabs in most apps
+        ;;         [:comma :!COleft_arrow]
+        ;;         [:period :!COright_arrow]
+        ;;         [:spacebar :delete_or_backspace :macbook_internal]
+        ;;         [:spacebar :return_or_enter :mistel]
+        ;;         [:delete_or_backspace :!Wd :mistel]
 
-                ;;media keys
-                [:q :rewind]
-                [:w :play_or_pause]
-                [:e :fastforward]
+        ;;         ;;media keys
+        ;;         [:q :rewind]
+        ;;         [:w :play_or_pause]
+        ;;         [:e :fastforward]
 
-                [:x :display_brightness_decrement]
-                [:c :display_brightness_increment]
+        ;;         [:x :display_brightness_decrement]
+        ;;         [:c :display_brightness_increment]
 
-                ;; ctrl arrows = esc + u or o
-                [:u :!Tleft_arrow]
-                [:o :!Tright_arrow]
+        ;;         ;; ctrl arrows = esc + u or o
+        ;;         [:u :!Tleft_arrow]
+        ;;         [:o :!Tright_arrow]
 
-                ;; nav + quote = go inside two quotes
-                [:quote [:!Squote :!Squote :left_arrow]]
+        ;;         ;; nav + quote = go inside two quotes
+        ;;         [:quote [:!Squote :!Squote :left_arrow]]
 
-                ;; semicolon to tab
-                [:semicolon :tab]
-                 ]}
+        ;;         ;; semicolon to tab
+        ;;         [:semicolon :tab]
+        ;;          ]}
 
         ;; after tapping left alt + tilde, this is activated until hit again (or caps lock).
-        {:des "tap-layer mapping"
-                :rules [:tap-layer
-                ;; ijkl arrows
-                [:##i [{:key :up_arrow :repeat true}]]
-                [:##l [{:key :right_arrow :repeat true}]]
-                [:##k [{:key :down_arrow :repeat true}]]
-                [:##j [{:key :left_arrow :repeat true}]]
-                [:##a :left_option]
-                [:##s :left_command]
-                [:##d :left_shift]
-                ;; switch tabs in most apps
-                [:comma :!COleft_arrow]
-                [:period :!COright_arrow]
-                [:semicolon :left_arrow]
-                [:quote :down_arrow]
-                [:open_bracket :up_arrow]
-                [:return_or_enter :right_arrow]
-                 ]}
+        ;; {:des "tap-layer mapping"
+        ;;         :rules [:tap-layer
+        ;;         ;; ijkl arrows
+        ;;         [:##i [{:key :up_arrow :repeat true}]]
+        ;;         [:##l [{:key :right_arrow :repeat true}]]
+        ;;         [:##k [{:key :down_arrow :repeat true}]]
+        ;;         [:##j [{:key :left_arrow :repeat true}]]
+        ;;         [:##a :left_option]
+        ;;         [:##s :left_command]
+        ;;         [:##d :left_shift]
+        ;;         ;; switch tabs in most apps
+        ;;         [:comma :!COleft_arrow]
+        ;;         [:period :!COright_arrow]
+        ;;         [:semicolon :left_arrow]
+        ;;         [:quote :down_arrow]
+        ;;         [:open_bracket :up_arrow]
+        ;;         [:return_or_enter :right_arrow]
+        ;;          ]}
 
-        {:des "q-mod mapping"
-                :rules [:q-mod
-                [:j :!Shyphen] [:##k :hyphen] [:##m :!Sequal_sign] [:##comma :equal_sign]
-                [:semicolon :quote]
-                [:##period :backslash]
-                [:n ["numpad" 1]]
-                [:u [:q :u]]
+        ;; {:des "q-mod mapping"
+        ;;         :rules [:q-mod
+        ;;         [:j :!Shyphen] [:##k :hyphen] [:##m :!Sequal_sign] [:##comma :equal_sign]
+        ;;         [:semicolon :quote]
+        ;;         [:##period :backslash]
+        ;;         [:n ["numpad" 1]]
+        ;;         [:u [:q :u]]
 
-                [:w :play_or_pause]
-                [:e :fastforward]
-                [:r :display_brightness_decrement]
-                [:t :display_brightness_increment]
-                [:s :volume_decrement]
-                [:d :volume_increment]
-                [:f :mute]
-                 ]}
+        ;;         [:w :play_or_pause]
+        ;;         [:e :fastforward]
+        ;;         [:r :display_brightness_decrement]
+        ;;         [:t :display_brightness_increment]
+        ;;         [:s :volume_decrement]
+        ;;         [:d :volume_increment]
+        ;;         [:f :mute]
+        ;;          ]}
 
-        {:des "z-mod mapping"
-        :rules [:z-mod
-                [:e [:z :e]]
-                [:o [:z :o]]
-                [:quote [:!Squote :!Squote :left_arrow]]
-                [:j :!S9] [:k :!S0] [:m :open_bracket ] [:comma :close_bracket][:u :!Sopen_bracket] [:i :!Sclose_bracket]
-                [:semicolon :!Squote]
-                [:s :!S3]
-                [:d :!S4]
-                [:f :!S5]
-                [:x :!S6]
-                [:c :!S7]
-                [:v :!S8]
-                ]}
+        ;; {:des "z-mod mapping"
+        ;; :rules [:z-mod
+        ;;         [:e [:z :e]]
+        ;;         [:o [:z :o]]
+        ;;         [:quote [:!Squote :!Squote :left_arrow]]
+        ;;         [:j :!S9] [:k :!S0] [:m :open_bracket ] [:comma :close_bracket][:u :!Sopen_bracket] [:i :!Sclose_bracket]
+        ;;         [:semicolon :!Squote]
+        ;;         [:s :!S3]
+        ;;         [:d :!S4]
+        ;;         [:f :!S5]
+        ;;         [:x :!S6]
+        ;;         [:c :!S7]
+        ;;         [:v :!S8]
+        ;;         ]}
 
-        {:des "numpad"
-                :rules [:numpad
-                 [:u :4] [:i :5] [:o :6]
-                 [:j :1] [:k :2] [:l :3]
-                 [:m :0]]}
+        ;; {:des "numpad"
+        ;;         :rules [:numpad
+        ;;          [:u :4] [:i :5] [:o :6]
+        ;;          [:j :1] [:k :2] [:l :3]
+        ;;          [:m :0]]}
 
         ;; backspace mod should be things you only want with a split keyboard.
         ;; e.g. media / funciton keys
-        {:des "backspace mod"
-                :rules []}
+        ;; {:des "backspace mod"
+        ;;         :rules []}
 
         {:des "launcher mode"
                 :rules [:launcher
@@ -291,24 +291,24 @@
         ;; this messes stuff up unless put at the bottom
 
         ;; slash acts as shift when held with another key
-        {:des "slash = shift if held with another key"
-                :rules [[:##slash :right_shift nil {:alone :slash}]]}
-        {:des "slash + space only equals slash + space" :rules [[:!Rspacebar [:slash :spacebar]]]}
+        ;; {:des "slash = shift if held with another key"
+        ;;         :rules [[:##slash :right_shift nil {:alone :slash}]]}
+        ;; {:des "slash + space only equals slash + space" :rules [[:!Rspacebar [:slash :spacebar]]]}
 
 
-        {:des "switch colon and semicolon"
-                :rules [[:semicolon :!Ssemicolon] [:!Ssemicolon :semicolon]]}
+        ;; {:des "switch colon and semicolon"
+        ;;         :rules [[:semicolon :!Ssemicolon] [:!Ssemicolon :semicolon]]}
 
 
-        {:des "comma is ! if held"
-                :rules [[:period :period nil {
-                                :held [:delete_or_backspace :!S1]
-                                :params {:held 150}}]]}
+        ;; {:des "comma is ! if held"
+        ;;         :rules [[:period :period nil {
+        ;;                         :held [:delete_or_backspace :!S1]
+        ;;                         :params {:held 150}}]]}
 
-        {:des "period is @ if held"
-                :rules [[:comma :comma nil {
-                                :held [ {:key :delete_or_backspace :repeat false}{:key :!S2 :repeat false} ]
-                                :params {:held 50}}]]}
+        ;; {:des "period is @ if held"
+        ;;         :rules [[:comma :comma nil {
+        ;;                         :held [ {:key :delete_or_backspace :repeat false}{:key :!S2 :repeat false} ]
+        ;;                         :params {:held 50}}]]}
 
 
         ;; {:des "test for double-tap mode"
