@@ -105,13 +105,6 @@
                         [:!Sf12 :f12]
                 ]}
 
-        ;; when caps is held, it sets caps-mod to 1. this means that unlike the other
-        ;; simlayers, i can hold it for a second and then still be in caps-mod.
-        {:des "caps lock = escape if tapped alone, acts as modifier when held"
-                :rules [
-                        [:caps_lock ["nav-layer" 1] nil {:alone [:escape] :afterup ["nav-layer" 0]}]
-                        ]}
-
         ;; command keys on left side
         {:des "l-shift mapping"
                 :rules [:l-shift
@@ -290,17 +283,24 @@
                 [:d :!S7 !:moonlander]
                 [:f :!S8 !:moonlander]
                 [:g :!Sgrave_accent_and_tilde !:moonlander]
-                [:1 :f1]
 
-                [:2 :f2]
-                [:3 :f3]
-                [:4 :f4]
-                [:5 :f5]
-                [:6 :f6]
-                [:7 :f7]
-                [:8 :f8]
-                [:9 :f9]
-                [:0 :f10]
+                [:1 :f1 !:moonlander]
+                [:2 :f2 !:moonlander]
+                [:3 :f3 !:moonlander]
+                [:4 :f4 !:moonlander]
+                [:5 :f5 !:moonlander]
+                [:6 :f6 !:moonlander]
+                [:7 :f7 !:moonlander]
+                [:8 :f8 !:moonlander]
+                [:9 :f9 !:moonlander]
+                [:0 :f10 !:moonlander]
+        ]}
+
+        ;; when caps is held, it sets caps-mod to 1. this means that unlike the other
+        ;; simlayers, i can hold it for a second and then still be in caps-mod.
+        {:des "caps lock = escape if tapped alone, acts as modifier when held"
+        :rules [
+                [:caps_lock ["nav-layer" 1] nil {:alone [:escape] :afterup ["nav-layer" 0]}]
         ]}
 
         ;; this comes later or else command tab doesn't work
