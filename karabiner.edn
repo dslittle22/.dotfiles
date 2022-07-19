@@ -57,6 +57,11 @@
                 ]}
         {:des "left shift + space = command + space"
                 :rules [[:!Sspacebar :!Cspacebar]]}
+         {:des "switch colon and semicolon"
+                :rules [
+                        [:semicolon :!Ssemicolon]
+                        [:!Ssemicolon :semicolon]
+                ]}
         {:des "insert -> copy screenshot"
                 :rules [[:print_screen :!STC4]]}
         {:des "right command + caps = command + command + escape"
@@ -272,11 +277,6 @@
         ;;         :rules [[:##slash :right_shift nil {:alone :slash}]]}
         ;; {:des "slash + space only equals slash + space" :rules [[:!Rspacebar [:slash :spacebar]]]}
 
-
-        {:des "switch colon and semicolon"
-                :rules [[:semicolon :!Ssemicolon] [:!Ssemicolon :semicolon]]}
-
-
         ;; {:des "comma is ! if held"
         ;;         :rules [[:period :period nil {
         ;;                         :held [:delete_or_backspace :!S1]
@@ -337,4 +337,3 @@
 ;;         :params {:held 200}}]]
 
 
-;; todo:
