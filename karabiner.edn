@@ -233,10 +233,10 @@
                 [:period :!COright_arrow !:moonlander]
                 [:o :!Tleft_arrow !moonlander]
                 [:p :!Tright_arrow !moonlander]
-                [:h [:spacebar :equal_sign :spacebar]]
-                [:l [:grave_accent_and_tilde :grave_accent_and_tilde :left_arrow]]
+                [:h [:spacebar :equal_sign :spacebar] !:moonlander]
+                [:l [:grave_accent_and_tilde :grave_accent_and_tilde :left_arrow] !:moonlander]
                 [:semicolon [:!Squote :!Squote :left_arrow] !:moonlander]
-                [:quote [:quote :quote :left_arrow]]
+                [:quote [:quote :quote :left_arrow] !:moonlander]
                  ]}
 
         {:des "z-mod mapping"
