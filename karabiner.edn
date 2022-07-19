@@ -273,11 +273,11 @@
 
         {:des "slash-symbols mapping"
         :rules [:slash-symbols
-                [:spacebar :!S1 !:moonlander]
+                [:t :!S1 !:moonlander]
                 [:x :!S2 !:moonlander]
                 [:c :!S3 !:moonlander]
                 [:v :!S4 !:moonlander]
-                [:b :!Sgrave_accent_and_tilde !:moonlander]
+                [:b :grave_accent_and_tilde !:moonlander]
                 [:a :!S5 !:moonlander]
                 [:s :!S6 !:moonlander]
                 [:d :!S7 !:moonlander]
