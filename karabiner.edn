@@ -216,7 +216,17 @@
                 [:e :!SOTe !:moonlander]
                 [:s :!SOTs !:moonlander]
                 [:d :!SOTd !:moonlander]
+                [:m :!SOTm :!moonlander]
+                [:u :!SOTu :!moonlander]
+                [:j :!SOTj :!moonlander]
+                [:k :!SOTk :!moonlander]
+                [:l :!SOTl :!moonlander]
+                [:i :!SOTi :!moonlander]
+                [:comma :!SOTcomma :!moonlander]
+                [:period :!SOTperiod :!moonlander]
                 [:semicolon :!SOTsemicolon !:moonlander]
+                [:o :!SOTo :!moonlander]
+                [:p :!SOTp :!moonlander]
                 ]}
 
         {:des "q-mod mapping"
