@@ -16,7 +16,8 @@
  :simlayers   {
         :c-cmd {:key :c}
         :m-cmd {:key :m}
-        :comma-ctrl {:key :comma}
+        :comma-alt {:key :comma}
+        :period-ctrl {:key :period}
         :l-shift {:key :l}
  }
 
@@ -57,17 +58,14 @@
                 ]}
         {:des "left shift + space = command + space"
                 :rules [[:!Sspacebar :!Cspacebar]]}
-         {:des "switch colon and semicolon"
-                :rules [
-                        [:semicolon :!Ssemicolon]
-                        [:!Ssemicolon :semicolon]
-                ]}
         {:des "insert -> copy screenshot"
                 :rules [[:print_screen :!STC4]]}
-        {:des "right command + caps = command + command + escape"
+        {:des "command + caps = command + command + escape"
                 :rules [
                         [:!Qcaps_lock :!COescape]
                         [:!Qescape :!COescape]
+                        [:!Ccaps_lock :!COescape]
+                        [:!Cescape :!COescape]
                         ]}
 
         {:des "vscode shortcuts"
@@ -78,7 +76,7 @@
                         [:!STj :!STdown_arrow]
                 ]}
 
-        {:des "right shift + fn + num = fn key"
+        {:des "either shift + fn + num = fn key"
                 :rules [:mistel
                         [:!Rf1 :f1]
                         [:!Rf2 :f2]
@@ -117,17 +115,10 @@
         {:des "caps lock = escape if tapped alone, acts as modifier when held"
                 :rules [
                         [:caps_lock ["nav-layer" 1] nil {:alone [:escape] :afterup ["nav-layer" 0]}]
-                        [:tab ["meh-layer" 1] nil {:alone [:tab] :afterup ["meh-layer" 0]}]
                         ]}
 
-        ;; {:des "shift + slash = qmark more reliably (simultaneous)"
-        ;; :rules [[[:left_shift :slash] :!Sslash]
-        ;;         [[:right_shift :slash] :!Rslash]]}
-
-
-
         ;; command keys on left side
-        {:des "j-shift mapping"
+        {:des "l-shift mapping"
                 :rules [:l-shift
                         [:q :!Rq]
                         [:w :!Rw]
@@ -145,11 +136,11 @@
                         [:c :!Rc]
                         [:v :!Rv]
                         [:b :!Rb]
-                        [:1 :!C1]
-                        [:2 :!C2]
-                        [:3 :!C3]
-                        [:4 :!C4]
-                        [:5 :!C5]
+                        [:1 :!R1]
+                        [:2 :!R2]
+                        [:3 :!R3]
+                        [:4 :!R4]
+                        [:5 :!R5]
         ]}
 
         ;; ;; command keys on left side
@@ -169,21 +160,27 @@
                         [:l :!Cl] [:n :!Cn] [:p :!Cp]
                         [:comma :!Ccomma] [:period :!Cperiod] [:slash :!Cslash]
                         ]}
-        ;; {:des "x-ctrl mapping"
-        ;;         :rules [:x-ctrl
-        ;;                 [:c :!Tleft_option]
-        ;;                 [:u :!Wu] [:o :!Wo] [:p :!Wp] [:h :!Wh] [:j :!Wj] [:k :!Wk]
-        ;;                 [:l :!Wl] [:n :!Wn] [:m :!Wm]
-        ;;                 [:semicolon :!Squote]
-        ;;                 [:comma :!Wcomma]
-        ;;                 [:backslash :!Wbackslash]
-        ;;                 [:period :!Wperiod]
-        ;;         ]}
-        ;; {:des "comma-ctrl mapping"
-        ;;         :rules [:comma-ctrl
-        ;;                 [:a :!Wa] [:e :!We] [:r :!Wr] [:n :!Wn] [:d :!Wd] [:c :!Wc]
-        ;;                 [:m :!Wm] [:spacebar [:comma :spacebar]] [:s :!Cs]
-        ;;                 [:grave_accent_and_tilde :!Wgrave_accent_and_tilde]]}
+
+        {:des "comma-alt mapping"
+                :rules [:comma-alt
+                         [:spacebar [:comma :spacebar]] [:tab :!Otab]
+                         [:grave_accent_and_tilde :!Ograve_accent_and_tilde]
+                         ]
+        }
+
+                {:des "period-ctrl mapping"
+                :rules [:period-ctrl
+                        [:a :!Wa !:moonlander]
+                        [:e :!We !:moonlander]
+                        [:r :!Wr !:moonlander]
+                        [:n :!Wn !:moonlander]
+                        [:d :!Wd !:moonlander]
+                        [:c :!Wc !:moonlander]
+                        [:m :!Wm !:moonlander]
+                        [:spacebar [:comma :spacebar] !:moonlander]
+                        [:s :!Cs !:moonlander]
+                        [:grave_accent_and_tilde :!Wgrave_accent_and_tilde !:moonlander]
+                ]}
 
         ;; when holding down caps
         {:des "nav-layer mapping"
@@ -208,14 +205,11 @@
                  ]}
         {:des "tab meh-layer"
                 :rules [:meh-layer
-                [:u :!STOu]
-                [:j :!STOj]
-                [:k :!STOk]
-                [:l :!STOl]
-                [:i :!STOi]
-                [:o :!STOo]
-                [:p :!STOp]
-                [:semicolon :!STOsemicolon]
+                [:w :!SOTw !:moonlander]
+                [:e :!SOTe !:moonlander]
+                [:s :!SOTs !:moonlander]
+                [:d :!SOTd !:moonlander]
+                [:semicolon :!SOTsemicolon !:moonlander]
                 ]}
 
         {:des "q-mod mapping"
@@ -242,22 +236,43 @@
                 [:l [:grave_accent_and_tilde :grave_accent_and_tilde :left_arrow] !:moonlander]
                 [:semicolon [:!Squote :!Squote :left_arrow] !:moonlander]
                 [:quote [:quote :quote :left_arrow] !:moonlander]
-                 ]}
+        ]}
 
         {:des "z-mod mapping"
         :rules [:z-mod
-                [:e [:z :e]]
-                [:o [:z :o]]
+                [:e [:z :e] !:moonlander]
                 [:semicolon :equal_sign !:moonlander]
-                [:j :!S9] [:k :!S0] [:m :open_bracket ] [:comma :close_bracket][:u :!Sopen_bracket] [:i :!Sclose_bracket]
-                [:x :!S1]
-                [:c :!S2]
-                [:v :!S3]
-                [:b :!S4]
-                [:s :!S5]
-                [:d :!S6]
-                [:f :!S7]
-                [:g :!S8]
+                [:j :!S9 !:moonlander]
+                [:k :!S0 !:moonlander]
+                [:m :open_bracket !:moonlander]
+                [:comma :close_bracket !:moonlander]
+                [:u :!Sopen_bracket !:moonlander]
+                [:i :!Sclose_bracket !:moonlander]
+                [:l :!Shyphen !:moonlander]
+                [:semicolon :equal_sign !:moonlander]
+                [:o :hyphen !:moonlander]
+                [:p :!Sequal_sign !:moonlander]
+                [:period :!Sbackslash !:moonlander]
+                [:slash :backslash !:moonlander]
+                [:x :!S1 !:moonlander]
+                [:c :!S2 !:moonlander]
+                [:v :!S3 !:moonlander]
+                [:b :!S4 !:moonlander]
+                [:s :!S5 !:moonlander]
+                [:d :!S6 !:moonlander]
+                [:f :!S7 !:moonlander]
+                [:g :!S8 !:moonlander]
+                ]}
+
+                ;; this comes later or else command tab doesn't work
+                {:des "tab meh" :rules [
+                        [:tab ["meh-layer" 1] nil {:alone [:tab] :afterup ["meh-layer" 0]}]
+                ]}
+
+                {:des "switch colon and semicolon"
+                :rules [
+                        [:semicolon :!Ssemicolon]
+                        [:!Ssemicolon :semicolon]
                 ]}
 
         {:des "launcher mode"
@@ -271,22 +286,6 @@
 
 
         ;; this messes stuff up unless put at the bottom
-
-        ;; slash acts as shift when held with another key
-        ;; {:des "slash = shift if held with another key"
-        ;;         :rules [[:##slash :right_shift nil {:alone :slash}]]}
-        ;; {:des "slash + space only equals slash + space" :rules [[:!Rspacebar [:slash :spacebar]]]}
-
-        ;; {:des "comma is ! if held"
-        ;;         :rules [[:period :period nil {
-        ;;                         :held [:delete_or_backspace :!S1]
-        ;;                         :params {:held 150}}]]}
-
-        ;; {:des "period is @ if held"
-        ;;         :rules [[:comma :comma nil {
-        ;;                         :held [ {:key :delete_or_backspace :repeat false}{:key :!S2 :repeat false} ]
-        ;;                         :params {:held 50}}]]}
-
 
         ;; {:des "test for double-tap mode"
         ;; :rules  [
