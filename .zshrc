@@ -2,7 +2,9 @@ export HISTFILE="$ZDOTDIR/.zhistory" # History filepath
 export HISTSIZE=1000 # Maximum events for internal history
 export SAVEHIST=1000 # Maximum events in history file
 
-autoload -Uz compinit && compinit # better autocomplete (e.g. git branches)
+# better autocomplete (e.g. git branches, fix capitalization errors)
+autoload -Uz compinit && compinit 
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 
 # get version control system info
 autoload -Uz vcs_info
