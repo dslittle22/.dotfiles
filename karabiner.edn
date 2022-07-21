@@ -14,10 +14,10 @@
  ;; you should probably only use them for letter keys that you type regularly.
  ;; for other keys, e.g. espace, you can probably just use a normal layer.
  :simlayers   {
-        :c-cmd {:key :c}
-        :m-cmd {:key :m}
+        :f-cmd {:key :f}
+        :j-cmd {:key :j}
         :comma-alt {:key :comma}
-        :period-ctrl {:key :period}
+        :k-ctrl {:key :k}
         :l-shift {:key :l}
  }
 
@@ -137,8 +137,8 @@
         ]}
 
         ;; ;; command keys on left side
-        {:des "m-cmd mapping"
-                :rules [:m-cmd
+        {:des "j-cmd mapping"
+                :rules [:j-cmd
                         [:f :!Cf !:moonlander]
                         [:w :!Cw !:moonlander]
                         [:r :!Cr !:moonlander]
@@ -156,8 +156,8 @@
         ]}
 
         ;; command keys on right side
-        {:des "c-cmd mapping"
-                :rules [:c-cmd
+        {:des "f-cmd mapping"
+                :rules [:f-cmd
                         [:x :!Oleft_control !:moonlander]
                         [:k [:c :k] !:moonlander]
                         [:l :!Cl !:moonlander]
@@ -175,8 +175,8 @@
                          ]
         }
 
-                {:des "period-ctrl mapping"
-                :rules [:period-ctrl
+                {:des "k-ctrl mapping"
+                :rules [:k-ctrl
                         [:a :!Wa !:moonlander]
                         [:e :!We !:moonlander]
                         [:r :!Wr !:moonlander]
