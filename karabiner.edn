@@ -14,17 +14,10 @@
  ;; you should probably only use them for letter keys that you type regularly.
  ;; for other keys, e.g. espace, you can probably just use a normal layer.
  :simlayers   {
-<<<<<<< HEAD
-        :c-cmd {:key :c}
-        :m-cmd {:key :m}
-        :comma-alt {:key :comma}
-        :period-ctrl {:key :period}
-=======
         :f-cmd {:key :f}
         :j-cmd {:key :j}
         :comma-alt {:key :comma}
         :k-ctrl {:key :k}
->>>>>>> bcf2bce6a2d34c41d95ad39d713646020cffd1e3
         :l-shift {:key :l}
  }
 
@@ -144,13 +137,8 @@
         ]}
 
         ;; ;; command keys on left side
-<<<<<<< HEAD
-        {:des "m-cmd mapping"
-                :rules [:m-cmd
-=======
         {:des "j-cmd mapping"
                 :rules [:j-cmd
->>>>>>> bcf2bce6a2d34c41d95ad39d713646020cffd1e3
                         [:f :!Cf !:moonlander]
                         [:w :!Cw !:moonlander]
                         [:r :!Cr !:moonlander]
@@ -168,13 +156,8 @@
         ]}
 
         ;; command keys on right side
-<<<<<<< HEAD
-        {:des "c-cmd mapping"
-                :rules [:c-cmd
-=======
         {:des "f-cmd mapping"
                 :rules [:f-cmd
->>>>>>> bcf2bce6a2d34c41d95ad39d713646020cffd1e3
                         [:x :!Oleft_control !:moonlander]
                         [:k [:c :k] !:moonlander]
                         [:l :!Cl !:moonlander]
@@ -192,13 +175,8 @@
                          ]
         }
 
-<<<<<<< HEAD
-                {:des "period-ctrl mapping"
-                :rules [:period-ctrl
-=======
                 {:des "k-ctrl mapping"
                 :rules [:k-ctrl
->>>>>>> bcf2bce6a2d34c41d95ad39d713646020cffd1e3
                         [:a :!Wa !:moonlander]
                         [:e :!We !:moonlander]
                         [:r :!Wr !:moonlander]
