@@ -14,15 +14,21 @@
  ;; you should probably only use them for letter keys that you type regularly.
  ;; for other keys, e.g. espace, you can probably just use a normal layer.
  :simlayers   {
+        :m-shift {:key :m}
+        :c-shift {:key :c}
         :f-cmd {:key :f}
         :j-cmd {:key :j}
+        :d-alt {:key :d}
+        :k-alt {:key :k}
+        :l-ctrl {:key :l}
+        :s-ctrl {:key :s}
         :comma-alt {:key :comma}
         :k-ctrl {:key :k}
-        :l-shift {:key :l}
+        :comma-sym {:key :comma}
  }
 
  :layers {
-        :z-mod {:key :z }
+        :x-mod {:key :x }
         :q-mod {:key :q}
         :launcher {:key :backslash}
  }
@@ -106,8 +112,8 @@
                 ]}
 
         ;; command keys on left side
-        {:des "l-shift mapping"
-                :rules [:l-shift
+        {:des "m-shift mapping"
+                :rules [:m-shift
                         [:q :!Rq [:macbook_internal :mistel]]
                         [:w :!Rw [:macbook_internal :mistel]]
                         [:e :!Re [:macbook_internal :mistel]]
@@ -124,6 +130,38 @@
                         [:c :!Rc [:macbook_internal :mistel]]
                         [:v :!Rv [:macbook_internal :mistel]]
                         [:b :!Rb [:macbook_internal :mistel]]
+                        [:1 :!R1 [:macbook_internal :mistel]]
+                        [:2 :!R2 [:macbook_internal :mistel]]
+                        [:3 :!R3 [:macbook_internal :mistel]]
+                        [:4 :!R4 [:macbook_internal :mistel]]
+                        [:5 :!R5 [:macbook_internal :mistel]]
+                        [:6 :!R6 [:macbook_internal :mistel]]
+                        [:7 :!R7 [:macbook_internal :mistel]]
+                        [:8 :!R8 [:macbook_internal :mistel]]
+                        [:9 :!R9 [:macbook_internal :mistel]]
+                        [:0 :!R0 [:macbook_internal :mistel]]
+        ]}
+
+        {:des "c-shift mapping"
+                :rules [:c-shift
+                        [:y :!Ry [:macbook_internal :mistel]]
+                        [:u :!Ru [:macbook_internal :mistel]]
+                        [:i :!Ri [:macbook_internal :mistel]]
+                        [:o :!Ro [:macbook_internal :mistel]]
+                        [:p :!Rp [:macbook_internal :mistel]]
+                        [:open_bracket :!Ropen_bracket [:macbook_internal :mistel]]
+                        [:close_bracket :!Rclose_bracket [:macbook_internal :mistel]]
+                        [:quote :!Rquote [:macbook_internal :mistel]]
+                        [:h :!Rh [:macbook_internal :mistel]]
+                        [:j :!Rj [:macbook_internal :mistel]]
+                        [:k :!Rk [:macbook_internal :mistel]]
+                        [:l :!Rl [:macbook_internal :mistel]]
+                        [:semicolon :!Rsemicolon [:macbook_internal :mistel]]
+                        [:n :!Rn [:macbook_internal :mistel]]
+                        [:m :!Rg [:macbook_internal :mistel]]
+                        [:comma :!Rcomma [:macbook_internal :mistel]]
+                        [:period :!Rperiod [:macbook_internal :mistel]]
+                        [:slash :!Rx [:macbook_internal :mistel]]
                         [:1 :!R1 [:macbook_internal :mistel]]
                         [:2 :!R2 [:macbook_internal :mistel]]
                         [:3 :!R3 [:macbook_internal :mistel]]
@@ -168,15 +206,15 @@
                         [:slash :!Cslash [:macbook_internal :mistel]]
                         ]}
 
-        {:des "comma-alt mapping"
-                :rules [:comma-alt
+        {:des "k-alt mapping"
+                :rules [:k-alt
                          [:spacebar [:comma :spacebar]] [:tab :!Otab]
                          [:grave_accent_and_tilde :!Ograve_accent_and_tilde]
                          ]
         }
 
-                {:des "k-ctrl mapping"
-                :rules [:k-ctrl
+                {:des "l-ctrl mapping"
+                :rules [:l-ctrl
                         [:a :!Wa [:macbook_internal :mistel]]
                         [:e :!We [:macbook_internal :mistel]]
                         [:r :!Wr [:macbook_internal :mistel]]
@@ -254,8 +292,8 @@
                 [:quote [:quote :quote :left_arrow] [:macbook_internal :mistel]]
         ]}
 
-        {:des "z-mod mapping"
-        :rules [:z-mod
+        {:des "x-mod mapping"
+        :rules [:x-mod
                 [:e [:z :e] [:macbook_internal :mistel]]
                 [:semicolon :equal_sign [:macbook_internal :mistel]]
                 [:j :!S9 [:macbook_internal :mistel]]
@@ -281,18 +319,18 @@
                 [:spacebar :!Td]
                 ]}
 
-        {:des "slash-symbols mapping"
-        :rules [:slash-symbols
-                [:t :!S1 [:macbook_internal :mistel]]
+        {:des "comma-sym mapping"
+        :rules [:comma-sym
+                [:z :!S1 [:macbook_internal :mistel]]
                 [:x :!S2 [:macbook_internal :mistel]]
                 [:c :!S3 [:macbook_internal :mistel]]
                 [:v :!S4 [:macbook_internal :mistel]]
-                [:b :grave_accent_and_tilde [:macbook_internal :mistel]]
+                [:b :!Sgrave_accent_and_tilde [:macbook_internal :mistel]]
                 [:a :!S5 [:macbook_internal :mistel]]
                 [:s :!S6 [:macbook_internal :mistel]]
                 [:d :!S7 [:macbook_internal :mistel]]
                 [:f :!S8 [:macbook_internal :mistel]]
-                [:g :!Sgrave_accent_and_tilde [:macbook_internal :mistel]]
+                [:g :grave_accent_and_tilde [:macbook_internal :mistel]]
 
                 [:1 :f1 [:macbook_internal :mistel]]
                 [:2 :f2 [:macbook_internal :mistel]]
@@ -319,7 +357,7 @@
         ]}
 
         {:des "slash symbols" :rules [
-                [:slash ["slash-symbols" 1] nil {:alone [:slash] :afterup ["slash-symbols" 0]}]
+                [:comma ["comma-sym" 1] nil {:alone [:comma] :afterup ["comma-sym" 0]}]
         ]}
 
         {:des "switch colon and semicolon"
