@@ -17,7 +17,7 @@ zstyle ':vcs_info:*' unstagedstr '*'
 zstyle ':vcs_info:*' stagedstr '+'
 
 # display when no action (e.g. rebase)
-zstyle ':vcs_info:git:*' formats "%F{40}%b %F{220}%u%c%m%f"
+zstyle ':vcs_info:git:*' formats "%F{40}%b%F{220}%u%c%m%f"
 # display on action
 zstyle ':vcs_info:git:*' actionformats '%F{40}%b|%F{220}%u%c%F{1}(%a)%f'
 # run hook below to check for untracked files
@@ -53,7 +53,7 @@ err="%(?..%F{red}? %?)%f"
 # percent of the total width.
 # https://unix.stackexchange.com/questions/369847/
 # how-to-configure-zsh-prompt-so-that-its-length-is-proportional-to-terminal-width
-export prompt_width_pct=30
+export prompt_width_pct=35
 function prompt_width_func() {
   echo $(( ${COLUMNS:-80} * prompt_width_pct / 100 ))
 }
@@ -62,15 +62,15 @@ prompt_width='$(prompt_width_func)'
 # the part in parenths, %(...), says: if the cwd is >= 4 # dirs,
 # show dir1/.../last2/dirs. # the %${p_w}<..< says, if the whole string
 # is longer than p_w, truncate it to ..rest-of-string.
-dir="%B%F{4}%${prompt_width}<..<%(4~|%-1~/…/%2~|%3~)%f"
+dir="%B%F{4}%${prompt_width}<…<%(4~|%-1~/…/%2~|%3~)%f"
 
 # shows arrow normally, pound sign if elevated privilages (sudo)
 suffix='%(!.#.→) '
 
-git_info='${vcs_info_msg_0_}'
+git_info="%F{40}%${prompt_width}<…<${vcs_info_msg_0_}"
 
 PROMPT="${err}${dir} ${suffix}"
-RPROMPT="%${prompt_width}<..<${git_info}"
+RPROMPT="${git_info}"
 
 if [ -n "$VIRTUAL_ENV" ]; then
   RPROMPT="🐍:(`basename \"$VIRTUAL_ENV\"`)$RPROMPT "
