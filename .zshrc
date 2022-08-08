@@ -87,6 +87,14 @@ timezsh() {
   for i in $(seq 1 10); do /usr/bin/time $shell -i -c exit; done
 }
 
+pullandmerge() {
+  current_branch=$(git symbolic-ref HEAD 2>/dev/null | cut -d"/" -f 3);
+  git checkout $1;
+  git pull;
+  git checkout $current_branch;
+  git merge $1;
+}
+
 # aliases
 alias python="/opt/homebrew/bin/python3"
 alias avenv="source venv/bin/activate"
