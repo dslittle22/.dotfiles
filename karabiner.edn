@@ -31,6 +31,7 @@
         :x-mod {:key :x }
         :q-mod {:key :q}
         :launcher {:key :backslash}
+        :launcher2 {:key :hyphen}
  }
 
  :devices {
@@ -40,8 +41,8 @@
     :mistel [
             {:vendor_id 1241}
     ]
-    :moonlander [
-            {:vendor_id 12951}
+    :sofle [
+            {:vendor_id 64562}
     ]
  }
 
@@ -254,17 +255,17 @@
                 [:e :!SOTe [:macbook_internal :mistel]]
                 [:s :!SOTs [:macbook_internal :mistel]]
                 [:d :!SOTd [:macbook_internal :mistel]]
-                [:m :!SOTm :!moonlander]
-                [:u :!SOTu :!moonlander]
-                [:j :!SOTj :!moonlander]
-                [:k :!SOTk :!moonlander]
-                [:l :!SOTl :!moonlander]
-                [:i :!SOTi :!moonlander]
-                [:comma :!SOTcomma :!moonlander]
-                [:period :!SOTperiod :!moonlander]
+                [:m :!SOTm :!sofle]
+                [:u :!SOTu :!sofle]
+                [:j :!SOTj :!sofle]
+                [:k :!SOTk :!sofle]
+                [:l :!SOTl :!sofle]
+                [:i :!SOTi :!sofle]
+                [:comma :!SOTcomma :!sofle]
+                [:period :!SOTperiod :!sofle]
                 [:semicolon :!SOTsemicolon [:macbook_internal :mistel]]
-                [:o :!SOTo :!moonlander]
-                [:p :!SOTp :!moonlander]
+                [:o :!SOTo :!sofle]
+                [:p :!SOTp :!sofle]
                 ]}
 
         {:des "q-mod mapping"
@@ -366,20 +367,23 @@
                 [:!Ssemicolon :semicolon]
         ]}
 
-        ;; {:des "test test test"
-        ;; :rules [
-        ;;         [:z :a]
-        ;; ]}
-
         {:des "launcher mode"
         :rules [:launcher
                 [:t [:open-app "iterm"]]
                 [:b [:open-app "google chrome"]]
                 [:c [:open-app "visual studio code"]]
-                [:s [:open "/Users/dannylittle/Library/Mobile Documents/com~apple~CloudDocs/Bowdoin Classes"]]
+                [:s [:open "/Users/dannylittle/Library/Mobile Documents/com~apple~CloudDocs/"]]
                  ]
                  :simlayer-threshold 500}
 
+        {:des "launcher mode 2"
+        :rules [:launcher2
+                [:t [:open-app "iterm"]]
+                [:b [:open-app "google chrome"]]
+                [:c [:open-app "visual studio code"]]
+                [:s [:open "/Users/dannylittle/Library/Mobile Documents/com~apple~CloudDocs/"]]
+                 ]
+                 :simlayer-threshold 500}
 
         ;; this messes stuff up unless put at the bottom
 
