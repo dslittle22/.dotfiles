@@ -30,8 +30,8 @@ set showmatch
 filetype indent on
 vnoremap . :norm.<CR>
 
-colorscheme sonokai
 packloadall
+colorscheme sonokai
 
 " search files recursively, using tab for completion
 set path+=**
