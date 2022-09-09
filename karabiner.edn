@@ -372,8 +372,7 @@
                 [:t [:open-app "iterm"]]
                 [:b [:open-app "google chrome"]]
                 [:c [:open-app "visual studio code"]]
-                [:s [:open "/Users/dannylittle/Library/Mobile Documents/com~apple~CloudDocs/"]]
-                 ]
+                [:s [:open "/Users/dannylittle/Library/Mobile Documents/com~apple~CloudDocs/Bowdoin"]] ]
                  :simlayer-threshold 500}
 
         {:des "launcher mode 2"
@@ -381,8 +380,7 @@
                 [:t [:open-app "iterm"]]
                 [:b [:open-app "google chrome"]]
                 [:c [:open-app "visual studio code"]]
-                [:s [:open "/Users/dannylittle/Library/Mobile Documents/com~apple~CloudDocs/"]]
-                 ]
+                [:s [:open "/Users/dannylittle/Library/Mobile Documents/com~apple~CloudDocs/Bowdoin"]] ]
                  :simlayer-threshold 500}
 
         ;; this messes stuff up unless put at the bottom
