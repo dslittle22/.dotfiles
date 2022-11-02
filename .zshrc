@@ -102,8 +102,9 @@ git_pull_and_merge() {
 
 # aliases
 alias python="/opt/homebrew/bin/python3"
-alias avenv="source venv/bin/activate"
+alias avenv="source env/bin/activate"
 alias dvenv="deactivate"
+alias mvenv="python3 -m venv env"
 alias matlab="/Applications/MATLAB_R2022b.app/bin/matlab -nojvm -nodesktop"
 alias sz="source ${ZDOTDIR}/.zshrc"
 alias vz="vim ${ZDOTDIR}/.zshrc"
