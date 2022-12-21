@@ -2,6 +2,10 @@ export HISTFILE="$ZDOTDIR/.zhistory" # History filepath
 export HISTSIZE=1000 # Maximum events for internal history
 export SAVEHIST=1000 # Maximum events in history file
 
+# update path for MacTex binaries
+PATH=/usr/local/texlive/2022/bin/universal-darwin:$PATH
+
+
 # better autocomplete (e.g. git branches, fix capitalization errors)
 autoload -Uz compinit && compinit
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
@@ -105,7 +109,8 @@ alias python="/opt/homebrew/bin/python3"
 alias avenv="source env/bin/activate"
 alias dvenv="deactivate"
 alias mvenv="python3 -m venv env"
-alias matlab="/Applications/MATLAB_R2022b.app/bin/matlab -nojvm -nodesktop"
+alias matlab="/Applications/MATLAB_R2022b.app/bin/matlab -nodisplay -nosplash -nodesktop -nojvm"
+alias killlogi="killall LogiMgrDaemon"
 alias sz="source ${ZDOTDIR}/.zshrc"
 alias vz="vim ${ZDOTDIR}/.zshrc"
 alias gs="git status"

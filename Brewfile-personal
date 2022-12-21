@@ -3,35 +3,72 @@ tap "homebrew/bundle"
 tap "homebrew/cask"
 tap "homebrew/cask-fonts"
 tap "homebrew/core"
+tap "osx-cross/arm"
+tap "osx-cross/avr"
+tap "qmk/qmk"
 tap "yqrashawn/goku"
+brew "jpeg-xl"
+brew "aom"
+brew "boost"
+brew "glib"
+brew "sqlite"
 brew "python@3.9"
+brew "libidn2"
+brew "unbound"
+brew "gnutls"
+brew "harfbuzz"
+brew "leptonica"
+brew "libbluray"
+brew "srt"
 brew "ffmpeg"
 brew "git"
+brew "gobject-introspection"
+brew "macos-trash"
 brew "mas"
 brew "node"
+brew "perl"
+brew "pillow", link: false
+brew "python@3.10"
 brew "vim"
 brew "yt-dlp"
 brew "zsh-autosuggestions"
 brew "zsh-syntax-highlighting"
+brew "qmk/qmk/qmk"
 brew "yqrashawn/goku/goku"
 cask "1password"
 cask "alt-tab"
+cask "cheatsheet"
 cask "font-fira-code-nerd-font"
 cask "font-meslo-lg-nerd-font"
 cask "freedom"
 cask "iina"
-cask "nordvpn"
+cask "mullvadvpn"
+cask "numi"
 cask "qbittorrent"
+cask "shottr"
 cask "steam"
 cask "superduper"
 mas "1Password for Safari", id: 1569813296
 mas "AdGuard for Safari", id: 1440147259
+mas "Baking Soda", id: 1601151613
+mas "BlockYT", id: 1575379461
+mas "Consent-O-Matic", id: 1606897889
 mas "Drafts", id: 1435957248
 mas "Final Cut Pro", id: 424389933
 mas "Flow", id: 1423210932
 mas "GoodNotes", id: 1444383602
 mas "Hidden Bar", id: 1452453066
+mas "iReal Pro", id: 409035833
 mas "iStat Menus", id: 1319778037
 mas "Logic Pro", id: 634148309
+mas "Microsoft Excel", id: 462058435
+mas "Numbers", id: 409203825
 mas "OmniFocus", id: 1346203938
+mas "Pages", id: 409201541
+mas "Reeder", id: 1529448980
 mas "Slack", id: 803453959
+mas "SponsorBlock for YouTube - Skip Sponsorships", id: 1573461917
+mas "Streaks", id: 963034692
+mas "Userscripts", id: 1463298887
+mas "Velja", id: 1607635845
+mas "Vinegar", id: 1591303229

@@ -1,4 +1,5 @@
 #!/bin/sh
+set -euo pipefail
 
 # supply any argument to recreate the brewfile
 print_usage() {
@@ -19,7 +20,7 @@ if "$newBrewfile" -eq 'true'; then
 fi
 
 
-declare -a ExcludeFromWork=("yt-dlp" "nordvpn" "NordVPN" "node" "qbittorrent" "steam" "freedom" "Logic Pro" "Final Cut Pro" "GoodNotes")
+declare -a ExcludeFromWork=("iReal Pro" "Reeder" "Streaks" "yt-dlp" "node" "qbittorrent" "steam" "freedom" "Logic Pro" "Final Cut Pro" "GoodNotes")
 declare -a ExcludeFromPersonal=("Okta Verify")
 
 cp Brewfile Brewfile-work
