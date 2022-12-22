@@ -133,11 +133,12 @@ echo "Running goku..."
 goku
 
 echo "Remaining things to do:"
-echo "[ ] Import rectangle settings"
-echo "[ ] Install wavelink and import settings"
-echo "[ ] ITerm2: Preferences -> General -> Preferences -> Load preferences from a custom folder or URL: ~/.dotfiles. \
+echo "- Import rectangle settings"
+echo "- Import safari adguard settings"
+echo "- Install wavelink and import settings"
+echo "- ITerm2: Preferences -> General -> Preferences -> Load preferences from a custom folder or URL: ~/.dotfiles. \
 Then, import color scheme (~/.dotfiles/material-ui-colors)"
-echo "[ ] Set MacOS shortcuts (e.g. f4 to DND, f5 = show desktop, cmd + option + arrow = switch tab, cmd + e = archive)"
-echo "[ ] install overcast"
-echo "[ ] install overcast"
+echo "- Set MacOS shortcuts (e.g. f4 to DND, f5 = show desktop, cmd + option + arrow = switch tab, cmd + e = archive)"
+echo "- install overcast"
+echo "- install overcast"
 

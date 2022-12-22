@@ -1,0 +1,53 @@
+{
+    "protocol-version": "1.0",
+    "general-settings": {
+        "app-language": "en-US",
+        "allow-acceptable-ads": false,
+        "show-app-updated-disabled": false,
+        "update-filters-period": 24,
+        "show-tray-icon": true,
+        "launch-at-login": true,
+        "verbose-logging": false,
+        "hardware-acceleration-disabled": false
+    },
+    "filters": {
+        "enabled-groups": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+        ],
+        "enabled-filters": [
+            208,
+            2,
+            3,
+            4,
+            118,
+            19,
+            20,
+            21,
+            22,
+            207,
+            215,
+            242,
+            204,
+            225,
+            122
+        ],
+        "custom-filters": [],
+        "user-filter": {
+            "enabled": true,
+            "rules": "",
+            "disabled-rules": ""
+        },
+        "allowlist": {
+            "enabled": true,
+            "inverted": false,
+            "domains": [],
+            "inverted-domains": []
+        }
+    }
+}
