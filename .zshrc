@@ -84,6 +84,10 @@ mkcd () {
   cd "$1"
 }
 
+xman() {
+open x-man-page://"${@}"
+}
+
 timezsh() {
   shell=${1-$SHELL}
   for i in $(seq 1 10); do /usr/bin/time $shell -i -c exit; done
@@ -128,14 +132,15 @@ alias gsa="git stash apply"
 alias gpul="git pull"
 alias gpus="git push"
 alias gpm="git_pull_and_merge"
-
+# alias man="xman"
 # colorize output of ls, with some aliases
-alias ls="ls -G"
-alias ll="ls -lG"
-alias la="ls -laG"
+alias ls="ls -GF"
+alias lsl="ls -lGF"
+alias lsla="ls -laGF"
+alias lsls="ls -lsGF"
+
 export CLICOLOR=1
 export LSCOLORS=gxfxbEaEBxxEhEhBaDaCaD
-
 export LESS=-R
 
 # source brew plugins
@@ -146,3 +151,4 @@ source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zs
 if [ -f ${ZDOTDIR}/.zshrc.local ]; then
   . "${ZDOTDIR}/.zshrc.local";
 fi
+GOPATH=/Users/dannylittle/.go

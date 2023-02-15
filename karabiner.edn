@@ -45,6 +45,7 @@
 
  :applications {
         :vscode "com.microsoft.VSCode"
+        :safari "com.apple.Safari"
  }
 
  :main [
@@ -106,122 +107,10 @@
                         [:!Sf12 :f12]
                 ]}
 
-        ;; ;; command keys on left side
-        ;; {:des "m-shift mapping"
-        ;;         :rules [:m-shift
-        ;;                 [:q :!Rq [:macbook_internal :mistel]]
-        ;;                 [:w :!Rw [:macbook_internal :mistel]]
-        ;;                 [:e :!Re [:macbook_internal :mistel]]
-        ;;                 [:r :!Rr [:macbook_internal :mistel]]
-        ;;                 [:t :!Rt [:macbook_internal :mistel]]
-        ;;                 [:y :!Ry [:macbook_internal :mistel]]
-        ;;                 [:a :!Ra [:macbook_internal :mistel]]
-        ;;                 [:s :!Rs [:macbook_internal :mistel]]
-        ;;                 [:d :!Rd [:macbook_internal :mistel]]
-        ;;                 [:f :!Rf [:macbook_internal :mistel]]
-        ;;                 [:g :!Rg [:macbook_internal :mistel]]
-        ;;                 [:z :!Rz [:macbook_internal :mistel]]
-        ;;                 [:x :!Rx [:macbook_internal :mistel]]
-        ;;                 [:c :!Rc [:macbook_internal :mistel]]
-        ;;                 [:v :!Rv [:macbook_internal :mistel]]
-        ;;                 [:b :!Rb [:macbook_internal :mistel]]
-        ;;                 [:1 :!R1 [:macbook_internal :mistel]]
-        ;;                 [:2 :!R2 [:macbook_internal :mistel]]
-        ;;                 [:3 :!R3 [:macbook_internal :mistel]]
-        ;;                 [:4 :!R4 [:macbook_internal :mistel]]
-        ;;                 [:5 :!R5 [:macbook_internal :mistel]]
-        ;;                 [:6 :!R6 [:macbook_internal :mistel]]
-        ;;                 [:7 :!R7 [:macbook_internal :mistel]]
-        ;;                 [:8 :!R8 [:macbook_internal :mistel]]
-        ;;                 [:9 :!R9 [:macbook_internal :mistel]]
-        ;;                 [:0 :!R0 [:macbook_internal :mistel]]
-        ;; ]}
-
-        ;; {:des "c-shift mapping"
-        ;;         :rules [:c-shift
-        ;;                 [:y :!Ry [:macbook_internal :mistel]]
-        ;;                 [:u :!Ru [:macbook_internal :mistel]]
-        ;;                 [:i :!Ri [:macbook_internal :mistel]]
-        ;;                 [:o :!Ro [:macbook_internal :mistel]]
-        ;;                 [:p :!Rp [:macbook_internal :mistel]]
-        ;;                 [:open_bracket :!Ropen_bracket [:macbook_internal :mistel]]
-        ;;                 [:close_bracket :!Rclose_bracket [:macbook_internal :mistel]]
-        ;;                 [:quote :!Rquote [:macbook_internal :mistel]]
-        ;;                 [:h :!Rh [:macbook_internal :mistel]]
-        ;;                 [:j :!Rj [:macbook_internal :mistel]]
-        ;;                 [:k :!Rk [:macbook_internal :mistel]]
-        ;;                 [:l :!Rl [:macbook_internal :mistel]]
-        ;;                 [:semicolon :!Rsemicolon [:macbook_internal :mistel]]
-        ;;                 [:n :!Rn [:macbook_internal :mistel]]
-        ;;                 [:m :!Rg [:macbook_internal :mistel]]
-        ;;                 [:comma :!Rcomma [:macbook_internal :mistel]]
-        ;;                 [:period :!Rperiod [:macbook_internal :mistel]]
-        ;;                 [:slash :!Rx [:macbook_internal :mistel]]
-        ;;                 [:1 :!R1 [:macbook_internal :mistel]]
-        ;;                 [:2 :!R2 [:macbook_internal :mistel]]
-        ;;                 [:3 :!R3 [:macbook_internal :mistel]]
-        ;;                 [:4 :!R4 [:macbook_internal :mistel]]
-        ;;                 [:5 :!R5 [:macbook_internal :mistel]]
-        ;;                 [:6 :!R6 [:macbook_internal :mistel]]
-        ;;                 [:7 :!R7 [:macbook_internal :mistel]]
-        ;;                 [:8 :!R8 [:macbook_internal :mistel]]
-        ;;                 [:9 :!R9 [:macbook_internal :mistel]]
-        ;;                 [:0 :!R0 [:macbook_internal :mistel]]
-        ;; ]}
-
-        ;; ;; ;; command keys on left side
-        ;; {:des "j-cmd mapping"
-        ;;         :rules [:j-cmd
-        ;;                 [:f :!Cf [:macbook_internal :mistel]]
-        ;;                 [:w :!Cw [:macbook_internal :mistel]]
-        ;;                 [:r :!Cr [:macbook_internal :mistel]]
-        ;;                 [:s :!Cs [:macbook_internal :mistel]]
-        ;;                 [:t :!Ct [:macbook_internal :mistel]]
-        ;;                 [:tab :!Ctab [:macbook_internal :mistel]]
-        ;;                 [:grave_accent_and_tilde :!Cgrave_accent_and_tilde [:macbook_internal :mistel]]
-        ;;                 [:d :!Cd [:macbook_internal :mistel]]
-        ;;                 [:a :!Ca [:macbook_internal :mistel]]
-        ;;                 [:z :!Cz [:macbook_internal :mistel]]
-        ;;                 [:x :!Cx [:macbook_internal :mistel]]
-        ;;                 [:c :!Cc [:macbook_internal :mistel]]
-        ;;                 [:v :!Cv [:macbook_internal :mistel]]
-        ;;                 [:1 :!Cq [:macbook_internal :mistel]]
-        ;; ]}
-
-        ;; ;; command keys on right side
-        ;; {:des "f-cmd mapping"
-        ;;         :rules [:f-cmd
-        ;;                 [:x :!Oleft_control [:macbook_internal :mistel]]
-        ;;                 [:k [:c :k] [:macbook_internal :mistel]]
-        ;;                 [:l :!Cl [:macbook_internal :mistel]]
-        ;;                 [:n :!Cn [:macbook_internal :mistel]]
-        ;;                 [:p :!Cp [:macbook_internal :mistel]]
-        ;;                 [:comma :!Ccomma [:macbook_internal :mistel]]
-        ;;                 [:period :!Cperiod [:macbook_internal :mistel]]
-        ;;                 [:slash :!Cslash [:macbook_internal :mistel]]
-        ;;                 ]}
-
-        ;; {:des "k-alt mapping"
-        ;;         :rules [:k-alt
-        ;;                  [:spacebar [:comma :spacebar]] [:tab :!Otab]
-        ;;                  [:grave_accent_and_tilde :!Ograve_accent_and_tilde]
-        ;;                  ]
-        ;; }
-
-        ;;         {:des "l-ctrl mapping"
-        ;;         :rules [:l-ctrl
-        ;;                 [:a :!Wa [:macbook_internal :mistel]]
-        ;;                 [:e :!We [:macbook_internal :mistel]]
-        ;;                 [:r :!Wr [:macbook_internal :mistel]]
-        ;;                 [:n :!Wn [:macbook_internal :mistel]]
-        ;;                 [:d :!Wd [:macbook_internal :mistel]]
-        ;;                 [:c :!Wc [:macbook_internal :mistel]]
-        ;;                 [:m :!Wm [:macbook_internal :mistel]]
-        ;;                 [:spacebar [:comma :spacebar] [:macbook_internal :mistel]]
-        ;;                 [:s :!Cs [:macbook_internal :mistel]]
-        ;;                 [:grave_accent_and_tilde :!Wgrave_accent_and_tilde [:macbook_internal :mistel]]
-        ;;         ]}
-
+        {:des "remap cmd-shift-I to command-option-I"
+                :rules [:safari
+                        [:!SCi :!COi]
+                ]}
         ;; when holding down caps
         {:des "nav-layer mapping"
                 :rules [:nav-layer

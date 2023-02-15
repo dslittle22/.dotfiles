@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>__country_code</key>
+	<string>US</string>
+	<key>__display_name</key>
+	<string>Danny Little</string>
+	<key>__fuzzy_search</key>
+	<true/>
+	<key>__last_check_update_time</key>
+	<string>1676047668</string>
+	<key>__now_playing_notifications</key>
+	<string>0</string>
+	<key>__oauth_access_token</key>
+	<string>BQDbImmGs_h4v5q7nwrqWbjAA2WnLH74tJYHxzV4fRUuP0IOlGDTY5tEYwJO3APJcK8uqei97v9O4Jjp7dMivhuz-HJa38hu-K7mYJW0QoAxxFHjIBe9HqRIjdmW4bOBGn1RGjIX5-VECLkjFyvhKnqHfaUe9TEFdwiR-6KPtxa9MLKMQr7dO56Qw9ApGRk2DkbhTUuKdARzGfNyVb-NdJ89UqHad-56uDkjnXPmViSiPZvrWhl2PTT0EN7AtvY66LcCKlikpVmlvJ6lz5xYQ1E_wzrf6UgNXNKAWzX3t7LFPupRC6Qhvd-4</string>
+	<key>__oauth_client_id</key>
+	<string>4814136cda614738988ae5b271b272fb</string>
+	<key>__oauth_client_secret</key>
+	<string>8e47c67b52694135adaa74f48a5e27ed</string>
+	<key>__oauth_refresh_token</key>
+	<string>AQDbp-bq4wX7UnHpvq8TLnG3GK3vIe6FehaBN2DnSjWSEVImCDt7RajitkMb4rC4izAGIKfYeB7GzmkHvncCmI1RcWQHpUhZdjQJdxAmGJRlDhHppxddGc7d1AChYkOmNe4</string>
+	<key>__use_artworks</key>
+	<string>0</string>
+	<key>__userid</key>
+	<string>dannyl99799</string>
+	<key>__workflow_version</key>
+	<string>12.6</string>
+</dict>
+</plist>
