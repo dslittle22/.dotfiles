@@ -6,7 +6,6 @@
 [core]
 	editor = vim
 	pager = less -r --mouse
-	hooksPath = /Users/dalittle/.git_hooks
 	excludesfile = /Users/dalittle/.gitignore_global
 [filter "lfs"]
 	process = git-lfs filter-process
