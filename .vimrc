@@ -16,7 +16,7 @@ set shiftwidth=2
 set softtabstop=2
 set expandtab
 set noshiftround
-set backspace=start
+set backspace=start,eol,indent
 
 set ttyfast
 

@@ -138,6 +138,7 @@ alias ls="ls -GF"
 alias lsl="ls -lGF"
 alias lsla="ls -laGF"
 alias lsls="ls -lsGF"
+alias brewup="brew update && brew upgrade"
 
 export CLICOLOR=1
 export LSCOLORS=gxfxbEaEBxxEhEhBaDaCaD

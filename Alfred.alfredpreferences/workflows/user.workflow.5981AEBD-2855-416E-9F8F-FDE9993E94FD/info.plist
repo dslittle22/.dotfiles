@@ -3962,7 +3962,7 @@ main($query,"TRACK","");
 				<key>hotkey</key>
 				<integer>49</integer>
 				<key>hotmod</key>
-				<integer>1310720</integer>
+				<integer>393216</integer>
 				<key>hotstring</key>
 				<string>Space</string>
 				<key>leftcursor</key>
