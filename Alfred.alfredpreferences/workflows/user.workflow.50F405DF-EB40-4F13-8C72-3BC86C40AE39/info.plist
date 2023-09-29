@@ -1,0 +1,958 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>com.omni-automation.of.alfred-collection</string>
+	<key>connections</key>
+	<dict>
+		<key>148C495C-7712-42F1-85D5-43BCF05B06A5</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>493CDC50-5593-47A3-9A85-8F645CBE5B03</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>29A8E1DC-83A5-411A-B802-55303032DBA2</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>008FA40D-BF41-4F87-8057-522738E52668</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>3C77A179-EEF6-4580-B84D-4CF2D922FAB5</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>148C495C-7712-42F1-85D5-43BCF05B06A5</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>55F90CD1-0545-4FB4-87AA-F9B3476F631E</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>4CCAB175-6F9C-4838-B85B-73121344E99F</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>6C6BE9BD-4D27-4961-A570-74534BD9075A</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>3C77A179-EEF6-4580-B84D-4CF2D922FAB5</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>74AFA7EB-700F-4839-898B-21964FD4365A</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>81204849-4ADB-4BA5-82EA-111EFA5FF54F</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>9293578A-BFDF-4430-9903-20B3E1413B6B</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>084394A4-96F9-40B5-9E5A-148F3CC75A24</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>BEA55294-8A2C-4844-95F3-6B57455B19C5</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>812DC5BC-0210-44A9-A542-5DBAEEC97CD4</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>D28C6D25-D9BA-43F9-B828-5E8A88F114C9</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>812DC5BC-0210-44A9-A542-5DBAEEC97CD4</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>E83D0C3D-4241-4E31-80D0-D0B3A053E37B</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>AE8BE250-EBB7-461A-8A9B-A75C2A1D9703</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>Otto Automator</string>
+	<key>description</key>
+	<string>A collection of Alfred actions for OmniFocus</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>OmniFocus Collection</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>browser</key>
+				<string></string>
+				<key>skipqueryencode</key>
+				<true/>
+				<key>skipvarencode</key>
+				<true/>
+				<key>spaces</key>
+				<string></string>
+				<key>url</key>
+				<string>omnifocus://localhost/omnijs-run?script=%28async%20%28arg%29%20%3D%3E%20%7B%0A%09try%20%7B%0A%09%09function%20createUtterance%28textToSpeak%29%7B%0A%09%09%09AlexID%20%3D%20%28%0A%09%09%09%09%28app%2EplatformName%20%3D%3D%3D%20%22macOS%22%29%20%3F%20%0A%09%09%09%09%22com%2Eapple%2Espeech%2Esynthesis%2Evoice%2EAlex%22%20%3A%20%0A%09%09%09%09%22com%2Eapple%2Espeech%2Evoice%2EAlex%22%0A%09%09%09%29%0A%09%09%09voiceObj%20%3D%20Speech%2EVoice%2EwithIdentifier%28AlexID%29%0A%09%09%09voiceRate%20%3D%200%2E4%0A%09%09%09utterance%20%3D%20new%20Speech%2EUtterance%28textToSpeak%29%0A%09%09%09utterance%2Evoice%20%3D%20voiceObj%0A%09%09%09utterance%2Erate%20%3D%20voiceRate%0A%09%09%09return%20utterance%0A%09%09%7D%0A%09%09var%20synthesizer%20%3D%20new%20Speech%2ESynthesizer%28%29%0A%0A%09%09%2F%2F%20AVAILABLE%20TASKS%20DUE%20TODAY%0A%09%09fmatr%20%3D%20Formatter%2EDate%2EwithStyle%28Formatter%2EDate%2EStyle%2EShort%29%0A%09%09rangeStart%20%3D%20fmatr%2EdateFromString%28%27today%27%29%0A%09%09rangeEnd%20%3D%20fmatr%2EdateFromString%28%27tomorrow%27%29%0A%09%09tasksToProcess%20%3D%20flattenedTasks%2Efilter%28task%20%3D%3E%20%7B%0A%09%09%09return%20%28%0A%09%09%09%09task%2EeffectiveDueDate%20%3E%20rangeStart%20%26%26%20%0A%09%09%09%09task%2EeffectiveDueDate%20%3C%20rangeEnd%20%26%26%0A%09%09%09%09task%2EtaskStatus%20%3D%3D%3D%20Task%2EStatus%2EDueSoon%0A%09%09%09%29%0A%09%09%7D%29%0A%09%09%0A%09%09if%28tasksToProcess%2Elength%20%3D%3D%3D%200%29%7B%0A%09%09%09throw%20%7B%0A%09%09%09%09name%3A%20%22No%20Items%20Matched%22%2C%0A%09%09%09%09message%3A%20%22No%20tasks%20are%20due%20today%2E%22%0A%09%09%09%7D%0A%09%09%7D%0A%09%09matchCount%20%3D%20tasksToProcess%2Elength%0A%09%09%0A%09%09itemsArray%20%3D%20new%20Array%28%29%0A%09%09for%20%28i%20%3D%200%3B%20i%20%3C%20tasksToProcess%2Elength%3B%20i%2B%2B%29%7B%20%0A%09%09%09aTask%20%3D%20tasksToProcess%5Bi%5D%0A%09%09%09console%2Elog%28%22NAME%22%2C%20aTask%2Ename%29%0A%09%09%09console%2Elog%28%22ID%22%2C%20aTask%2Eid%2EprimaryKey%29%0A%0A%09%09%09itemObj%20%3D%20new%20Object%28%29%0A%09%09%09itemObj%2Etitle%20%3D%20aTask%2Ename%0A%09%09%09itemObj%2Esubtitle%20%3D%20%22DUE%3A%20%22%20%2B%20aTask%2EdueDate%2EtoTimeString%28%29%0A%09%09%09itemObj%2Earg%20%3D%20aTask%2Eid%2EprimaryKey%0A%09%09%09itemsArray%2Epush%28itemObj%29%0A%09%09%7D%0A%09%09jsonObj%20%3D%20new%20Object%28%29%0A%09%09jsonObj%2Eitems%20%3D%20itemsArray%0A%09%09jsonStr%20%3D%20JSON%2Estringify%28jsonObj%29%0A%09%09console%2Elog%28jsonStr%29%0A%09%09%0A%09%09encodedJSON%20%3D%20encodeURIComponent%28jsonStr%29%0A%09%09alfredWorkflowID%20%3D%20%22com%2Eomni%2Dautomation%2Eof%2Ealfred%2Dcollection%22%0A%09%09alfredTriggerVar%20%3D%20%22displayResults%22%0A%09%09urlStr%20%3D%20%60alfred%3A%2F%2Fruntrigger%2F%24%7BalfredWorkflowID%7D%2F%24%7BalfredTriggerVar%7D%2F%3Fargument%3D%24%7BencodedJSON%7D%60%0A%09%09console%2Elog%28urlStr%29%0A%09%09URL%2EfromString%28urlStr%29%2Eopen%28%29%0A%09%0A%09%09taskOrTasks%20%3D%20%28matchCount%20%3D%3D%3D%201%29%3F%20%22task%22%3A%22tasks%22%0A%09%09response%20%3D%20%60%24%7BmatchCount%7D%20%24%7BtaskOrTasks%7D%20due%20today%2E%60%0A%09%09utterance%20%3D%20createUtterance%28response%29%0A%09%09synthesizer%2EspeakUtterance%28utterance%29%0A%09%7D%0A%09catch%28err%29%7B%0A%09%09utterance%20%3D%20createUtterance%28err%2Emessage%29%0A%09%09synthesizer%2EspeakUtterance%28utterance%29%0A%09%09%2F%2Fnew%20Alert%28err%2Ename%2C%20err%2Emessage%29%2Eshow%28%29%0A%09%7D%0A%7D%29%28%29%3B</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.openurl</string>
+			<key>uid</key>
+			<string>812DC5BC-0210-44A9-A542-5DBAEEC97CD4</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>keyword</key>
+				<string>{var:tasksDueTodayKeyword}</string>
+				<key>subtext</key>
+				<string>OmniFocus</string>
+				<key>text</key>
+				<string>Tasks Due Today</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>D28C6D25-D9BA-43F9-B828-5E8A88F114C9</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>keyword</key>
+				<string>{var:firstInboxItemKeyword}</string>
+				<key>subtext</key>
+				<string>OmniFocus</string>
+				<key>text</key>
+				<string>Select First Inbox Item</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>74AFA7EB-700F-4839-898B-21964FD4365A</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>browser</key>
+				<string></string>
+				<key>skipqueryencode</key>
+				<true/>
+				<key>skipvarencode</key>
+				<true/>
+				<key>spaces</key>
+				<string></string>
+				<key>url</key>
+				<string>omnifocus://localhost/omnijs-run?script=%28async%20%28%29%20%3D%3E%20%7B%0A%09try%20%7B%0A%09%09function%20createUtterance%28textToSpeak%29%7B%0A%09%09%09AlexID%20%3D%20%28%0A%09%09%09%09%28app%2EplatformName%20%3D%3D%3D%20%22macOS%22%29%20%3F%20%0A%09%09%09%09%22com%2Eapple%2Espeech%2Esynthesis%2Evoice%2EAlex%22%20%3A%20%0A%09%09%09%09%22com%2Eapple%2Espeech%2Evoice%2EAlex%22%0A%09%09%09%29%0A%09%09%09voiceObj%20%3D%20Speech%2EVoice%2EwithIdentifier%28AlexID%29%0A%09%09%09voiceRate%20%3D%200%2E4%0A%09%09%09utterance%20%3D%20new%20Speech%2EUtterance%28textToSpeak%29%0A%09%09%09utterance%2Evoice%20%3D%20voiceObj%0A%09%09%09utterance%2Erate%20%3D%20voiceRate%0A%09%09%09return%20utterance%0A%09%09%7D%0A%09%09var%20synthesizer%20%3D%20new%20Speech%2ESynthesizer%28%29%0A%0A%09%09document%2Eshow%28%29%0A%09%09var%20win%20%3D%20document%2Ewindows%5B0%5D%0A%09%09win%2Eperspective%20%3D%20Perspective%2EBuiltIn%2EInbox%0A%09%09tree%20%3D%20win%2Econtent%0A%09%09tree%2Eselect%28%5B%5D%29%0A%09%09tree%2ErootNode%2Echildren%2EforEach%28node%20%3D%3E%20%7B%0A%09%09%09node%2Ecollapse%28true%29%0A%09%09%7D%29%0A%09%09firstTask%20%3D%20tree%2ErootNode%2Echildren%5B0%5D%0A%09%09if%28firstTask%29%7B%0A%09%09%09tree%2Eselect%28%5BfirstTask%5D%29%0A%09%09%09firstTask%2Eexpand%28true%29%0A%09%09%09firstTask%2EexpandNote%28%29%0A%09%09%09firstTask%2Echildren%2EforEach%28node%20%3D%3E%20%7B%0A%09%09%09%09node%2EexpandNote%28true%29%0A%09%09%09%7D%29%0A%09%09%7D%0A%09%0A%09%09utterance%20%3D%20createUtterance%28%22Ready%21%22%29%0A%09%09synthesizer%2EspeakUtterance%28utterance%29%0A%09%7D%0A%09catch%28err%29%7B%0A%09%09utterance%20%3D%20createUtterance%28err%2Emessage%29%0A%09%09synthesizer%2EspeakUtterance%28utterance%29%0A%09%09%2F%2Fnew%20Alert%28err%2Ename%2C%20err%2Emessage%29%2Eshow%28%29%0A%09%7D%0A%7D%29%28%29%3B</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.openurl</string>
+			<key>uid</key>
+			<string>81204849-4ADB-4BA5-82EA-111EFA5FF54F</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>browser</key>
+				<string></string>
+				<key>skipqueryencode</key>
+				<false/>
+				<key>skipvarencode</key>
+				<true/>
+				<key>spaces</key>
+				<string></string>
+				<key>url</key>
+				<string>omnifocus://localhost/omnijs-run?script=%28async%20%28arg%29%20%3D%3E%20%7B%0A%09try%20%7B%0A%09%09function%20createUtterance%28textToSpeak%29%7B%0A%09%09%09AlexID%20%3D%20%28%0A%09%09%09%09%28app%2EplatformName%20%3D%3D%3D%20%22macOS%22%29%20%3F%20%0A%09%09%09%09%22com%2Eapple%2Espeech%2Esynthesis%2Evoice%2EAlex%22%20%3A%20%0A%09%09%09%09%22com%2Eapple%2Espeech%2Evoice%2EAlex%22%0A%09%09%09%29%0A%09%09%09voiceObj%20%3D%20Speech%2EVoice%2EwithIdentifier%28AlexID%29%0A%09%09%09voiceRate%20%3D%200%2E4%0A%09%09%09utterance%20%3D%20new%20Speech%2EUtterance%28textToSpeak%29%0A%09%09%09utterance%2Evoice%20%3D%20voiceObj%0A%09%09%09utterance%2Erate%20%3D%20voiceRate%0A%09%09%09return%20utterance%0A%09%09%7D%0A%09%09var%20synthesizer%20%3D%20new%20Speech%2ESynthesizer%28%29%0A%0A%09%09matchedProjects%20%3D%20projectsMatching%28arg%29%0A%0A%09%09if%28matchedProjects%2Elength%20%3D%3D%3D%200%29%7B%0A%09%09%09messageStr%20%3D%20%60No%20projects%20were%20found%20matching%3A%20%24%7Barg%7D%60%0A%09%09%09throw%20%7B%0A%09%09%09%09name%3A%20%22Empty%20Search%22%2C%0A%09%09%09%09message%3A%20messageStr%0A%09%09%09%7D%0A%09%09%7D%0A%09%09%0A%09%09matchCount%20%3D%20matchedProjects%2Elength%0A%09%09%0A%09%09itemsArray%20%3D%20new%20Array%28%29%0A%09%09for%20%28i%20%3D%200%3B%20i%20%3C%20matchedProjects%2Elength%3B%20i%2B%2B%29%7B%20%0A%09%09%09aProject%20%3D%20matchedProjects%5Bi%5D%0A%0A%09%09%09switch%28aProject%2Estatus%29%20%7B%0A%09%09%09%09case%20Project%2EStatus%2EActive%3A%0A%09%09%09%09%09var%20projectStatus%20%3D%20%22Active%22%0A%09%09%09%09%09break%3B%20%0A%09%09%09%09case%20Project%2EStatus%2EDone%3A%0A%09%09%09%09%09var%20projectStatus%20%3D%20%22Done%22%0A%09%09%09%09%09break%3B%0A%09%09%09%09case%20Project%2EStatus%2EDropped%3A%0A%09%09%09%09%09var%20projectStatus%20%3D%20%22Dropped%22%0A%09%09%09%09default%3A%0A%09%09%09%09%09var%20projectStatus%20%3D%20%22OnHold%22%0A%09%09%09%7D%0A%0A%09%09%09itemObj%20%3D%20new%20Object%28%29%0A%09%09%09itemObj%2Etitle%20%3D%20aProject%2Ename%0A%09%09%09itemObj%2Esubtitle%20%3D%20%60Status%3A%20%24%7BprojectStatus%7D%60%0A%09%09%09itemObj%2Earg%20%3D%20aProject%2Eid%2EprimaryKey%0A%09%09%09itemsArray%2Epush%28itemObj%29%0A%09%09%7D%0A%09%09jsonObj%20%3D%20new%20Object%28%29%0A%09%09jsonObj%2Eitems%20%3D%20itemsArray%0A%09%09jsonStr%20%3D%20JSON%2Estringify%28jsonObj%29%0A%09%09%0A%09%09encodedJSON%20%3D%20encodeURIComponent%28jsonStr%29%0A%09%09alfredWorkflowID%20%3D%20%22com%2Eomni%2Dautomation%2Eof%2Ealfred%2Dcollection%22%0A%09%09alfredTriggerVar%20%3D%20%22displayResults%22%0A%09%09urlStr%20%3D%20%60alfred%3A%2F%2Fruntrigger%2F%24%7BalfredWorkflowID%7D%2F%24%7BalfredTriggerVar%7D%2F%3Fargument%3D%24%7BencodedJSON%7D%60%0A%09%09URL%2EfromString%28urlStr%29%2Eopen%28%29%0A%09%0A%09%09projectOrProjects%20%3D%20%28matchCount%20%3D%3D%3D%201%29%3F%20%22project%22%3A%22projects%22%0A%09%09response%20%3D%20%60%24%7BmatchCount%7D%20%24%7BprojectOrProjects%7D%20matched%2E%60%0A%09%09utterance%20%3D%20createUtterance%28response%29%0A%09%09synthesizer%2EspeakUtterance%28utterance%29%0A%09%7D%0A%09catch%28err%29%7B%0A%09%09utterance%20%3D%20createUtterance%28err%2Emessage%29%0A%09%09synthesizer%2EspeakUtterance%28utterance%29%0A%09%09%2F%2Fnew%20Alert%28err%2Ename%2C%20err%2Emessage%29%2Eshow%28%29%0A%09%7D%0A%7D%29%28argument%29%3B&amp;arg=%22{query}%22</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.openurl</string>
+			<key>uid</key>
+			<string>4CCAB175-6F9C-4838-B85B-73121344E99F</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>availableviaurlhandler</key>
+				<true/>
+				<key>triggerid</key>
+				<string>tasksDue</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.external</string>
+			<key>uid</key>
+			<string>BEA55294-8A2C-4844-95F3-6B57455B19C5</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>{var:sequentialProjectKeyword}</string>
+				<key>subtext</key>
+				<string>Type a “Space” then enter the project title</string>
+				<key>text</key>
+				<string>New Sequential OmniFocus Project</string>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>29A8E1DC-83A5-411A-B802-55303032DBA2</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>{var:projectSearchKeyword}</string>
+				<key>subtext</key>
+				<string>Type a “Space” then enter the search terms</string>
+				<key>text</key>
+				<string>Smart Match OmniFocus Projects</string>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>55F90CD1-0545-4FB4-87AA-F9B3476F631E</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>browser</key>
+				<string></string>
+				<key>skipqueryencode</key>
+				<false/>
+				<key>skipvarencode</key>
+				<true/>
+				<key>spaces</key>
+				<string></string>
+				<key>url</key>
+				<string>omnifocus://localhost/omnijs-run?script=%28function%20newSequentialProject%28arg%29%7B%0A%09project%20%3D%20new%20Project%28arg%29%0A%09project%2Esequential%20%3D%20true%0A%09projectID%20%3D%20project%2Eid%2EprimaryKey%0A%09url%20%3D%20%22omnifocus%3A%2F%2F%2Ftask%2F%22%20%2B%20projectID%0A%09URL%2EfromString%28url%29%2Eopen%28%29%0A%7D%29%28argument%29&amp;arg=%22{query}%22</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.openurl</string>
+			<key>uid</key>
+			<string>008FA40D-BF41-4F87-8057-522738E52668</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>availableviaurlhandler</key>
+				<true/>
+				<key>triggerid</key>
+				<string>displayResults</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.external</string>
+			<key>uid</key>
+			<string>6C6BE9BD-4D27-4961-A570-74534BD9075A</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>browser</key>
+				<string></string>
+				<key>skipqueryencode</key>
+				<true/>
+				<key>skipvarencode</key>
+				<true/>
+				<key>spaces</key>
+				<string></string>
+				<key>url</key>
+				<string>omnifocus:///task/{query}</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.openurl</string>
+			<key>uid</key>
+			<string>493CDC50-5593-47A3-9A85-8F645CBE5B03</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>alfredfiltersresults</key>
+				<true/>
+				<key>alfredfiltersresultsmatchmode</key>
+				<integer>2</integer>
+				<key>argumenttreatemptyqueryasnil</key>
+				<true/>
+				<key>argumenttrimmode</key>
+				<integer>0</integer>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>queuedelaycustom</key>
+				<integer>3</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<true/>
+				<key>queuedelaymode</key>
+				<integer>0</integer>
+				<key>queuemode</key>
+				<integer>1</integer>
+				<key>runningsubtext</key>
+				<string></string>
+				<key>script</key>
+				<string>echo "${results_json}"</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>subtext</key>
+				<string></string>
+				<key>title</key>
+				<string></string>
+				<key>type</key>
+				<integer>5</integer>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>148C495C-7712-42F1-85D5-43BCF05B06A5</string>
+			<key>version</key>
+			<integer>3</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argument</key>
+				<string></string>
+				<key>passthroughargument</key>
+				<false/>
+				<key>variables</key>
+				<dict>
+					<key>results_json</key>
+					<string>{query}</string>
+				</dict>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.argument</string>
+			<key>uid</key>
+			<string>3C77A179-EEF6-4580-B84D-4CF2D922FAB5</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>browser</key>
+				<string></string>
+				<key>skipqueryencode</key>
+				<true/>
+				<key>skipvarencode</key>
+				<true/>
+				<key>spaces</key>
+				<string></string>
+				<key>url</key>
+				<string>omnifocus:///task/{query}</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.openurl</string>
+			<key>uid</key>
+			<string>084394A4-96F9-40B5-9E5A-148F3CC75A24</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>browser</key>
+				<string></string>
+				<key>skipqueryencode</key>
+				<true/>
+				<key>skipvarencode</key>
+				<true/>
+				<key>spaces</key>
+				<string></string>
+				<key>url</key>
+				<string>omnifocus:///tag/{query}</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.openurl</string>
+			<key>uid</key>
+			<string>AE8BE250-EBB7-461A-8A9B-A75C2A1D9703</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>alfredfiltersresults</key>
+				<true/>
+				<key>alfredfiltersresultsmatchmode</key>
+				<integer>2</integer>
+				<key>argumenttreatemptyqueryasnil</key>
+				<true/>
+				<key>argumenttrimmode</key>
+				<integer>0</integer>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>keyword</key>
+				<string>{var:listAllProjectsKeyword}</string>
+				<key>queuedelaycustom</key>
+				<integer>3</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<true/>
+				<key>queuedelaymode</key>
+				<integer>0</integer>
+				<key>queuemode</key>
+				<integer>1</integer>
+				<key>runningsubtext</key>
+				<string>Accessing projects…</string>
+				<key>script</key>
+				<string>// GET ALL PROJECTS
+const allProjects = Application("OmniFocus").defaultDocument.flattenedProjects()
+
+// EXTRACT PROJECT DATA TO SCRIPT FILTER ITEMS
+const sfItems = allProjects.map(project =&gt; {
+	const projName = project.name()
+	const projID = project.id()
+	const taskCount = project.numberOfTasks()
+	const remainTaskCount = taskCount - project.numberOfCompletedTasks()
+
+	return {
+		title: projName,
+		subtitle: `${remainTaskCount} tasks remaining of ${taskCount}`,
+		arg: projID
+	}
+})
+
+// OUTPUT JSON
+JSON.stringify({items:sfItems})</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>subtext</key>
+				<string>Type characters to filter by project name</string>
+				<key>title</key>
+				<string>List OmniFocus Projects by Name</string>
+				<key>type</key>
+				<integer>7</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>9293578A-BFDF-4430-9903-20B3E1413B6B</string>
+			<key>version</key>
+			<integer>3</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>alfredfiltersresults</key>
+				<true/>
+				<key>alfredfiltersresultsmatchmode</key>
+				<integer>2</integer>
+				<key>argumenttreatemptyqueryasnil</key>
+				<true/>
+				<key>argumenttrimmode</key>
+				<integer>0</integer>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>keyword</key>
+				<string>{var:listAllTagsKeyword}</string>
+				<key>queuedelaycustom</key>
+				<integer>3</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<true/>
+				<key>queuedelaymode</key>
+				<integer>0</integer>
+				<key>queuemode</key>
+				<integer>1</integer>
+				<key>runningsubtext</key>
+				<string>Accessing tags…</string>
+				<key>script</key>
+				<string>// GET ALL TAGS
+const allTags = Application("OmniFocus").defaultDocument.flattenedTags()
+
+// EXTRACT PROJECT DATA TO SCRIPT FILTER ITEMS
+const sfItems = allTags.map(tag =&gt; {
+	const tagName = tag.name()
+	const tagID = tag.id()
+	const remainTaskCount = tag.remainingTaskCount()
+
+	return {
+		title: tagName,
+		subtitle: `${remainTaskCount} tasks remaining`,
+		arg: tagID
+	}
+})
+
+// OUTPUT JSON
+JSON.stringify({items:sfItems})</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>subtext</key>
+				<string>Type characters to filter by tag name</string>
+				<key>title</key>
+				<string>List OmniFocus Tags by Name</string>
+				<key>type</key>
+				<integer>7</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>E83D0C3D-4241-4E31-80D0-D0B3A053E37B</string>
+			<key>version</key>
+			<integer>3</integer>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string># OmniFocus Collection
+
+A collection of Alfred actions demonstrating the integration of Omni Automation with Alfred. Detailed explanation and documentation is provided on the [Omni Automation website](https://omni-automation.com/alfred)
+
+---
+
+### REQUIREMENTS:
+
+NOTE: All Alfred actions in the collection currently require OmniFocus to be active or running in the background.
+
+Prior to running the actions:
+
+- In the OmniFocus application, enable the “Accept scripts from external applications” preference in the “Security” tab of the “Automation Configuration” dialog, accessed by selecting the “Automation” menu &gt; “Configure…” menu option.
+
+During the use of the actions:
+
+The execution of any external Omni Automation script will cause the display of a Script Security Window.
+
+- In the security dialog, fully scroll the Omni Automation script to review it, and then approve its execution by pressing the “Run Script” button at the bottom right of the window.
+
+- IMPORTANT: To enable the script to run without subsequent re-approval, select the checkbox located at the bottom left labeled “Automatically run this script when sent by Alfred”. Once the preference is selected and the script is run, a security window will no longer be presented for this workflow.
+
+- The “List OmniFocus Projects” and “List OmniFocus Tags” actions rely upon Apple Events and so require user approval of the system security dialog shown during their initial execution.
+
+---
+
+## Example Actions
+
+Here are the example Alfred actions:
+
+### Select 1st Inbox Item
+
+This action will switch the current view in OmniFocus to the Inbox and select the first item.
+
+### New Sequential Project
+
+This action will create and select a new sequential project titled using the name entered in Alfred.
+
+### Smart Search OmniFocus Projects
+
+This action will use the entered search terms to display a linked list of the matching projects in Alfred.
+
+### Tasks Due Today
+
+This action will display a linked list in Alfred of the OmniFocus taks due today. NOTE: With the installation of the included Voice Control commands file, this action can be triggered using a Voice Control command.
+
+### List OmniFocus Projects
+
+This action will display a linked list of all OmniFocus projects in Alfred. Select a list item to display it within OmniFocus.
+
+### List OmniFocus Tags
+
+This action will display a linked list of all OmniFocus tags in Alfred. Select a list item to display it within OmniFocus.</string>
+	<key>uidata</key>
+	<dict>
+		<key>008FA40D-BF41-4F87-8057-522738E52668</key>
+		<dict>
+			<key>note</key>
+			<string>The URL set here will open when you press Return after typing the keyword.</string>
+			<key>xpos</key>
+			<real>225</real>
+			<key>ypos</key>
+			<real>210</real>
+		</dict>
+		<key>084394A4-96F9-40B5-9E5A-148F3CC75A24</key>
+		<dict>
+			<key>note</key>
+			<string>Open project in OmniFocus, via passed URL.</string>
+			<key>xpos</key>
+			<real>225</real>
+			<key>ypos</key>
+			<real>585</real>
+		</dict>
+		<key>148C495C-7712-42F1-85D5-43BCF05B06A5</key>
+		<dict>
+			<key>note</key>
+			<string>List the resulting items in an ordered list. Type to filter by title.</string>
+			<key>xpos</key>
+			<real>385</real>
+			<key>ypos</key>
+			<real>405</real>
+		</dict>
+		<key>29A8E1DC-83A5-411A-B802-55303032DBA2</key>
+		<dict>
+			<key>note</key>
+			<string>Type your keyword into Alfred to trigger this action.</string>
+			<key>xpos</key>
+			<real>50</real>
+			<key>ypos</key>
+			<real>210</real>
+		</dict>
+		<key>3C77A179-EEF6-4580-B84D-4CF2D922FAB5</key>
+		<dict>
+			<key>note</key>
+			<string>Save the the input into a "results_json" variable to read in the Script Filter.</string>
+			<key>xpos</key>
+			<real>265</real>
+			<key>ypos</key>
+			<real>435</real>
+		</dict>
+		<key>493CDC50-5593-47A3-9A85-8F645CBE5B03</key>
+		<dict>
+			<key>note</key>
+			<string>Open task or project in OmniFocus, via passed URL.</string>
+			<key>xpos</key>
+			<real>555</real>
+			<key>ypos</key>
+			<real>405</real>
+		</dict>
+		<key>4CCAB175-6F9C-4838-B85B-73121344E99F</key>
+		<dict>
+			<key>note</key>
+			<string>The URL set here will open when you press Return after typing the keyword.</string>
+			<key>xpos</key>
+			<real>560</real>
+			<key>ypos</key>
+			<real>210</real>
+		</dict>
+		<key>55F90CD1-0545-4FB4-87AA-F9B3476F631E</key>
+		<dict>
+			<key>note</key>
+			<string>Type your keyword into Alfred to trigger this action.</string>
+			<key>xpos</key>
+			<real>385</real>
+			<key>ypos</key>
+			<real>210</real>
+		</dict>
+		<key>6C6BE9BD-4D27-4961-A570-74534BD9075A</key>
+		<dict>
+			<key>note</key>
+			<string>This action is called externally via a URL by other actions to display search results</string>
+			<key>xpos</key>
+			<real>50</real>
+			<key>ypos</key>
+			<real>405</real>
+		</dict>
+		<key>74AFA7EB-700F-4839-898B-21964FD4365A</key>
+		<dict>
+			<key>note</key>
+			<string>Type your keyword into Alfred to trigger this action.</string>
+			<key>xpos</key>
+			<real>45</real>
+			<key>ypos</key>
+			<real>30</real>
+		</dict>
+		<key>81204849-4ADB-4BA5-82EA-111EFA5FF54F</key>
+		<dict>
+			<key>note</key>
+			<string>The URL set here will open when you press Return after typing the keyword.</string>
+			<key>xpos</key>
+			<real>225</real>
+			<key>ypos</key>
+			<real>30</real>
+		</dict>
+		<key>812DC5BC-0210-44A9-A542-5DBAEEC97CD4</key>
+		<dict>
+			<key>note</key>
+			<string>The URL set here will open when you press Return after typing the keyword.</string>
+			<key>xpos</key>
+			<real>945</real>
+			<key>ypos</key>
+			<real>25</real>
+		</dict>
+		<key>9293578A-BFDF-4430-9903-20B3E1413B6B</key>
+		<dict>
+			<key>note</key>
+			<string>List Projects in a nice list. Type to filter by title.</string>
+			<key>xpos</key>
+			<real>55</real>
+			<key>ypos</key>
+			<real>585</real>
+		</dict>
+		<key>AE8BE250-EBB7-461A-8A9B-A75C2A1D9703</key>
+		<dict>
+			<key>note</key>
+			<string>Open tag in OmniFocus, via passed URL.</string>
+			<key>xpos</key>
+			<real>555</real>
+			<key>ypos</key>
+			<real>585</real>
+		</dict>
+		<key>BEA55294-8A2C-4844-95F3-6B57455B19C5</key>
+		<dict>
+			<key>note</key>
+			<string>Call via Voice Control using the external URL</string>
+			<key>xpos</key>
+			<real>760</real>
+			<key>ypos</key>
+			<real>210</real>
+		</dict>
+		<key>D28C6D25-D9BA-43F9-B828-5E8A88F114C9</key>
+		<dict>
+			<key>note</key>
+			<string>Type your keyword into Alfred to trigger this action.</string>
+			<key>xpos</key>
+			<real>765</real>
+			<key>ypos</key>
+			<real>25</real>
+		</dict>
+		<key>E83D0C3D-4241-4E31-80D0-D0B3A053E37B</key>
+		<dict>
+			<key>note</key>
+			<string>List Tags in a nice list. Type to filter by title.</string>
+			<key>xpos</key>
+			<real>385</real>
+			<key>ypos</key>
+			<real>585</real>
+		</dict>
+	</dict>
+	<key>userconfigurationconfig</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
+				<string>ib</string>
+				<key>placeholder</key>
+				<string>ib</string>
+				<key>required</key>
+				<true/>
+				<key>trim</key>
+				<true/>
+			</dict>
+			<key>description</key>
+			<string>The keyword used to summon the Alfred action to “Select 1st Inbox Item”</string>
+			<key>label</key>
+			<string>First Inbox Item Keyword</string>
+			<key>type</key>
+			<string>textfield</string>
+			<key>variable</key>
+			<string>firstInboxItemKeyword</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
+				<string>sq</string>
+				<key>placeholder</key>
+				<string>sq</string>
+				<key>required</key>
+				<true/>
+				<key>trim</key>
+				<true/>
+			</dict>
+			<key>description</key>
+			<string>The keyword used to summon the Alfred action to create a “New Sequential Project”</string>
+			<key>label</key>
+			<string>New Sequential Project Keyword</string>
+			<key>type</key>
+			<string>textfield</string>
+			<key>variable</key>
+			<string>sequentialProjectKeyword</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
+				<string>sp</string>
+				<key>placeholder</key>
+				<string>sp</string>
+				<key>required</key>
+				<true/>
+				<key>trim</key>
+				<true/>
+			</dict>
+			<key>description</key>
+			<string>The keyword used to summon the Alfred action to “Smart Search OmniFocus Projects”</string>
+			<key>label</key>
+			<string>Smart Search Projects Keyword</string>
+			<key>type</key>
+			<string>textfield</string>
+			<key>variable</key>
+			<string>projectSearchKeyword</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
+				<string>prs</string>
+				<key>placeholder</key>
+				<string>prs</string>
+				<key>required</key>
+				<true/>
+				<key>trim</key>
+				<true/>
+			</dict>
+			<key>description</key>
+			<string>The keyword used to summon the Alfred action to “List All OmniFocus Projects”</string>
+			<key>label</key>
+			<string>List All Projects Keyword</string>
+			<key>type</key>
+			<string>textfield</string>
+			<key>variable</key>
+			<string>listAllProjectsKeyword</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
+				<string>tgs</string>
+				<key>placeholder</key>
+				<string>tgs</string>
+				<key>required</key>
+				<true/>
+				<key>trim</key>
+				<true/>
+			</dict>
+			<key>description</key>
+			<string>The keyword used to summon the Alfred action to “List All OmniFocus Tags”</string>
+			<key>label</key>
+			<string>List All Tags Keyword</string>
+			<key>type</key>
+			<string>textfield</string>
+			<key>variable</key>
+			<string>listAllTagsKeyword</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
+				<string>tsk</string>
+				<key>placeholder</key>
+				<string>tsk</string>
+				<key>required</key>
+				<true/>
+				<key>trim</key>
+				<true/>
+			</dict>
+			<key>description</key>
+			<string>The keyword used to summon the Alfred action to “Tasks Due Today”</string>
+			<key>label</key>
+			<string>Tasks Due Today Keyword</string>
+			<key>type</key>
+			<string>textfield</string>
+			<key>variable</key>
+			<string>tasksDueTodayKeyword</string>
+		</dict>
+	</array>
+	<key>variablesdontexport</key>
+	<array/>
+	<key>version</key>
+	<string>1.0</string>
+	<key>webaddress</key>
+	<string>https://omni-automation.com/alfred</string>
+</dict>
+</plist>
