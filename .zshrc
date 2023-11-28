@@ -110,8 +110,7 @@ git_pull_and_merge() {
 
 git_log_on_branch() {
   default=$(git symbolic-ref refs/remotes/origin/HEAD | sed 's@^refs/remotes/origin/@@')
-  current=$(git name-rev --name-only HEAD)
-  git log "$default".."$current" --oneline --graph --decorate
+  git log "$default".. --oneline --graph --decorate
 }
 
 # aliases
