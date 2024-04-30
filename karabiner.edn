@@ -14,11 +14,12 @@
  ;; you should probably only use them for letter keys that you type regularly.
  ;; for other keys, e.g. espace, you can probably just use a normal layer.
  :simlayers   {
-        ;; :k-shift {:key :k}
-        ;; :d-shift {:key :d}
         :f-cmd {:key :f}
         :j-cmd {:key :j}
         :m-sym {:key :m}
+        :q-mod {:key :q}
+        ;; :k-shift {:key :k}
+        ;; :d-shift {:key :d}
         ;; :s-alt {:key :s}
         ;; :l-alt {:key :l}
         ;; :a-ctrl {:key :a}
@@ -28,11 +29,10 @@
  :layers {
         ;; :v-mod {:key :v }
         :launcher {:key :backslash}
-        :launcher2 {:key :hyphen}
  }
 
  :devices {
-    :macbook_internal [
+    :macbook [
             {:vendor_id 1452}
     ]
     :mistel [
@@ -42,7 +42,7 @@
             {:vendor_id 64562}
     ]
     :glove80 [
-        {:vendor_id 5824}
+            {:vendor_id 5824}
     ]
  }
 
@@ -115,126 +115,127 @@
         {:des "nav-layer mapping"
                 :rules [:nav-layer
                  ;; ijkl arrows
-                [:##d :left_command [:macbook_internal :mistel]]
-                [:##s :left_option [:macbook_internal :mistel]]
-                [:##a :left_shift [:macbook_internal :mistel]]
-                [:##h [{:key :left_arrow :repeat true}] [:macbook_internal :mistel]]
-                [:##j [{:key :down_arrow :repeat true}] [:macbook_internal :mistel]]
-                [:##k [{:key :up_arrow :repeat true}] [:macbook_internal :mistel]]
-                [:##l [{:key :right_arrow :repeat true}] [:macbook_internal :mistel]]
-                [:##y [{:key :!Oleft_arrow :repeat true}] [:macbook_internal :mistel]]
-                [:##u [{:key :!Odown_arrow :repeat true}] [:macbook_internal :mistel]]
-                [:##i [{:key :!Oup_arrow :repeat true}] [:macbook_internal :mistel]]
-                [:##o [{:key :!Oright_arrow :repeat true}] [:macbook_internal :mistel]]
-                [:##n [{:key :!Cleft_arrow :repeat true}] [:macbook_internal :mistel]]
-                [:##m [{:key :!Cdown_arrow :repeat true}] [:macbook_internal :mistel]]
-                [:##comma [{:key :!Cup_arrow :repeat true}] [:macbook_internal :mistel]]
-                [:##period [{:key :!Cright_arrow :repeat true}] [:macbook_internal :mistel]]
-                [:##spacebar :delete_or_backspace :macbook_internal]
+                [:##d :left_command [:macbook :mistel]]
+                [:##s :left_option [:macbook :mistel]]
+                [:##a :left_shift [:macbook :mistel]]
+                [:##h [{:key :left_arrow :repeat true}] [:macbook :mistel]]
+                [:##j [{:key :down_arrow :repeat true}] [:macbook :mistel]]
+                [:##k [{:key :up_arrow :repeat true}] [:macbook :mistel]]
+                [:##l [{:key :right_arrow :repeat true}] [:macbook :mistel]]
+                [:##y [{:key :!Oleft_arrow :repeat true}] [:macbook :mistel]]
+                [:##u [{:key :!Odown_arrow :repeat true}] [:macbook :mistel]]
+                [:##i [{:key :!Oup_arrow :repeat true}] [:macbook :mistel]]
+                [:##o [{:key :!Oright_arrow :repeat true}] [:macbook :mistel]]
+                [:##n [{:key :!Cleft_arrow :repeat true}] [:macbook :mistel]]
+                [:##m [{:key :!Cdown_arrow :repeat true}] [:macbook :mistel]]
+                [:##comma [{:key :!Cup_arrow :repeat true}] [:macbook :mistel]]
+                [:##period [{:key :!Cright_arrow :repeat true}] [:macbook :mistel]]
+                [:##spacebar :delete_or_backspace :macbook]
                  ]}
         {:des "tab meh-layer"
+         ;; rectangle shortcuts- for qmk/zmk boards, just make tab key a mod on hold
                 :rules [:meh-layer
-                [:q :!SOTq :!sofle]
-                [:a :!SOTa :!sofle]
-                [:w :!SOTw :!sofle]
-                [:e :!SOTe :!sofle]
-                [:s :!SOTs :!sofle]
-                [:d :!SOTd :!sofle]
-                [:m :!SOTm :!sofle]
-                [:n :!SOTn :!sofle]
-                [:u :!SOTu :!sofle]
-                [:j :!SOTj :!sofle]
-                [:k :!SOTk :!sofle]
-                [:l :!SOTl :!sofle]
-                [:i :!SOTi :!sofle]
-                [:comma :!SOTcomma :!sofle]
-                [:period :!SOTperiod :!sofle]
-                [:semicolon :!SOTsemicolon [:macbook_internal :mistel]]
-                [:o :!SOTo :!sofle]
-                [:p :!SOTp :!sofle]
+                [:q :!SOTq :macbook]
+                [:a :!SOTa :macbook]
+                [:w :!SOTw :macbook]
+                [:e :!SOTe :macbook]
+                [:s :!SOTs :macbook]
+                [:d :!SOTd :macbook]
+                [:m :!SOTm :macbook]
+                [:n :!SOTn :macbook]
+                [:u :!SOTu :macbook]
+                [:j :!SOTj :macbook]
+                [:k :!SOTk :macbook]
+                [:l :!SOTl :macbook]
+                [:i :!SOTi :macbook]
+                [:comma :!SOTcomma :macbook]
+                [:period :!SOTperiod :macbook]
+                [:semicolon :!SOTsemicolon :macbook]
+                [:o :!SOTo :macbook]
+                [:p :!SOTp :macbook]
                 ]}
 
         {:des "q-mod mapping"
                 :rules [:q-mod
                 [:u [:q :u]]
-                [:2 :mute [:macbook_internal :mistel]]
-                [:3 :volume_decrement [:macbook_internal :mistel]]
-                [:4 :volume_increment [:macbook_internal :mistel]]
-                [:w :display_brightness_decrement [:macbook_internal :mistel]]
-                [:e :display_brightness_increment [:macbook_internal :mistel]]
-                [:r :mission_control [:macbook_internal :mistel]]
-                [:s :rewind [:macbook_internal :mistel]]
-                [:d :play_or_pause [:macbook_internal :mistel]]
-                [:f :fastforward [:macbook_internal :mistel]]
-                [:j :quote [:macbook_internal :mistel]]
-                [:k :!Squote [:macbook_internal :mistel]]
-                [:i [:!Squote :!Squote :left_arrow] [:macbook_internal :mistel]]
-                [:comma :!COleft_arrow [:macbook_internal :mistel]]
-                [:period :!COright_arrow [:macbook_internal :mistel]]
-                [:o :!Tleft_arrow [:macbook_internal :mistel]]
-                [:p :!Tright_arrow [:macbook_internal :mistel]]
-                [:h [:spacebar :equal_sign :spacebar] [:macbook_internal :mistel]]
-                [:l [:grave_accent_and_tilde :grave_accent_and_tilde :left_arrow] [:macbook_internal :mistel]]
-                [:semicolon [:!Squote :!Squote :left_arrow] [:macbook_internal :mistel]]
-                [:quote [:quote :quote :left_arrow] [:macbook_internal :mistel]]
+                [:2 :mute [:macbook :mistel]]
+                [:3 :volume_decrement [:macbook :mistel]]
+                [:4 :volume_increment [:macbook :mistel]]
+                [:w :display_brightness_decrement [:macbook :mistel]]
+                [:e :display_brightness_increment [:macbook :mistel]]
+                [:r :mission_control [:macbook :mistel]]
+                [:s :rewind [:macbook :mistel]]
+                [:d :play_or_pause [:macbook :mistel]]
+                [:f :fastforward [:macbook :mistel]]
+                [:j :quote [:macbook :mistel]]
+                [:k :!Squote [:macbook :mistel]]
+                [:i [:!Squote :!Squote :left_arrow] [:macbook :mistel]]
+                [:comma :!COleft_arrow [:macbook :mistel]]
+                [:period :!COright_arrow [:macbook :mistel]]
+                [:o :!Tleft_arrow [:macbook :mistel]]
+                [:p :!Tright_arrow [:macbook :mistel]]
+                [:h [:spacebar :equal_sign :spacebar] [:macbook :mistel]]
+                [:l [:grave_accent_and_tilde :grave_accent_and_tilde :left_arrow] [:macbook :mistel]]
+                [:semicolon [:!Squote :!Squote :left_arrow] [:macbook :mistel]]
+                [:quote [:quote :quote :left_arrow] [:macbook :mistel]]
         ]}
 
         {:des "v-mod mapping"
         :rules [:v-mod
-                [:e [:z :e] [:macbook_internal :mistel]]
-                [:semicolon :equal_sign [:macbook_internal :mistel]]
-                [:j :!S9 [:macbook_internal :mistel]]
-                [:k :!S0 [:macbook_internal :mistel]]
-                [:m :open_bracket [:macbook_internal :mistel]]
-                [:comma :close_bracket [:macbook_internal :mistel]]
-                [:u :!Sopen_bracket [:macbook_internal :mistel]]
-                [:i :!Sclose_bracket [:macbook_internal :mistel]]
-                [:l :!Shyphen [:macbook_internal :mistel]]
-                [:semicolon :equal_sign [:macbook_internal :mistel]]
-                [:o :hyphen [:macbook_internal :mistel]]
-                [:p :!Sequal_sign [:macbook_internal :mistel]]
-                [:period :!Sbackslash [:macbook_internal :mistel]]
-                [:slash :backslash [:macbook_internal :mistel]]
-                [:x :!S1 [:macbook_internal :mistel]]
-                [:c :!S2 [:macbook_internal :mistel]]
-                [:v :!S3 [:macbook_internal :mistel]]
-                [:b :!S4 [:macbook_internal :mistel]]
-                [:s :!S5 [:macbook_internal :mistel]]
-                [:d :!S6 [:macbook_internal :mistel]]
-                [:f :!S7 [:macbook_internal :mistel]]
-                [:g :!S8 [:macbook_internal :mistel]]
+                [:e [:z :e] [:macbook :mistel]]
+                [:semicolon :equal_sign [:macbook :mistel]]
+                [:j :!S9 [:macbook :mistel]]
+                [:k :!S0 [:macbook :mistel]]
+                [:m :open_bracket [:macbook :mistel]]
+                [:comma :close_bracket [:macbook :mistel]]
+                [:u :!Sopen_bracket [:macbook :mistel]]
+                [:i :!Sclose_bracket [:macbook :mistel]]
+                [:l :!Shyphen [:macbook :mistel]]
+                [:semicolon :equal_sign [:macbook :mistel]]
+                [:o :hyphen [:macbook :mistel]]
+                [:p :!Sequal_sign [:macbook :mistel]]
+                [:period :!Sbackslash [:macbook :mistel]]
+                [:slash :backslash [:macbook :mistel]]
+                [:x :!S1 [:macbook :mistel]]
+                [:c :!S2 [:macbook :mistel]]
+                [:v :!S3 [:macbook :mistel]]
+                [:b :!S4 [:macbook :mistel]]
+                [:s :!S5 [:macbook :mistel]]
+                [:d :!S6 [:macbook :mistel]]
+                [:f :!S7 [:macbook :mistel]]
+                [:g :!S8 [:macbook :mistel]]
                 [:spacebar :!Td]
                 ]}
 
         {:des "m-sym mapping"
         :rules [:m-sym
-                [:z :!S1 [:macbook_internal :mistel]]
-                [:x :!S2 [:macbook_internal :mistel]]
-                [:c :!S3 [:macbook_internal :mistel]]
-                [:v :!S4 [:macbook_internal :mistel]]
-                [:b :!Sgrave_accent_and_tilde [:macbook_internal :mistel]]
-                [:a :!S5 [:macbook_internal :mistel]]
-                [:s :!S6 [:macbook_internal :mistel]]
-                [:d :!S7 [:macbook_internal :mistel]]
-                [:f :!S8 [:macbook_internal :mistel]]
-                [:g :grave_accent_and_tilde [:macbook_internal :mistel]]
+                [:z :!S1 [:macbook :mistel]]
+                [:x :!S2 [:macbook :mistel]]
+                [:c :!S3 [:macbook :mistel]]
+                [:v :!S4 [:macbook :mistel]]
+                [:b :!Sgrave_accent_and_tilde [:macbook :mistel]]
+                [:a :!S5 [:macbook :mistel]]
+                [:s :!S6 [:macbook :mistel]]
+                [:d :!S7 [:macbook :mistel]]
+                [:f :!S8 [:macbook :mistel]]
+                [:g :grave_accent_and_tilde [:macbook :mistel]]
 
-                [:1 :f1 [:macbook_internal :mistel]]
-                [:2 :f2 [:macbook_internal :mistel]]
-                [:3 :f3 [:macbook_internal :mistel]]
-                [:4 :f4 [:macbook_internal :mistel]]
-                [:5 :f5 [:macbook_internal :mistel]]
-                [:6 :f6 [:macbook_internal :mistel]]
-                [:7 :f7 [:macbook_internal :mistel]]
-                [:8 :f8 [:macbook_internal :mistel]]
-                [:9 :f9 [:macbook_internal :mistel]]
-                [:0 :f10 [:macbook_internal :mistel]]
+                [:1 :f1 [:macbook :mistel]]
+                [:2 :f2 [:macbook :mistel]]
+                [:3 :f3 [:macbook :mistel]]
+                [:4 :f4 [:macbook :mistel]]
+                [:5 :f5 [:macbook :mistel]]
+                [:6 :f6 [:macbook :mistel]]
+                [:7 :f7 [:macbook :mistel]]
+                [:8 :f8 [:macbook :mistel]]
+                [:9 :f9 [:macbook :mistel]]
+                [:0 :f10 [:macbook :mistel]]
         ]}
 
         ;; when caps is held, it sets caps-mod to 1. this means that unlike the other
         ;; simlayers, i can hold it for a second and then still be in caps-mod.
         {:des "caps lock = escape if tapped alone, acts as modifier when held"
-        :rules [:!glove80
+        :rules [:macbook
                 [:caps_lock ["nav-layer" 1] nil {:alone [:escape] :afterup ["nav-layer" 0]}]
         ]}
 
@@ -253,16 +254,7 @@
         :rules [:launcher
                 [:t [:open-app "iterm"]]
                 [:b [:open-app "google chrome"]]
-                [:c [:open-app "visual studio code"]]
-                [:s [:open "/Users/dannylittle/Library/Mobile Documents/com~apple~CloudDocs/Bowdoin"]] ]
-                 :simlayer-threshold 500}
-
-        {:des "launcher mode 2"
-        :rules [:launcher2
-                [:t [:open-app "iterm"]]
-                [:b [:open-app "google chrome"]]
-                [:c [:open-app "visual studio code"]]
-                [:s [:open "/Users/dannylittle/Library/Mobile Documents/com~apple~CloudDocs/Bowdoin"]] ]
+                [:c [:open-app "visual studio code"]] ]
                  :simlayer-threshold 500}
 
         ;; {:des "test for double-tap mode"
