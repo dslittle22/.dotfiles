@@ -257,6 +257,15 @@
                 [:c [:open-app "visual studio code"]] ]
                  :simlayer-threshold 500}
 
+         {:des "either shift + fn + num = fn key"
+                :rules [:glove80
+                        [:f6 :rewind]
+                        [:f7 :play_or_pause]
+                        [:f8 :fastforward]
+                        [:f9 :volume_decrement]
+                        [:f10 :volume_increment]
+                ]}
+
         ;; {:des "test for double-tap mode"
         ;; :rules  [
         ;; ;; set double esc mode if already pressed once
