@@ -29,8 +29,6 @@ set showmatch
 filetype indent on
 vnoremap . :norm.<CR>
 
-packloadall
-colorscheme sonokai
 
 :set termguicolors
 set autoread
@@ -48,3 +46,30 @@ autocmd FileType python setlocal commentstring=#\ %s
 autocmd FileType zsh setlocal commentstring=#\ %s
 autocmd FileType vim setlocal commentstring=\"\ %s
 :set scrolloff=10
+
+nnoremap <SPACE> <Nop>
+nnoremap "<C-d>" "<C-d>zz"
+nnoremap "<C-u>" "<C-u>zz"
+let mapleader=" "
+
+" override surround plugin mappings
+let g:surround_no_mappings = 1
+
+nmap ds  <Plug>Dsurround
+nmap cs  <Plug>Csurround
+nmap ys  <Plug>Ysurround
+nmap yS  <Plug>YSurround
+
+nmap ySs <Plug>YSsurround
+nmap ySS <Plug>YSsurround
+" xmap S   <Plug>VSurround
+xmap gS  <Plug>VgSurround
+
+if !hasmapto("<Plug>Isurround","i") && "" == mapcheck("<C-S>","i")
+  imap    <C-S> <Plug>Isurround
+endif
+imap      <C-G>s <Plug>Isurround
+imap      <C-G>S <Plug>ISurround
+
+packloadall
+colorscheme sonokai
