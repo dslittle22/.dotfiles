@@ -113,8 +113,56 @@ git_log_on_branch() {
   git log "$default".. --oneline --graph --decorate
 }
 
-git_branch_cleanup() {
+function git_cleanup () {
+	git fetch -p && git branch -vv | awk '/: gone]/{print $1}' | grep -v "\*" | xargs git branch -D
+}
+
+
+function git_cleanup_2() {
   TARGET_BRANCH=master && git checkout -q $TARGET_BRANCH && git for-each-ref refs/heads/ "--format=%(refname:short)" | while read branch; do mergeBase=$(git merge-base $TARGET_BRANCH $branch) && [[ $(git cherry $TARGET_BRANCH $(git commit-tree $(git rev-parse $branch\^{tree}) -p $mergeBase -m _)) == "-"* ]] && git branch -D $branch; done
+}
+
+function git_branch_backup() {
+  # current_branch=$(git symbolic-ref --short HEAD 2>/dev/null);
+  current_branch=$(git symbolic-ref --short HEAD);
+  git switch -c bak/"$current_branch" && git switch -
+}
+
+function git_range_diff() {
+    # Default values for optional parameters
+    local branch="$1"
+    local branch_backup="${2:-bak/$branch}"
+    local base="${3:-master}"
+
+    # Function usage
+    if [ -z "$branch" ]; then
+        echo "Usage: git_range_diff <branch> [branch_backup] [base]"
+        echo "  branch: Branch to compare (required)"
+        echo "  branch_backup: Backup branch (default: bak/<branch>)"
+        echo "  base: Base branch for comparison (default: master)"
+        return 1
+    fi
+
+    # Verify that branch exists
+    if ! git rev-parse --verify "$branch" >/dev/null 2>&1; then
+        echo "Error: Branch '$branch' does not exist"
+        return 1
+    fi
+
+    # Verify that backup branch exists
+    if ! git rev-parse --verify "$branch_backup" >/dev/null 2>&1; then
+        echo "Error: Backup branch '$branch_backup' does not exist"
+        return 1
+    fi
+
+    # Verify that base branch exists
+    if ! git rev-parse --verify "$base" >/dev/null 2>&1; then
+        echo "Error: Base branch '$base' does not exist"
+        return 1
+    fi
+
+    # Run the range-diff command
+    git range-diff "$base..$branch" "$base..$branch_backup"
 }
 
 # aliases
@@ -128,12 +176,13 @@ alias brewup="brew update && brew upgrade && brew cleanup"
 alias sz="source ${ZDOTDIR}/.zshrc"
 alias vz="vim ${ZDOTDIR}/.zshrc"
 alias gs="git status"
-alias ga="git add ."
+alias ga="git add"
+alias gaa="git add ."
 alias gd="git diff"
 alias gcm="git commit -m"
 alias gcmm="git commit -m"
 alias gacm="git add . && git commit -m"
-alias gundo="git reset --soft HEAD~1"
+alias gundo="git reset --soft HEAD~"
 alias glo="git log --oneline --graph --decorate"
 alias gblo=git_log_on_branch
 alias gch="git checkout"
@@ -146,13 +195,19 @@ alias gsa="git stash apply"
 alias gpul="git pull"
 alias gpus="git push"
 alias gpm="git_pull_and_merge"
+alias gsw="git switch"
+alias gsc="git switch -c"
+alias gbak="git_branch_backup"
 # colorize output of ls, with some aliases
 alias ls="ls -GF"
 alias lsl="ls -lGF"
 alias lsla="ls -laGF"
 alias lsls="ls -lsGF"
 alias brewup="brew update && brew upgrade && brew cleanup"
-alias git_del_branch=git_branch_cleanup
+alias gbd="git-branch-delete"
+alias grs="git reset"
+alias grss="git reset --soft"
+alias grsh="git reset --hard"
 
 export CLICOLOR=1
 export LSCOLORS=gxfxbEaEBxxEhEhBaDaCaD
