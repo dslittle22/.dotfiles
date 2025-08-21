@@ -1,8 +1,12 @@
-export HISTFILE="$ZDOTDIR/.zhistory" # History filepath
-export HISTSIZE=10000000 # Maximum events for internal history
-export SAVEHIST=10000000 # Maximum events in history file
-export HISTFILESIZE=10000000 # Maximum events in history file
+export HISTFILE="$ZDOTDIR/histfile" # History filepath
+export HISTSIZE=100000 # Maximum events for internal history
+export SAVEHIST=100000 # Maximum events in history file
+export HISTFILESIZE=100000 # Maximum events in history file
 setopt INC_APPEND_HISTORY
+setopt APPEND_HISTORY
+setopt EXTENDED_HISTORY
+setopt SHARE_HISTORY
+setopt INC_APPEND_HISTORY_TIME
 
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
@@ -220,8 +224,37 @@ source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zs
 
 [ -f "/Users/dannylittle/.ghcup/env" ] && source "/Users/dannylittle/.ghcup/env" # ghcup-env
 
+__fzf_history_widget() {
+  local n=1 fc_opts='-i'
+  awk_filter='
+    {
+  ts = int($2)
+  delta = systime() - ts
+  delta_days = int(delta / 86400)
+  if (delta < 0) { $2="+" (-delta_days) "d" }
+  else if (strftime("%Y%m%d", ts) == strftime("%Y%m%d")) { $2=strftime("%H:%M", ts) }
+  else { $2=delta_days "d" }
+  if (!seen[$0]++) print $0
+}'
+  local selected
+  selected=($(
+    fc -rl $fc_opts -t '%s' 1 | \
+      sed -E "s/^ *//" | \
+      gawk "$awk_filter" | \
+      FZF_DEFAULT_OPTS="--height 40% --with-nth 1.. --no-multi" fzf --query="$LBUFFER"
+  ))
+  if [[ -n $selected ]]; then
+    local -a arr
+    arr=("${(z)selected[@]}")
+    LBUFFER="${arr[@]:2}"
+    zle reset-prompt
+  fi
+}
+zle -N __fzf_history_widget
+bindkey '^R' __fzf_history_widget
 
 if [ -f ${ZDOTDIR}/.zshrc.local ]; then
   . "${ZDOTDIR}/.zshrc.local";
 fi
+
 GOPATH=$HOME/.go
