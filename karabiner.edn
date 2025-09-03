@@ -236,8 +236,7 @@
                 [:tab ["meh-layer" 1] nil {:alone [:tab] :afterup ["meh-layer" 0]}]
         ]}
 
-        {:des "switch colon and semicolon"
-        :rules [:!voyager
+        {:des "switch colon and semicolon" :rules [
                 [:semicolon :!Ssemicolon]
                 [:!Ssemicolon :semicolon]
         ]}
