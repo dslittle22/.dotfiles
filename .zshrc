@@ -244,7 +244,7 @@ fzf-history-widget() {
   }'
 
 selected=( $(fc -rl -i -t '%s' 1 | sed -E "s/^ *//" | gawk "$awk_filter" | FZF_DEFAULT_OPTS="--height ${FZF_TMUX_HEIGHT:-40%}
-  $FZF_DEFAULT_OPTS --with-nth 2.. --bind=ctrl-r:toggle-sort $FZF_CTRL_R_OPTS --query=${(qqq)LBUFFER} --no-multi" fzf) )
+  $FZF_DEFAULT_OPTS --with-nth 2.. --bind=ctrl-r:toggle-sort $FZF_CTRL_R_OPTS --query=${(qqq)LBUFFER} --tiebreak=index --no-multi" fzf) )
 
   local ret=$?
   if [ -n "$selected" ]; then
