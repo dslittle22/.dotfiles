@@ -109,6 +109,15 @@ git_pull_and_merge() {
   git merge "$1";
 }
 
+git_pull_and_checkout() {
+  if [ -z "$1" ]; then
+    echo "Pass in a branch name."
+    return
+  fi
+  default=$(git symbolic-ref refs/remotes/origin/HEAD | sed 's@^refs/remotes/origin/@@')
+  git checkout "$default" && git pull && git checkout "$1";
+}
+
 git_log_on_branch() {
   default=$(git symbolic-ref refs/remotes/origin/HEAD | sed 's@^refs/remotes/origin/@@')
   git log "$default".. --oneline --graph --decorate
@@ -196,6 +205,7 @@ alias gsa="git stash apply"
 alias gpul="git pull"
 alias gpus="git push"
 alias gpm="git_pull_and_merge"
+alias gpch="git_pull_and_checkout"
 alias gsw="git switch"
 alias gsc="git switch -c"
 alias gbak="git_branch_backup"

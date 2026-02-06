@@ -70,10 +70,10 @@
                 [:tab :!TOleft_shift nil {:alone [:tab]}]
         ]}
 
-        {:des "switch colon and semicolon" :rules [
-                [:semicolon :!Ssemicolon]
-                [:!Ssemicolon :semicolon]
-        ]}
+        ;; {:des "switch colon and semicolon" :rules [
+        ;;         [:semicolon :!Ssemicolon]
+        ;;         [:!Ssemicolon :semicolon]
+        ;; ]}
 
         {:des "backslash to hyper when held"
         :rules [:macbook

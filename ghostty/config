@@ -23,3 +23,6 @@ font-thicken = true
 keybind = cmd+backspace=text:\x15
 quit-after-last-window-closed = true
 keybind = shift+enter=text:\n
+
+
+
