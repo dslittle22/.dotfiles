@@ -32,4 +32,3 @@ vim.opt.confirm = true        -- Raise a dialog for ops that would fail with uns
 -- vim.schedule(function()
   -- vim.opt.clipboard = 'unnamedplus' -- Use system clipboard
 -- end)
-
