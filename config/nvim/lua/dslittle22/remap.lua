@@ -33,6 +33,7 @@ local js_filetypes = { javascript = true, typescript = true, javascriptreact = t
 
 if require("hubspot").is_hubspot() then
   vim.keymap.set("n", "<leader>tt", require("hubspot.test_toggle").toggle, { desc = "Toggle test/source file" })
+  vim.keymap.set("n", "<leader>wp", require("hubspot.bend_picker").test, { desc = "Toggle test/source file" })
 end
 
 vim.keymap.set("n", "<leader>/z", function()

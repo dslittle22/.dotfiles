@@ -1,33 +1,28 @@
 return {
   "ibhagwan/fzf-lua",
-  config = function()
-    local fzf = require("fzf-lua")
-    fzf.setup({
+  keys = {
+    { "<leader>p",  "<cmd>FzfLua files<cr>",                  desc = "Find files" },
+    { "<leader>f",  "<cmd>FzfLua live_grep<cr>",              desc = "Live grep" },
+    { "<leader>b",  "<cmd>FzfLua buffers<cr>",                desc = "Buffers" },
+    { "<leader>zg", "<cmd>FzfLua global<cr>",                 desc = "$: buffer, @: file symbol, #: workspace symbols" },
+    { "<leader>zh", "<cmd>FzfLua history<cr>",                desc = "History" },
+    { "<leader>zr", "<cmd>FzfLua resume<cr>",                 desc = "Resume" },
+    { "<leader>zw", "<cmd>FzfLua grep_cword<cr>",             desc = "grep word under cursor" },
+    { "<leader>zW", "<cmd>FzfLua grep_cWORD<cr>",             desc = "grep Word under cursor" },
+    { "<leader>zb", "<cmd>FzfLua git_branches<cr>",           desc = "Git branches" },
+    { "<leader>zo", "<cmd>FzfLua oldfiles cwd_only=true<cr>", desc = "Recent files (oldfiles)" },
+    { "<leader>zH", "<cmd>FzfLua helptags<cr>",               desc = "Help tags" },
+  },
+  opts = {
+    files = {
       fzf_opts = {
-        ["--bind"] = "alt-right:forward-word,alt-left:backward-word",
+        ["--history"] = vim.fn.stdpath("data") .. "/fzf-lua-files-history",
       },
-      files = {
-        fzf_opts = {
-          ["--history"] = vim.fn.stdpath("data") .. "/fzf-lua-files-history",
-        },
+    },
+    grep = {
+      fzf_opts = {
+        ["--history"] = vim.fn.stdpath("data") .. "/fzf-lua-grep-history",
       },
-      grep = {
-        fzf_opts = {
-          ["--history"] = vim.fn.stdpath("data") .. "/fzf-lua-grep-history",
-        },
-      },
-    })
-    vim.keymap.set("n", "<leader>p", fzf.files, { desc = "Find files" })
-    vim.keymap.set("n", "<leader>f", fzf.live_grep, { desc = "Live grep" })
-    vim.keymap.set("n", "<leader>b", fzf.buffers, { desc = "Buffers" })
-    vim.keymap.set("n", "<leader>zh", fzf.history, { desc = "History" })
-    vim.keymap.set("n", "<leader>zr", fzf.resume, { desc = "Resume" })
-    vim.keymap.set("n", "<leader>zw", fzf.grep_cword, { desc = "grep word under cursor" })
-    vim.keymap.set("n", "<leader>zW", fzf.grep_cWORD, { desc = "grep Word under cursor" })
-    vim.keymap.set("n", "<leader>zb", fzf.git_branches)
-    vim.keymap.set("n", "<leader>zo", function()
-      fzf.oldfiles({ cwd_only = true })
-    end, { desc = "Recent files (oldfiles)" })
-    vim.keymap.set("n", "<leader>zH", fzf.helptags, { desc = "Help tags" })
-  end,
+    },
+  },
 }
