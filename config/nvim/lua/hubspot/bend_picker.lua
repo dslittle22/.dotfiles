@@ -84,7 +84,7 @@ local function map(list, cb)
   return transformed
 end
 
-function M.test()
+function M.pick()
   local packages = get_src_packages()
 
 
