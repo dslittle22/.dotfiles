@@ -18,14 +18,14 @@ vim.api.nvim_create_autocmd('LspAttach', {
     local opts = { buffer = 0 }
     vim.keymap.set('n', 'gd', vim.lsp.buf.definition, opts)
     vim.keymap.set('n', 'ga', vim.lsp.buf.code_action, opts)
-    vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, opts)
-    vim.keymap.set('n', 'gr', require('fzf-lua').lsp_references, opts)
+    vim.keymap.set('n', 'gm', vim.lsp.buf.implementation, opts)
+    vim.keymap.set('n', 'gr', function() require('fzf-lua').lsp_references() end, opts)
     vim.keymap.set('n', 'gn', vim.lsp.buf.rename, opts)
     vim.keymap.set('n', 'gt', vim.lsp.buf.type_definition, opts)
     vim.keymap.set('i', '<C-k>', vim.lsp.buf.signature_help, opts)
     vim.keymap.set('n', '<leader>dl', vim.diagnostic.open_float, opts)
-    vim.keymap.set('n', '<leader>df', require('fzf-lua').diagnostics_document, opts)
-    vim.keymap.set('n', '<leader>dp', require('fzf-lua').diagnostics_workspace, opts)
+    vim.keymap.set('n', '<leader>df', function() require('fzf-lua').diagnostics_document() end, opts)
+    vim.keymap.set('n', '<leader>dp', function() require('fzf-lua').diagnostics_workspace() end, opts)
   end,
 })
 
