@@ -4,16 +4,24 @@ return {
     lazy = false,
     build = ':TSUpdate',
     config = function()
-      require("nvim-treesitter").install({ "javascript", "typescript", "tsx", "lua", "vim" })
+      require("nvim-treesitter").install({ "javascript", "typescript", "tsx", "lua", "vim", "html", "python", "css" })
       vim.api.nvim_create_autocmd('FileType', {
         pattern = '*',
         callback = function() pcall(vim.treesitter.start) end,
       })
+      -- experimental ts-based indentation
+      vim.bo.indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
     end,
   },
 
   { 'nvim-treesitter/nvim-treesitter-context' },
 
+  {
+    'windwp/nvim-ts-autotag',
+    config = function()
+      require('nvim-ts-autotag').setup()
+    end
+  },
   {
     "nvim-treesitter/nvim-treesitter-textobjects",
     dependencies = { "nvim-treesitter/nvim-treesitter" },

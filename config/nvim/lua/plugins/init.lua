@@ -47,6 +47,12 @@ local plugins = {
   },
 
   {
+    'windwp/nvim-autopairs',
+    event = "InsertEnter",
+    config = true
+  },
+
+  {
     "NeogitOrg/neogit",
     lazy = true,
     dependencies = {
