@@ -1,5 +1,6 @@
 local plugins = {
   { "tpope/vim-surround" },
+  { "tpope/vim-fugitive" },
   {
     'lewis6991/gitsigns.nvim',
     opts = {
