@@ -16,9 +16,6 @@ return {
       default = { 'lsp', 'path', 'snippets' },
     },
     fuzzy = { implementation = "prefer_rust_with_warning" },
-    snippets = {
-      extended_filetypes = { typescriptreact = { 'typescript' } },
-    },
     signature = { enabled = true }
   },
   opts_extend = { "sources.default" }
