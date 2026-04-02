@@ -1,0 +1,7 @@
+{
+  "Await setTimeout": {
+    "prefix": "stahp",
+    "body": ["await new Promise((resolve) => setTimeout(resolve, ${1:9000}));"],
+    "description": "await setTimeout promise"
+  }
+}

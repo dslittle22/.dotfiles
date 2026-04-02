@@ -14,75 +14,33 @@ local I18N_METHODS = {
   unescapedText = true,
 }
 
-local function get_node_text(node, bufnr)
-  return vim.treesitter.get_node_text(node, bufnr)
-end
-
-local function find_ancestor(node, type)
-  local current = node
-  while current do
-    if current:type() == type then return current end
-    current = current:parent()
-  end
-  return nil
-end
-
-local function is_jsx_translation_context(node, bufnr)
-  -- Walk up to find jsx_attribute
-  local attr = find_ancestor(node, "jsx_attribute")
-  if not attr then return false end
-
-  -- Check the attribute name is "message"
-  local attr_name = attr:named_child(0)
-  if not attr_name or get_node_text(attr_name, bufnr) ~= "message" then
-    return false
-  end
-
-  -- Walk up to jsx_self_closing_element or jsx_opening_element
-  local element = attr:parent()
-  if not element then return false end
-  local element_type = element:type()
-  if element_type ~= "jsx_self_closing_element" and element_type ~= "jsx_opening_element" then
-    return false
-  end
-
-  -- Check the tag name
-  local tag = element:named_child(0)
-  if not tag then return false end
-  local tag_name = get_node_text(tag, bufnr)
-  return TRANSLATION_COMPONENTS[tag_name] == true
-end
-
-local function is_i18n_call_context(node, bufnr)
-  -- Walk up to find arguments node
-  local args = find_ancestor(node, "arguments")
-  if not args then return false end
-
-  -- Check we're in the first argument position
-  local string_node = find_ancestor(node, "string") or find_ancestor(node, "template_string")
-  if not string_node then return false end
-  local first_arg = args:named_child(0)
-  if not first_arg or first_arg:id() ~= string_node:id() then return false end
-
-  -- Parent should be call_expression
-  local call = args:parent()
-  if not call or call:type() ~= "call_expression" then return false end
-
-  -- The function should be a member_expression like I18n.text
-  local func = call:named_child(0)
-  if not func or func:type() ~= "member_expression" then return false end
-
-  local object = func:named_child(0)
-  local property = func:named_child(1)
-  if not object or not property then return false end
-
-  return get_node_text(object, bufnr) == "I18n" and I18N_METHODS[get_node_text(property, bufnr)] == true
-end
-
 local function is_translation_context(bufnr, row, col)
   local ok, node = pcall(vim.treesitter.get_node, { bufnr = bufnr, pos = { row, col } })
   if not ok or not node then return false end
-  return is_jsx_translation_context(node, bufnr) or is_i18n_call_context(node, bufnr)
+
+  local current = node
+  while current do
+    local t = current:type()
+    local text = vim.treesitter.get_node_text(current, bufnr)
+
+    if t == "call_expression" then
+      local func = current:named_child(0)
+      if not func then return false end
+      local name = vim.treesitter.get_node_text(func, bufnr)
+      -- I18n.text(), I18n.unescapedText(), text(), unescapedText()
+      return I18N_METHODS[name] == true
+        or I18N_METHODS[name:match("%.(%w+)$") or ""] == true
+    end
+
+    if t == "jsx_self_closing_element" or t == "jsx_opening_element" then
+      local tag = current:named_child(0)
+      if tag then return TRANSLATION_COMPONENTS[vim.treesitter.get_node_text(tag, bufnr)] == true end
+      return false
+    end
+
+    current = current:parent()
+  end
+  return false
 end
 
 function source.new(opts)

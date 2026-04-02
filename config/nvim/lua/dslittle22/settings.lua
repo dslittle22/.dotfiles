@@ -12,6 +12,10 @@ vim.opt.shiftround = false
 vim.opt.mouse = "a"
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
+
+-- Clear highlights on search when pressing <Esc> in normal mode
+vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
+
 vim.opt.showmatch = true
 vim.opt.wildmode = "list:longest,full"
 vim.opt.scrolloff = 10
