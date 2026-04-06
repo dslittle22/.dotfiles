@@ -146,6 +146,7 @@ function M.pick()
 
         vim.fn.setenv("BEND_DIRS", table.concat(full_paths, ":"))
         require("bend").reset()
+        -- vim.cmd("edit " .. vim.api.nvim_buf_get_name(0))
       end,
     }
   })
