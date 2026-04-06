@@ -1,4 +1,4 @@
--- opt-backspace = delete word 
+-- opt-backspace = delete word
 vim.keymap.set('i', '<M-BS>', '<C-w>')
 
 -- Allow window navigation from terminal mode without needing to escape first
@@ -30,6 +30,18 @@ vim.keymap.set("n", "<leader>cl", function()
   vim.fn.setreg("+", line)
   vim.notify(line)
 end, { desc = "Copy relative file path with line number" })
+
+vim.keymap.set('n', '<leader>gc', '<cmd>GBrowse<cr>', { desc = 'Open on current branch' })
+vim.keymap.set('v', '<leader>gc', ":'<,'>GBrowse<cr>", { desc = 'Open on current branch' })
+vim.keymap.set('n', '<leader>gC', '<cmd>.GBrowse!<cr>', { desc = 'Copy current branch URL' })
+vim.keymap.set('v', '<leader>gC', ":'<,'>GBrowse!<cr>", { desc = 'Copy current branch URL' })
+
+vim.keymap.set('n', '<leader>gd', '<cmd>GBrowse master:%<cr>', { desc = 'Open on default branch' })
+vim.keymap.set('v', '<leader>gd', ":'<,'>GBrowse master:%<cr>", { desc = 'Open on default branch' })
+vim.keymap.set('n', '<leader>gD', '<cmd>.GBrowse! master:%<cr>', { desc = 'Copy default branch URL' })
+vim.keymap.set('v', '<leader>gD', ":'<,'>GBrowse! master:%<cr>", { desc = 'Copy default branch URL' })
+
+vim.keymap.set('n', '<leader>gm', ':Git commit -m ""<left>', { desc = 'Git commit with message' })
 
 vim.api.nvim_create_user_command('Svc', function()
   local dir = vim.fn.stdpath('config') .. '/lua/dslittle22'
