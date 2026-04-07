@@ -24,3 +24,11 @@ end, { desc = "Toggle file explorer (current file)" })
 vim.cmd.colorscheme('alabaster')
 
 require("nvim-autopairs").setup()
+
+require('blink.indent').setup({
+  static = { enabled = false },
+  scope = {
+    enabled = true,
+    highlights = { 'BlinkIndent' },
+  },
+})

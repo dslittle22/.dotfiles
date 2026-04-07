@@ -1,4 +1,3 @@
-local source = {}
 local M = {}
 
 local cache = {}
@@ -56,20 +55,6 @@ local function get_translation_key_at_cursor()
   if not is_translation_context(bufnr, row, col) then return nil end
 
   return vim.treesitter.get_node_text(node, bufnr)
-end
-
-local function find_git_root(bufnr)
-  local filepath = vim.api.nvim_buf_get_name(bufnr)
-  if filepath == "" then return nil end
-
-  local dir = vim.fn.fnamemodify(filepath, ":h")
-  while dir ~= "/" do
-    if vim.fn.isdirectory(dir .. "/.git") == 1 then
-      return dir
-    end
-    dir = vim.fn.fnamemodify(dir, ":h")
-  end
-  return nil
 end
 
 local function flatten_yaml(lines)
@@ -180,16 +165,15 @@ end
 
 -- blink-cmp source interface
 
-function source.new(opts)
-  local self = setmetatable({}, { __index = source })
-  return self
+function M.new()
+  return setmetatable({}, { __index = M })
 end
 
-function source:get_trigger_characters()
+function M:get_trigger_characters()
   return { '"', "'" }
 end
 
-function source:get_completions(ctx, callback)
+function M:get_completions(ctx, callback)
   callback = vim.schedule_wrap(callback)
 
   local bufnr = ctx.bufnr
@@ -200,8 +184,8 @@ function source:get_completions(ctx, callback)
     callback(EMPTY)
     return
   end
-  local root = find_git_root(bufnr)
 
+  local root = vim.fs.root(bufnr, ".git")
   if not root then
     callback(EMPTY)
     return
@@ -223,67 +207,40 @@ end
 
 -- hover and go-to-definition
 
-local function translation_hover()
+local function with_translation(fallback, fn)
   local key = get_translation_key_at_cursor()
-  if not key then
-    vim.lsp.buf.hover()
-    return
-  end
+  if not key then return fallback() end
 
-  local root = find_git_root(vim.api.nvim_get_current_buf())
-  if not root then
-    vim.lsp.buf.hover()
-    return
-  end
+  local root = vim.fs.root(0, ".git")
+  if not root then return fallback() end
 
-  local function show()
+  local function act()
     local entry = lookup[root] and lookup[root][key]
     if entry then
-      vim.lsp.util.open_floating_preview(
-        { entry.value, "", "`" .. key .. "`" },
-        "markdown",
-        { focus_id = "hs_translation_hover" }
-      )
+      fn(entry, key)
     else
       vim.notify("Translation key not found: " .. key, vim.log.levels.WARN)
     end
   end
 
-  if lookup[root] then
-    show()
-  else
-    ensure_cache(root, show)
-  end
+  if lookup[root] then act() else ensure_cache(root, act) end
+end
+
+local function translation_hover()
+  with_translation(vim.lsp.buf.hover, function(entry, key)
+    vim.lsp.util.open_floating_preview(
+      { entry.value, "", "`" .. key .. "`" },
+      "markdown",
+      { focus_id = "hs_translation_hover" }
+    )
+  end)
 end
 
 local function translation_goto_definition()
-  local key = get_translation_key_at_cursor()
-  if not key then
-    vim.lsp.buf.definition()
-    return
-  end
-
-  local root = find_git_root(vim.api.nvim_get_current_buf())
-  if not root then
-    vim.lsp.buf.definition()
-    return
-  end
-
-  local function jump()
-    local entry = lookup[root] and lookup[root][key]
-    if entry then
-      vim.cmd.edit(entry.file)
-      vim.api.nvim_win_set_cursor(0, { entry.lnum, 0 })
-    else
-      vim.notify("Translation key not found: " .. key, vim.log.levels.WARN)
-    end
-  end
-
-  if lookup[root] then
-    jump()
-  else
-    ensure_cache(root, jump)
-  end
+  with_translation(vim.lsp.buf.definition, function(entry)
+    vim.cmd.edit(entry.file)
+    vim.api.nvim_win_set_cursor(0, { entry.lnum, 0 })
+  end)
 end
 
 function M.setup()
@@ -297,10 +254,5 @@ function M.setup()
     end,
   })
 end
-
--- Export both the blink source (default) and setup
-M.new = source.new
-M.get_trigger_characters = source.get_trigger_characters
-M.get_completions = source.get_completions
 
 return M

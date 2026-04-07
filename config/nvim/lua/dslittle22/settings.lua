@@ -25,5 +25,3 @@ vim.opt.updatetime = 50
 vim.opt.confirm = true
 
 vim.opt.grepprg = "rg --vimgrep --smart-case"
-
-vim.opt.diffopt:remove("inline")
