@@ -2,6 +2,15 @@ if not require('hubspot').is_hubspot() then
   return
 end
 
+-- Install runner dependencies on plugin install/update
+vim.api.nvim_create_autocmd('PackChanged', {
+  callback = function(ev)
+    if ev.data.spec.name == 'neotest-hs-jasmine' and (ev.data.kind == 'install' or ev.data.kind == 'update') then
+      vim.system({ 'yarn', '--cwd', ev.data.path .. '/runner', 'install' })
+    end
+  end,
+})
+
 -- HubSpot-specific plugins
 vim.pack.add({
   'https://github.com/nvim-lua/plenary.nvim',
@@ -23,15 +32,9 @@ vim.pack.add({
 -- Copilot setup
 vim.g.copilot_nes_debounce = 500
 require('copilot').setup({
-  suggestion = { enabled = false },
+  suggestion = { enabled = true },
   panel = { enabled = false },
-  nes = {
-    enabled = true,
-    keymap = {
-      accept_and_goto = '<tab>',
-      dismiss = '<esc>',
-    },
-  },
+  nes = { enabled = false },
 })
 
 local bend = require('bend')
