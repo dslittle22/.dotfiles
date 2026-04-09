@@ -25,6 +25,10 @@ vim.cmd.colorscheme('alabaster')
 
 require("nvim-autopairs").setup()
 
+if require('hubspot').is_hubspot() then
+  require('hubspot.plugins')
+end
+
 require('blink.indent').setup({
   static = { enabled = false },
   scope = {
