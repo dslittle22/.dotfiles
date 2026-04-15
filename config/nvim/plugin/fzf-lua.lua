@@ -33,11 +33,11 @@ vim.keymap.set('n', '<leader>zH', '<cmd>FzfLua helptags<cr>', { desc = 'Help tag
 vim.api.nvim_create_autocmd('LspAttach', {
   callback = function()
     local opts = { buffer = 0 }
-    vim.keymap.set('n', '<leader>zr', function() require('fzf-lua').lsp_references() end, opts)
-    vim.keymap.set('n', '<leader>df', function() require('fzf-lua').diagnostics_document() end, opts)
-    vim.keymap.set('n', '<leader>dp', function() require('fzf-lua').diagnostics_workspace() end, opts)
-    vim.keymap.set('n', '<leader>zR', function() require('dslittle22.pickers.buffer_references').pick() end,
+    vim.keymap.set('n', '<leader>zd', function() require('fzf-lua').diagnostics_document() end, opts)
+    vim.keymap.set('n', '<leader>zD', function() require('fzf-lua').diagnostics_workspace() end, opts)
+    vim.keymap.set('n', '<leader>zr', function() require('dslittle22.pickers.buffer_references').pick() end,
       { desc = 'Buffer references (symbol under cursor)' })
+    vim.keymap.set('n', '<leader>zR', function() require('fzf-lua').lsp_references() end, opts)
   end,
 })
 

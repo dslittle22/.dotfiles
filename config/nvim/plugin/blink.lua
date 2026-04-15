@@ -32,13 +32,22 @@ if is_hubspot then
 end
 
 require('blink.cmp').setup({
+  enabled =
+      function()
+        local node = vim.treesitter.get_node()
+        if node == nil then return true end
+        return node:type():find('comment') == nil
+      end,
   sources = {
     default = sources,
     providers = providers,
   },
   completion = {
     accept = { auto_brackets = { enabled = false } },
-    documentation = { auto_show = true, auto_show_delay_ms = 500 },
-    ghost_text = { enabled = true, show_with_menu = false },
+    documentation = { auto_show = true, auto_show_delay_ms = 1000 },
+    ghost_text = {
+      enabled = true, show_with_menu = false
+    },
+    menu = { auto_show = false }
   }
 })

@@ -9,6 +9,7 @@ vim.pack.add({
   "https://github.com/windwp/nvim-autopairs",
   "https://github.com/folke/which-key.nvim",
   "https://github.com/saghen/blink.indent",
+  "https://github.com/esmuellert/codediff.nvim",
 })
 
 
@@ -24,7 +25,7 @@ require('mini.files').setup({
   },
 })
 
-vim.keymap.set("n", "leaderE", "<Cmd>lua MiniFiles.open()<CR>")
+vim.keymap.set("n", "<leader>E", "<Cmd>lua MiniFiles.open()<CR>")
 vim.keymap.set('n', '<leader>e', function()
   if not MiniFiles.close() then MiniFiles.open(vim.api.nvim_buf_get_name(0)) end
 end, { desc = "Toggle file explorer (current file)" })
