@@ -17,3 +17,9 @@
 	prune = true
 [rerere]
 	enabled = true
+[alias]
+  cm = "commit -m"
+  ac = "!add . && git commit"
+  acm = "!git add . && git commit -m"
+  cmp = "!f() { git commit -m \"$@\" && git push; }; f"
+  acmp = "!f() { git add -A && git commit -m \"$@\" && git push; }; f"
