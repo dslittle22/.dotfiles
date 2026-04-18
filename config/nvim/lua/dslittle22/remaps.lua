@@ -44,6 +44,18 @@ vim.keymap.set('v', '<leader>gd', ":'<,'>GBrowse master:%<cr>", { desc = 'Open o
 vim.keymap.set('n', '<leader>gD', '<cmd>.GBrowse! master:%<cr>', { desc = 'Copy default branch URL' })
 vim.keymap.set('v', '<leader>gD', ":'<,'>GBrowse! master:%<cr>", { desc = 'Copy default branch URL' })
 
+vim.keymap.set("n", "<C-d>", "<C-d>zz")
+vim.keymap.set("n", "<C-u>", "<C-u>zz")
+vim.keymap.set("n", "<C-f>", "<C-f>zz")
+vim.keymap.set("n", "<C-b>", "<C-b>zz")
+
+vim.keymap.set("n", "<C-h>", "<C-w>h")
+vim.keymap.set("n", "<C-j>", "<C-w>j")
+vim.keymap.set("n", "<C-k>", "<C-w>k")
+vim.keymap.set("n", "<C-l>", "<C-w>l")
+
+vim.keymap.set("t", "<Esc>", "<C-\\><C-n>")
+
 vim.keymap.set('n', '<leader>gm', ':Git commit -m ""<left>', { desc = 'Git commit with message' })
 
 vim.api.nvim_create_user_command('Svc', function()

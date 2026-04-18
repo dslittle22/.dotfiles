@@ -6,7 +6,15 @@ vim.pack.add({
 
 vim.g.copilot_nes_debounce = 500
 require('copilot').setup({
-  suggestion = { enabled = true },
+  suggestion = { enabled = false },
   panel = { enabled = false },
-  nes = { enabled = false },
+  nes = {
+    enabled = true, -- requires copilot-lsp as a dependency
+    -- auto_trigger = false,
+    keymap = {
+      accept_and_goto = "<leader><Tab>",
+      accept = false,
+      dismiss = "<Esc>",
+    },
+  },
 })
