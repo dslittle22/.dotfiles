@@ -6,7 +6,9 @@ require('lualine').setup({
     component_separators = ''
   },
   sections = {
-    lualine_a = { 'mode' },
+    lualine_a = {
+      { 'mode', fmt = function(str) return str:sub(1, 1) end },
+    },
     lualine_b = { { 'branch', icons_enabled = false }, 'diff', 'diagnostics' },
     lualine_c = { { 'filename', path = 1, file_status = true, shorting_target = 40 } },
     lualine_x = {
