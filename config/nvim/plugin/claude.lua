@@ -1,0 +1,18 @@
+vim.pack.add({
+  -- "https://github.com/folke/snacks.nvim",
+  "https://github.com/coder/claudecode.nvim"
+})
+
+require("claudecode").setup()
+
+local map = vim.keymap.set
+
+map("n", "<leader>ac", "<cmd>ClaudeCode<cr>",            { desc = "Toggle Claude" })
+map("n", "<leader>af", "<cmd>ClaudeCodeFocus<cr>",       { desc = "Focus Claude" })
+map("n", "<leader>am", "<cmd>ClaudeCodeSelectModel<cr>", { desc = "Select model" })
+map("n", "<leader>ar", "<cmd>ClaudeCode --resume<cr>",   { desc = "Resume session" })
+map("n", "<leader>aC", "<cmd>ClaudeCode --continue<cr>", { desc = "Continue session" })
+map("n", "<leader>ab", "<cmd>ClaudeCodeAdd %<cr>",       { desc = "Add buffer to context" })
+map("v", "<leader>as", "<cmd>ClaudeCodeSend<cr>",        { desc = "Send selection to Claude" })
+map("n", "<leader>aa", "<cmd>ClaudeCodeDiffAccept<cr>",  { desc = "Accept diff" })
+map("n", "<leader>ad", "<cmd>ClaudeCodeDiffDeny<cr>",    { desc = "Deny diff" })
